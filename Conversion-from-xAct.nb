@@ -22,6 +22,7 @@ Cell[BoxData["Quit"], "Input",
  CellChangeTimes->{{3.871979446642151*^9, 3.8719794472869115`*^9}},
  CellLabel->"In[20]:=",ExpressionUUID->"45522145-1bf5-4539-8bd2-a1248cbade49"],
 
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"Directory", "[", "]"}]], "Input",
