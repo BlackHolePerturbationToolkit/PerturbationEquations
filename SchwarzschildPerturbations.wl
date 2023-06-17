@@ -58,11 +58,9 @@ sigmarule::usage = "Rule for {\[Sigma]\[Rule](-1)^(\[ScriptQ]+\[ScriptL]+\[Scrip
 
 
 R::usage ="radial coordinate"
-xAct`xTensor`PD::usage ="Partial derivative"
 BL::usage ="Boyer--Lindquist coordinates"
 h::usage ="metric perturbation"
 NP::usage ="Newman--Penrose tetrad basis"
-xAct`xTensor`LI::usage ="Label indicies"
 l::usage ="angular number l"
 l1::usage ="angular number l1"
 l2::usage ="angular number l2"
