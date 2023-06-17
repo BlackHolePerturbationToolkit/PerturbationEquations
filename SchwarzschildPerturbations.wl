@@ -528,12 +528,12 @@ SchwarzschildQuadraticOperator[Source_,Gauge_:"Generic",OutputBasis_:"Carter",In
 
 
 
-If[MemberQ[{"d2G","d2R","S4d2G","S0d2G"},Source],,Message[SchwarzschildSource::argserror,Source]];
-If[MemberQ[{"Generic","Lorenz","ReggeWheeler","OutgoingRadiationGauge","TraceFreeOutgoingRadiationGauge","IngoingRadiationGauge","TraceFreeIngoingRadiationGauge"},Gauge],,Message[SchwarzschildSource::argserror,Gauge]];
-If[MemberQ[{"Carter","BLS","trTensor","Kinnersley"},OutputBasis],,Message[SchwarzschildSource::argserror,OutputBasis]];
-If[MemberQ[{"Carter","BLS","trTensor","Kinnersley"},InputBasis],,Message[SchwarzschildSource::argserror,InputBasis]];
+If[!MemberQ[{"d2G","d2R","S4d2G","S0d2G"},Source],Message[SchwarzschildSource::argserror,Source]];
+If[!MemberQ[{"Generic","Lorenz","ReggeWheeler","OutgoingRadiationGauge","TraceFreeOutgoingRadiationGauge","IngoingRadiationGauge","TraceFreeIngoingRadiationGauge"},Gauge],Message[SchwarzschildSource::argserror,Gauge]];
+If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},OutputBasis],Message[SchwarzschildSource::argserror,OutputBasis]];
+If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},InputBasis],Message[SchwarzschildSource::argserror,InputBasis]];
 
-If[MemberQ[{"S4d2G","S0d2G"},Source]&&MemberQ[{"BLS","trTensor","Kinnersley"},OutputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis],];
+If[MemberQ[{"S4d2G","S0d2G"},Source]&&MemberQ[{"BLS","trTensor","Kinnersley"},OutputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]];
 
 
 If[Source=="d2G"&&Gauge=="Generic",func=d2GCarter];
@@ -586,10 +586,10 @@ SchwarzschildLinearOperator[Source_,Gauge_:"Generic",OutputBasis_:"Carter",Input
 
 
 
-If[MemberQ[{"dG","dR"},Source],,Message[SchwarzschildSource::argserror,Source]];
-If[MemberQ[{"Generic","Lorenz","ReggeWheeler","OutgoingRadiationGauge","TraceFreeOutgoingRadiationGauge","IngoingRadiationGauge","TraceFreeIngoingRadiationGauge"},Gauge],,Message[SchwarzschildSource::argserror,Gauge]];
-If[MemberQ[{"Carter","BLS","trTensor","Kinnersley"},OutputBasis],,Message[SchwarzschildSource::argserror,OutputBasis]];
-If[MemberQ[{"Carter","BLS","trTensor","Kinnersley"},InputBasis],,Message[SchwarzschildSource::argserror,InputBasis]];
+If[!MemberQ[{"dG","dR"},Source],Message[SchwarzschildSource::argserror,Source]];
+If[!MemberQ[{"Generic","Lorenz","ReggeWheeler","OutgoingRadiationGauge","TraceFreeOutgoingRadiationGauge","IngoingRadiationGauge","TraceFreeIngoingRadiationGauge"},Gauge],Message[SchwarzschildSource::argserror,Gauge]];
+If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},OutputBasis],Message[SchwarzschildSource::argserror,OutputBasis]];
+If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},InputBasis],Message[SchwarzschildSource::argserror,InputBasis]];
 
 
 
@@ -625,8 +625,8 @@ Return[func]];
 
 SchwarzschildQuadraticCovariantSource[Source_,Gauge_:"Generic"]:=Module[{func},
 
-If[MemberQ[{"d2G"},Source],,Message[SchwarzschildCovariantSource::argserror,Source]];
-If[MemberQ[{"Generic","ReggeWheeler"},Gauge],,Message[SchwarzschildCovariantSource::argserror,Gauge]];
+If[!MemberQ[{"d2G"},Source],Message[SchwarzschildCovariantSource::argserror,Source]];
+If[!MemberQ[{"Generic","ReggeWheeler"},Gauge],Message[SchwarzschildCovariantSource::argserror,Gauge]];
 
 If[Source=="d2G"&&Gauge=="Generic",func=d2GVectorHarmonics];
 If[Source=="d2G"&&Gauge=="ReggeWheeler",func=d2GVectorHarmonics/.RWGaugeConditionVectorHarmonicdecompform];
