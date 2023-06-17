@@ -516,7 +516,7 @@ ftoMrule=f->Function[{r},1-2M/r];
 Derivative[n_][f] := Evaluate[Function[{r}, Evaluate[D[1-2M/r,{r,n}]]]];
 
 lambdatolrule={\[Lambda]1[l_]->Sqrt[(l)(l+1)],\[Lambda]2[l_]->Sqrt[(l-1)(l+2)]};
-mutolrule=mu[LI[l_],LI[s_]]:>Sqrt[(l-s)(l+1+s)];
+mutolrule=mu[LI[l_],-LI[s_]]:>Sqrt[(l-s)(l+1+s)];
 sigmarule={\[Sigma]->(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]),\[Sigma]p->\[Sigma]+1,\[Sigma]m->\[Sigma]-1};
 
 
