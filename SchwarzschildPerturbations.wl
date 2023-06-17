@@ -38,7 +38,6 @@ RWGaugeConditionVectorHarmonicdecompform::usage = "Rule that imposes the Regge--
 f::usage = "Schwarzschild's function, f[R[]]=1-2M/R[], see ftoMrule"
 M::usage = "Mass"
 mu::usage = "coefficient in terms of l, see mutolambdarule"
-mu::usage = "coefficient in terms of l, see mutolambdarule"
 (***r::usage = "Boyer\[Dash]Lindquist radial coordinates" ***)
 t::usage = "Boyer\[Dash]Lindquist time coordinates"
 
