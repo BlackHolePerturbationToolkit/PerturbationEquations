@@ -40,8 +40,8 @@ mu::usage = "coefficient in terms of l, see mutolambdarule"
 (***r::usage = "Boyer\[Dash]Lindquist radial coordinates" ***)
 t::usage = "Boyer\[Dash]Lindquist time coordinates"
 
-Coupling::usage = "Coupling[xAct`xTensor`LI[l], xAct`xTensor`LI[m], xAct`xTensor`LI[s], -xAct`xTensor`LI[l'], -xAct`xTensor`LI[m'], -xAct`xTensor`LI[s'], -xAct`xTensor`LI[l''], -xAct`xTensor`LI[m''], -xAct`xTensor`LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]"
-CInt::usage = "CInt[xAct`xTensor`LI[l], xAct`xTensor`LI[m], xAct`xTensor`LI[s], -xAct`xTensor`LI[l'], -xAct`xTensor`LI[m'], -xAct`xTensor`LI[s'], -xAct`xTensor`LI[l''], -xAct`xTensor`LI[m''], -xAct`xTensor`LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]"
+Coupling::usage = "Coupling[LI[l], LI[m], LI[s], -LI[l'], -LI[m'], -LI[s'], -LI[l''], -LI[m''], -LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]"
+CInt::usage = "CInt[LI[l], LI[m], LI[s], -LI[l'], -LI[m'], -LI[s'], -LI[l''], -LI[m''], -LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]"
 
 \[Sigma]m::usage = "see sigmarule"
 \[Sigma]p::usage = "see sigmarule"
@@ -450,19 +450,19 @@ ail[[2]]/R[](f[R[]] x[[1]] R[]-f[R[]] x[[5]] R[]),
 
 ail[[3]]/R[](2 x[[2]] R[]),
 
-ail[[4]]/R[](-Sqrt[f[R[]]] x[[3]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]+Sqrt[f[R[]]] x[[4]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]-Sqrt[f[R[]]] x[[6]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]+Sqrt[f[R[]]] x[[7]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]),
+ail[[4]]/R[](-Sqrt[f[R[]]] x[[3]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[4]] mu[LI[l], -LI[1]] R[]-Sqrt[f[R[]]] x[[6]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[7]] mu[LI[l], -LI[1]] R[]),
 
-ail[[5]]/R[](-Sqrt[f[R[]]] x[[3]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]+Sqrt[f[R[]]] x[[4]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]+Sqrt[f[R[]]] x[[6]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]-Sqrt[f[R[]]] x[[7]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]),
+ail[[5]]/R[](-Sqrt[f[R[]]] x[[3]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[4]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[6]] mu[LI[l], -LI[1]] R[]-Sqrt[f[R[]]] x[[7]] mu[LI[l], -LI[1]] R[]),
 
 ail[[6]]/R[](2 x[[9]] R[]),
 
-ail[[7]]/R[](x[[8]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[2]] R[]+x[[10]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[2]] R[]),
+ail[[7]]/R[](x[[8]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] R[]+x[[10]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] R[]),
 
-ail[[8]]/R[](-I (Sqrt[f[R[]]] x[[3]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]+Sqrt[f[R[]]] x[[4]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]+Sqrt[f[R[]]] x[[6]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]+Sqrt[f[R[]]] x[[7]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[])),
+ail[[8]]/R[](-I (Sqrt[f[R[]]] x[[3]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[4]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[6]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[7]] mu[LI[l], -LI[1]] R[])),
 
-ail[[9]]/R[](-I (Sqrt[f[R[]]] x[[3]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]+Sqrt[f[R[]]] x[[4]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]-Sqrt[f[R[]]] x[[6]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[]-Sqrt[f[R[]]] x[[7]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] R[])),
+ail[[9]]/R[](-I (Sqrt[f[R[]]] x[[3]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[4]] mu[LI[l], -LI[1]] R[]-Sqrt[f[R[]]] x[[6]] mu[LI[l], -LI[1]] R[]-Sqrt[f[R[]]] x[[7]] mu[LI[l], -LI[1]] R[])),
 
-ail[[10]]/R[](I (x[[8]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[2]] R[]-x[[10]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[2]] R[]))};
+ail[[10]]/R[](I (x[[8]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] R[]-x[[10]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] R[]))};
 
 
 (* ::Section::Closed:: *)
