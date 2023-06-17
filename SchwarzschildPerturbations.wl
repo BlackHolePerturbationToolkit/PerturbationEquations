@@ -513,7 +513,7 @@ CarterToKinnersley[x_]:={2/f[R[]]x[[1]],x[[2]],Sqrt[2/f[R[]]]x[[3]],Sqrt[2/f[R[]
 
 ftoMrule=f->Function[{r},1-2M/r];
 
-Derivative[1][f][R[]]=2M/R[]^2
+Derivative[n_][f] := Evaluate[Function[{r}, Evaluate[D[1-2M/r,{r,n}]]]];
 
 lambdatolrule={\[Lambda]1[l_]->Sqrt[(l)(l+1)],\[Lambda]2[l_]->Sqrt[(l-1)(l+2)]};
 mutolrule=mu[LI[l_],LI[s_]]:>Sqrt[(l-s)(l+1+s)];
