@@ -511,7 +511,7 @@ CarterToKinnersley[x_]:={2/f[R[]]x[[1]],x[[2]],Sqrt[2/f[R[]]]x[[3]],Sqrt[2/f[R[]
 (*Rules for quantities in my notation*)
 
 
-ftoMrule={f[x_]->1-2M/x,Derivative[n_][f][x_]->D[1-2M/x,{x,n}]};
+ftoMrule=f->Function[{r},1-2M/r];
 
 Derivative[1][f][R[]]=2M/R[]^2
 
