@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Begin Package*)
 
 
@@ -9,12 +9,11 @@ Unprotect @@ Names["SchwarzschildPerturbations`*"]
 ClearAll @@ Names["SchwarzschildPerturbations`*"]
 
 
-
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Usage messages*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Rules*)
 
 
@@ -92,7 +91,7 @@ hrm::usage ="r component of the minus angular part of the metric perturbation"
 
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Functions*)
 
 
@@ -138,27 +137,23 @@ Arguments:
 "
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Error Messages*)
 
 
-SchwarzschildSource::argserror = "Argument `1` is unknown"
-
-SchwarzschildSource::argserror2 = "Cannot put `1` in output basis `2`"
-
-
-
-SchwarzschildCovariantSource::argserror = "Argument `1` is unknown"
+SchwarzschildSource::argserror = "Argument `1` is unknown";
+SchwarzschildSource::argserror2 = "Cannot put `1` in output basis `2`";
+SchwarzschildCovariantSource::argserror = "Argument `1` is unknown";
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Begin Private part of package*)
 
 
 Begin["`Private`"]
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Definitions*)
 
 
@@ -286,7 +281,7 @@ DefConstantSymbol[\[Omega]1]
 DefConstantSymbol[\[Omega]2]
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Frequency domain decomposition*)
 
 
@@ -336,11 +331,11 @@ PD[{0,-BL}][htrAB[LI[l],LI[m]]]:>-I \[Omega] htrAB[LI[l],LI[m]]
 }
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Load expressions for dG, dR, d2G, d2R, S0d2G and S4d2G*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*dG*)
 
 
@@ -350,7 +345,7 @@ Get["dGCarter.wl"];
 Get["dGLorenzCarter.wl"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*dR*)
 
 
@@ -360,7 +355,7 @@ Get["dRCarter.wl"];
 Get["dRLorenzCarter.wl"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*d2R*)
 
 
@@ -370,7 +365,7 @@ Get["d2RCarter.wl"];
 Get["d2RLorenzCarter.wl"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*d2G*)
 
 
@@ -380,14 +375,14 @@ Get["d2GCarter.wl"];
 Get["d2GLorenzCarter.wl"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*d2G Vector Harmonics*)
 
 
 Get["d2GVectorHarmonics.wl"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Sd2G*)
 
 
@@ -403,7 +398,7 @@ Get["S4d2GCarter.wl"];
 Get["S4d2GLorenzCarter.wl"];
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Regge-Wheeler gauge condition rule*)
 
 
@@ -412,7 +407,7 @@ RWGaugeConditionNPform={h[{3,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{4,-NP},{4,
 RWGaugeConditionVectorHarmonicdecompform={hap[___]->0,hp[___]->0,hm[___]->0};
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Radiation gauge condition rule*)
 
 
@@ -422,7 +417,7 @@ IngoingRadiationGauge={h[{2,-NP},{1,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{2,-NP},{2,-
 TraceFreeGauge={h[{1,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{3,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>0};
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*From Carter to Barack--Lousto--Sago rule and function*)
 
 
@@ -470,7 +465,7 @@ ail[[9]]/R[](-I (Sqrt[f[R[]]] x[[3]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]]
 ail[[10]]/R[](I (x[[8]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[2]] R[]-x[[10]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[1]] mu[xAct`xTensor`LI[l], -xAct`xTensor`LI[2]] R[]))};
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*BLS to tr basis rule and function*)
 
 
@@ -489,7 +484,7 @@ hBS[LI[10],LI[l_],LI[m_]]:>-mu[LI[l],-LI[1]]^2 mu[LI[l],-LI[2]]^2/R[] hm[LI[l],L
 BLStotr[x_]:={1/Sqrt[2](f[R[]]x[[3]]+x[[1]]),1/(Sqrt[2]f[R[]])x[[2]],1/(Sqrt[2]f[R[]]^2)(-f[R[]]x[[3]]+x[[1]]),R[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[4]],R[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[5]],R[]^2/(Sqrt[2])x[[6]],Sqrt[2]R[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[7]],-R[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[8]],-R[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[9]],-Sqrt[2]R[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[10]]};
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*From Carter to Kinnersley tetrad rule and function*)
 
 
@@ -507,7 +502,7 @@ h[{4,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{4,-NP},{4,-NP},LI[s],LI[l],LI[m]]};
 CarterToKinnersley[x_]:={2/f[R[]]x[[1]],x[[2]],Sqrt[2/f[R[]]]x[[3]],Sqrt[2/f[R[]]]x[[4]],f[R[]]/2  x[[5]],Sqrt[f[R[]]/2]x[[6]],Sqrt[f[R[]]/2]x[[7]],x[[8]],x[[9]],x[[10]]}
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Rules for quantities in my notation*)
 
 
@@ -520,7 +515,7 @@ mutolrule=mu[LI[l_],-LI[s_]]:>Sqrt[(l-s)(l+1+s)];
 sigmarule={\[Sigma]->(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]),\[Sigma]p->\[Sigma]+1,\[Sigma]m->\[Sigma]-1};
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*SchwarzschildSource Function*)
 
 
@@ -634,14 +629,10 @@ If[Source=="d2G"&&Gauge=="ReggeWheeler",func=d2GVectorHarmonics/.RWGaugeConditio
 Return[func]];
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*End Package*)
 
 
 End[];
 Protect @@ Names["SchwarzschildPerturbations`*"];
 EndPackage[];
-
-
-
-
