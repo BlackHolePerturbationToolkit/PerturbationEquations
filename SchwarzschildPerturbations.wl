@@ -34,7 +34,7 @@ FrequencyDomainConversion::usage = "Rule for converting t derivatives to frequen
 RWGaugeConditionNPform::usage = "Rule that imposes the Regge--Wheeler gauge in the Carter tetrad."
 RWGaugeConditionVectorHarmonicdecompform::usage = "Rule that imposes the Regge--Wheeler gauge in the Vector harmonic decomposition."
 
-f::usage = "Schwarzschild's function, f[R[]]=1-2M/R[], see ftoMrule"
+f::usage = "Schwarzschild's function, f[r[]]=1-2M/r[], see ftoMrule"
 M::usage = "Mass"
 mu::usage = "coefficient in terms of l, see mutolambdarule"
 (***r::usage = "Boyer\[Dash]Lindquist radial coordinates" ***)
@@ -174,10 +174,9 @@ DefProductMetric[g[-\[Alpha],-\[Beta]],{{TangentR2,1},{TangentS2,r[]}},CD,Symbol
 
 DefConstantSymbol[M];
 DefScalarFunction[f];
-DefTensor[r[],R2];
-DefTensor[R[],M4,PrintAs->"r"];
+DefTensor[r[],M4];
 
-$Assumptions=f[R[]]>0;
+$Assumptions=f[r[]]>0;
 
 DefConstantSymbol[l1,PrintAs->"\!\(\*SubscriptBox[\(l\), \(1\)]\)"];
 DefConstantSymbol[l2,PrintAs->"\!\(\*SubscriptBox[\(l\), \(2\)]\)"];
@@ -270,10 +269,10 @@ PD[{0,-BL}][PD[{1,-BL}][a_]]:=PD[{1,-BL}][PD[{0,-BL}][a]];
 PD[{0,-BL}][rs[]]=0;
 PD[{0,-BL}][mu[__]]=0;
 PD[{1,-BL}][mu[__]]=0;
-PD[{0,-BL}][R[]]=0;
-PD[{1,-BL}][R[]]=1;
+PD[{0,-BL}][r[]]=0;
+PD[{1,-BL}][r[]]=1;
 PD[{0,-BL}][F]=0;
-PD[{0,-BL}][f[R[]]]=0;
+PD[{0,-BL}][f[r[]]]=0;
 Protect[PD];
 
 DefConstantSymbol[\[Omega]]
@@ -421,85 +420,85 @@ TraceFreeGauge={h[{1,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{3,-NP},{4,-NP},LI[
 (*From Carter to Barack--Lousto--Sago rule and function*)
 
 
-F=f[R[]]
-CarterToBLShRule={h[ {1, -NP}, {1, -NP},LI[0],LI[l_],LI[m_]]:>1/(2R[]f[R[]])(hBS[LI[1],LI[l],LI[m]]+hBS[LI[2],LI[l],LI[m]]),
+F=f[r[]]
+CarterToBLShRule={h[ {1, -NP}, {1, -NP},LI[0],LI[l_],LI[m_]]:>1/(2r[]f[r[]])(hBS[LI[1],LI[l],LI[m]]+hBS[LI[2],LI[l],LI[m]]),
 
-h[ {2, -NP}, {2, -NP},LI[0],LI[l_],LI[m_]]:>1/(2R[]f[R[]])(hBS[LI[1],LI[l],LI[m]]-hBS[LI[2],LI[l],LI[m]]),
+h[ {2, -NP}, {2, -NP},LI[0],LI[l_],LI[m_]]:>1/(2r[]f[r[]])(hBS[LI[1],LI[l],LI[m]]-hBS[LI[2],LI[l],LI[m]]),
 
-h[ {1, -NP}, {2, -NP},LI[0],LI[l_],LI[m_]]:>1/(2R[])hBS[LI[3],LI[l],LI[m]],
+h[ {1, -NP}, {2, -NP},LI[0],LI[l_],LI[m_]]:>1/(2r[])hBS[LI[3],LI[l],LI[m]],
 
-h[ {3, -NP}, {4, -NP},LI[0],LI[l_],LI[m_]]:>1/(2R[])hBS[LI[6],LI[l],LI[m]],
+h[ {3, -NP}, {4, -NP},LI[0],LI[l_],LI[m_]]:>1/(2r[])hBS[LI[6],LI[l],LI[m]],
 
-h[ {1, -NP}, {3, -NP},LI[1],LI[l_],LI[m_]]:>-1/(4R[]Sqrt[f[R[]]]mu[LI[l],-LI[1]])(hBS[LI[4],LI[l],LI[m]]+hBS[LI[5],LI[l],LI[m]]-I(hBS[LI[8],LI[l],LI[m]]+hBS[LI[9],LI[l],LI[m]])),
+h[ {1, -NP}, {3, -NP},LI[1],LI[l_],LI[m_]]:>-1/(4r[]Sqrt[f[r[]]]mu[LI[l],-LI[1]])(hBS[LI[4],LI[l],LI[m]]+hBS[LI[5],LI[l],LI[m]]-I(hBS[LI[8],LI[l],LI[m]]+hBS[LI[9],LI[l],LI[m]])),
 
-h[ {1, -NP}, {4, -NP},LI[-1],LI[l_],LI[m_]]:>1/(4R[]Sqrt[f[R[]]]mu[LI[l],-LI[1]])(hBS[LI[4],LI[l],LI[m]]+hBS[LI[5],LI[l],LI[m]]+I(hBS[LI[8],LI[l],LI[m]]+hBS[LI[9],LI[l],LI[m]])),
+h[ {1, -NP}, {4, -NP},LI[-1],LI[l_],LI[m_]]:>1/(4r[]Sqrt[f[r[]]]mu[LI[l],-LI[1]])(hBS[LI[4],LI[l],LI[m]]+hBS[LI[5],LI[l],LI[m]]+I(hBS[LI[8],LI[l],LI[m]]+hBS[LI[9],LI[l],LI[m]])),
 
-h[ {2, -NP}, {3, -NP},LI[1],LI[l_],LI[m_]]:>-1/(4R[]Sqrt[f[R[]]]mu[LI[l],-LI[1]])(hBS[LI[4],LI[l],LI[m]]-hBS[LI[5],LI[l],LI[m]]-I(hBS[LI[8],LI[l],LI[m]]-hBS[LI[9],LI[l],LI[m]])),
+h[ {2, -NP}, {3, -NP},LI[1],LI[l_],LI[m_]]:>-1/(4r[]Sqrt[f[r[]]]mu[LI[l],-LI[1]])(hBS[LI[4],LI[l],LI[m]]-hBS[LI[5],LI[l],LI[m]]-I(hBS[LI[8],LI[l],LI[m]]-hBS[LI[9],LI[l],LI[m]])),
 
-h[ {2, -NP}, {4, -NP},LI[-1],LI[l_],LI[m_]]:>1/(4R[]Sqrt[f[R[]]]mu[LI[l],-LI[1]])(hBS[LI[4],LI[l],LI[m]]-hBS[LI[5],LI[l],LI[m]]+I(hBS[LI[8],LI[l],LI[m]]-hBS[LI[9],LI[l],LI[m]])),
+h[ {2, -NP}, {4, -NP},LI[-1],LI[l_],LI[m_]]:>1/(4r[]Sqrt[f[r[]]]mu[LI[l],-LI[1]])(hBS[LI[4],LI[l],LI[m]]-hBS[LI[5],LI[l],LI[m]]+I(hBS[LI[8],LI[l],LI[m]]-hBS[LI[9],LI[l],LI[m]])),
 
-h[ {3, -NP}, {3, -NP},LI[2],LI[l_],LI[m_]]:>1/(2R[]mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])(hBS[LI[7],LI[l],LI[m]]-I hBS[LI[10],LI[l],LI[m]]),
+h[ {3, -NP}, {3, -NP},LI[2],LI[l_],LI[m_]]:>1/(2r[]mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])(hBS[LI[7],LI[l],LI[m]]-I hBS[LI[10],LI[l],LI[m]]),
 
-h[ {4, -NP}, {4, -NP},LI[-2],LI[l_],LI[m_]]:>1/(2R[]mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])(hBS[LI[7],LI[l],LI[m]]+I hBS[LI[10],LI[l],LI[m]])};
+h[ {4, -NP}, {4, -NP},LI[-2],LI[l_],LI[m_]]:>1/(2r[]mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])(hBS[LI[7],LI[l],LI[m]]+I hBS[LI[10],LI[l],LI[m]])};
 
 ail={1/Sqrt[2],1/Sqrt[2],1/Sqrt[2],1/(Sqrt[2]mu[LI[l],-LI[1]]),1/(Sqrt[2]mu[LI[l],-LI[1]]),1/Sqrt[2],1/(Sqrt[2]mu[LI[l],-LI[1]]mu[LI[l],-LI[2]]),1/(Sqrt[2]mu[LI[l],-LI[1]]),1/(Sqrt[2]mu[LI[l],-LI[1]]),1/(Sqrt[2]mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])}
 
-CarterToBLS[x_]:={ail[[1]]/R[](f[R[]] x[[1]] R[]+f[R[]] x[[5]] R[]),
+CarterToBLS[x_]:={ail[[1]]/r[](f[r[]] x[[1]] r[]+f[r[]] x[[5]] r[]),
 
-ail[[2]]/R[](f[R[]] x[[1]] R[]-f[R[]] x[[5]] R[]),
+ail[[2]]/r[](f[r[]] x[[1]] r[]-f[r[]] x[[5]] r[]),
 
-ail[[3]]/R[](2 x[[2]] R[]),
+ail[[3]]/r[](2 x[[2]] r[]),
 
-ail[[4]]/R[](-Sqrt[f[R[]]] x[[3]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[4]] mu[LI[l], -LI[1]] R[]-Sqrt[f[R[]]] x[[6]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[7]] mu[LI[l], -LI[1]] R[]),
+ail[[4]]/r[](-Sqrt[f[r[]]] x[[3]] mu[LI[l], -LI[1]] r[]+Sqrt[f[r[]]] x[[4]] mu[LI[l], -LI[1]] r[]-Sqrt[f[r[]]] x[[6]] mu[LI[l], -LI[1]] r[]+Sqrt[f[r[]]] x[[7]] mu[LI[l], -LI[1]] r[]),
 
-ail[[5]]/R[](-Sqrt[f[R[]]] x[[3]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[4]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[6]] mu[LI[l], -LI[1]] R[]-Sqrt[f[R[]]] x[[7]] mu[LI[l], -LI[1]] R[]),
+ail[[5]]/r[](-Sqrt[f[r[]]] x[[3]] mu[LI[l], -LI[1]] r[]+Sqrt[f[r[]]] x[[4]] mu[LI[l], -LI[1]] r[]+Sqrt[f[r[]]] x[[6]] mu[LI[l], -LI[1]] r[]-Sqrt[f[r[]]] x[[7]] mu[LI[l], -LI[1]] r[]),
 
-ail[[6]]/R[](2 x[[9]] R[]),
+ail[[6]]/r[](2 x[[9]] r[]),
 
-ail[[7]]/R[](x[[8]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] R[]+x[[10]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] R[]),
+ail[[7]]/r[](x[[8]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] r[]+x[[10]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] r[]),
 
-ail[[8]]/R[](-I (Sqrt[f[R[]]] x[[3]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[4]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[6]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[7]] mu[LI[l], -LI[1]] R[])),
+ail[[8]]/r[](-I (Sqrt[f[r[]]] x[[3]] mu[LI[l], -LI[1]] r[]+Sqrt[f[r[]]] x[[4]] mu[LI[l], -LI[1]] r[]+Sqrt[f[r[]]] x[[6]] mu[LI[l], -LI[1]] r[]+Sqrt[f[r[]]] x[[7]] mu[LI[l], -LI[1]] r[])),
 
-ail[[9]]/R[](-I (Sqrt[f[R[]]] x[[3]] mu[LI[l], -LI[1]] R[]+Sqrt[f[R[]]] x[[4]] mu[LI[l], -LI[1]] R[]-Sqrt[f[R[]]] x[[6]] mu[LI[l], -LI[1]] R[]-Sqrt[f[R[]]] x[[7]] mu[LI[l], -LI[1]] R[])),
+ail[[9]]/r[](-I (Sqrt[f[r[]]] x[[3]] mu[LI[l], -LI[1]] r[]+Sqrt[f[r[]]] x[[4]] mu[LI[l], -LI[1]] r[]-Sqrt[f[r[]]] x[[6]] mu[LI[l], -LI[1]] r[]-Sqrt[f[r[]]] x[[7]] mu[LI[l], -LI[1]] r[])),
 
-ail[[10]]/R[](I (x[[8]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] R[]-x[[10]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] R[]))};
+ail[[10]]/r[](I (x[[8]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] r[]-x[[10]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] r[]))};
 
 
 (* ::Section::Closed:: *)
 (*BLS to tr basis rule and function*)
 
 
-BLStotrhRule={hBS[LI[1],LI[l_],LI[m_]]:>R[](f[R[]]^2 htt[LI[l],LI[m]]+hrr[LI[l],LI[m]]),
-hBS[LI[2],LI[l_],LI[m_]]:>2R[]f[R[]] htr[LI[l],LI[m]],
-hBS[LI[3],LI[l_],LI[m_]]:>R[]/f[R[]](f[R[]]^2 htt[LI[l],LI[m]]-hrr[LI[l],LI[m]]),
+BLStotrhRule={hBS[LI[1],LI[l_],LI[m_]]:>r[](f[r[]]^2 htt[LI[l],LI[m]]+hrr[LI[l],LI[m]]),
+hBS[LI[2],LI[l_],LI[m_]]:>2r[]f[r[]] htr[LI[l],LI[m]],
+hBS[LI[3],LI[l_],LI[m_]]:>r[]/f[r[]](f[r[]]^2 htt[LI[l],LI[m]]-hrr[LI[l],LI[m]]),
 hBS[LI[4],LI[l_],LI[m_]]:>2 mu[LI[l],-LI[1]]^2 htp[LI[l],LI[m]],
-hBS[LI[5],LI[l_],LI[m_]]:>2 mu[LI[l],-LI[1]]^2 f[R[]] hrp[LI[l],LI[m]],
+hBS[LI[5],LI[l_],LI[m_]]:>2 mu[LI[l],-LI[1]]^2 f[r[]] hrp[LI[l],LI[m]],
 hBS[LI[8],LI[l_],LI[m_]]:>-2 mu[LI[l],-LI[1]]^2 htm[LI[l],LI[m]],
-hBS[LI[9],LI[l_],LI[m_]]:>-2 mu[LI[l],-LI[1]]^2 f[R[]] hrm[LI[l],LI[m]],
-hBS[LI[6],LI[l_],LI[m_]]:>2/R[] htrAB[LI[l],LI[m]],
-hBS[LI[7],LI[l_],LI[m_]]:>mu[LI[l],-LI[1]]^2 mu[LI[l],-LI[2]]^2/R[] hp[LI[l],LI[m]],
-hBS[LI[10],LI[l_],LI[m_]]:>-mu[LI[l],-LI[1]]^2 mu[LI[l],-LI[2]]^2/R[] hm[LI[l],LI[m]]};
+hBS[LI[9],LI[l_],LI[m_]]:>-2 mu[LI[l],-LI[1]]^2 f[r[]] hrm[LI[l],LI[m]],
+hBS[LI[6],LI[l_],LI[m_]]:>2/r[] htrAB[LI[l],LI[m]],
+hBS[LI[7],LI[l_],LI[m_]]:>mu[LI[l],-LI[1]]^2 mu[LI[l],-LI[2]]^2/r[] hp[LI[l],LI[m]],
+hBS[LI[10],LI[l_],LI[m_]]:>-mu[LI[l],-LI[1]]^2 mu[LI[l],-LI[2]]^2/r[] hm[LI[l],LI[m]]};
 
 
-BLStotr[x_]:={1/Sqrt[2](f[R[]]x[[3]]+x[[1]]),1/(Sqrt[2]f[R[]])x[[2]],1/(Sqrt[2]f[R[]]^2)(-f[R[]]x[[3]]+x[[1]]),R[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[4]],R[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[5]],R[]^2/(Sqrt[2])x[[6]],Sqrt[2]R[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[7]],-R[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[8]],-R[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[9]],-Sqrt[2]R[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[10]]};
+BLStotr[x_]:={1/Sqrt[2](f[r[]]x[[3]]+x[[1]]),1/(Sqrt[2]f[r[]])x[[2]],1/(Sqrt[2]f[r[]]^2)(-f[r[]]x[[3]]+x[[1]]),r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[4]],r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[5]],r[]^2/(Sqrt[2])x[[6]],Sqrt[2]r[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[7]],-r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[8]],-r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[9]],-Sqrt[2]r[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[10]]};
 
 
 (* ::Section::Closed:: *)
 (*From Carter to Kinnersley tetrad rule and function*)
 
 
-CarterToKinnersleyhRule={h[{1,-NP},{1,-NP},LI[s_],LI[l_],LI[m_]]:>f[R[]]/2hK[{1,-NP},{1,-NP},LI[s],LI[l],LI[m]],
+CarterToKinnersleyhRule={h[{1,-NP},{1,-NP},LI[s_],LI[l_],LI[m_]]:>f[r[]]/2hK[{1,-NP},{1,-NP},LI[s],LI[l],LI[m]],
 h[{1,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{1,-NP},{2,-NP},LI[s],LI[l],LI[m]],
-h[{1,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>Sqrt[f[R[]]/2]hK[{1,-NP},{3,-NP},LI[s],LI[l],LI[m]],
-h[{1,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>Sqrt[f[R[]]/2]hK[{1,-NP},{4,-NP},LI[s],LI[l],LI[m]],
-h[{2,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]]:>2/f[R[]]hK[{2,-NP},{2,-NP},LI[s],LI[l],LI[m]],
-h[{2,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>Sqrt[2/f[R[]]]hK[{2,-NP},{3,-NP},LI[s],LI[l],LI[m]],
-h[{2,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>Sqrt[2/f[R[]]]hK[{2,-NP},{4,-NP},LI[s],LI[l],LI[m]],
+h[{1,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>Sqrt[f[r[]]/2]hK[{1,-NP},{3,-NP},LI[s],LI[l],LI[m]],
+h[{1,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>Sqrt[f[r[]]/2]hK[{1,-NP},{4,-NP},LI[s],LI[l],LI[m]],
+h[{2,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]]:>2/f[r[]]hK[{2,-NP},{2,-NP},LI[s],LI[l],LI[m]],
+h[{2,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>Sqrt[2/f[r[]]]hK[{2,-NP},{3,-NP},LI[s],LI[l],LI[m]],
+h[{2,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>Sqrt[2/f[r[]]]hK[{2,-NP},{4,-NP},LI[s],LI[l],LI[m]],
 h[{3,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{3,-NP},{3,-NP},LI[s],LI[l],LI[m]],
 h[{3,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{3,-NP},{4,-NP},LI[s],LI[l],LI[m]],
 h[{4,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{4,-NP},{4,-NP},LI[s],LI[l],LI[m]]};
 
-CarterToKinnersley[x_]:={2/f[R[]]x[[1]],x[[2]],Sqrt[2/f[R[]]]x[[3]],Sqrt[2/f[R[]]]x[[4]],f[R[]]/2  x[[5]],Sqrt[f[R[]]/2]x[[6]],Sqrt[f[R[]]/2]x[[7]],x[[8]],x[[9]],x[[10]]}
+CarterToKinnersley[x_]:={2/f[r[]]x[[1]],x[[2]],Sqrt[2/f[r[]]]x[[3]],Sqrt[2/f[r[]]]x[[4]],f[r[]]/2  x[[5]],Sqrt[f[r[]]/2]x[[6]],Sqrt[f[r[]]/2]x[[7]],x[[8]],x[[9]],x[[10]]}
 
 
 (* ::Section::Closed:: *)
