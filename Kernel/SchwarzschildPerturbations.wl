@@ -369,63 +369,63 @@ PD[{0,-BL}][htrAB[LI[l],LI[m]]]:>-I \[Omega] htrAB[LI[l],LI[m]]
 (*dG*)
 
 
-Get["dGCarter.wl"];
+Get["Kernel/dGCarter.wl"];
 
 
-Get["dGLorenzCarter.wl"];
+Get["Kernel/dGLorenzCarter.wl"];
 
 
 (* ::Subsection::Closed:: *)
 (*dR*)
 
 
-Get["dRCarter.wl"];
+Get["Kernel/dRCarter.wl"];
 
 
-Get["dRLorenzCarter.wl"];
+Get["Kernel/dRLorenzCarter.wl"];
 
 
 (* ::Subsection::Closed:: *)
 (*d2R*)
 
 
-Get["d2RCarter.wl"];
+Get["Kernel/d2RCarter.wl"];
 
 
-Get["d2RLorenzCarter.wl"];
+Get["Kernel/d2RLorenzCarter.wl"];
 
 
 (* ::Subsection::Closed:: *)
 (*d2G*)
 
 
-Get["d2GCarter.wl"];
+Get["Kernel/d2GCarter.wl"];
 
 
-Get["d2GLorenzCarter.wl"];
+Get["Kernel/d2GLorenzCarter.wl"];
 
 
 (* ::Subsection::Closed:: *)
 (*d2G Vector Harmonics*)
 
 
-Get["d2GVectorHarmonics.wl"];
+Get["Kernel/d2GVectorHarmonics.wl"];
 
 
 (* ::Subsection::Closed:: *)
 (*Sd2G*)
 
 
-Get["S0d2GCarter.wl"];
+Get["Kernel/S0d2GCarter.wl"];
 
 
-Get["S0d2GLorenzCarter.wl"];
+Get["Kernel/S0d2GLorenzCarter.wl"];
 
 
-Get["S4d2GCarter.wl"];
+Get["Kernel/S4d2GCarter.wl"];
 
 
-Get["S4d2GLorenzCarter.wl"];
+Get["Kernel/S4d2GLorenzCarter.wl"];
 
 
 (* ::Section::Closed:: *)
