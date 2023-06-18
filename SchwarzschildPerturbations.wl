@@ -4,9 +4,44 @@
 (*Begin Package*)
 
 
-BeginPackage["SchwarzschildPerturbations`"]
-Unprotect @@ Names["SchwarzschildPerturbations`*"]
-ClearAll @@ Names["SchwarzschildPerturbations`*"]
+xAct`HelloWorldxTension`$xTensorVersionExpected={"1.0.5",{2013,1,27}};
+xAct`SchwarzschildPerturbations`$Version={"1.0.0",{2023,6,18}}
+
+
+With[{xAct`SchwarzschildPerturbations`Private`SchwarzschildPerturbationsSymbols=DeleteCases[Join[Names["xAct`SchwarzschildPerturbations`*"],Names["xAct`SchwarzschildPerturbations`Private`*"]],"$Version"|"xAct`SchwarzschildPerturbations`$Version"|"$SchwarzschildPerturbationsVersionExpected"|"xAct`SchwarzschildPerturbations`$xTensorVersionExpected"]},
+Unprotect/@xAct`SchwarzschildPerturbations`Private`SchwarzschildPerturbationsSymbols;
+Clear/@xAct`SchwarzschildPerturbations`Private`SchwarzschildPerturbationsSymbols;
+]
+
+
+If[Unevaluated[xAct`xCore`Private`$LastPackage]===xAct`xCore`Private`$LastPackage,xAct`xCore`Private`$LastPackage="xAct`SchwarzschildPerturbations`"];
+
+
+BeginPackage["xAct`SchwarzschildPerturbations`", {"xAct`xCoba`","xAct`xTensor`","xAct`xPerm`","xAct`xCore`"}]
+
+
+If[Not@OrderedQ@Map[Last,{$xTensorVersionExpected,xAct`xTensor`$Version}],Throw@Message[General::versions,"xTensor",xAct`xTensor`$Version,$xTensorVersionExpected]]
+
+
+Print[xAct`xCore`Private`bars];
+Print["Package xAct`SchwarzschildPerturbations`  version ",$Version[[1]],", ",$Version[[2]]];
+Print["CopyRight (C) 2023, Andrew Spiers, Adam Pound and Barry Wardell."];
+
+
+Off[General::shdw]
+xAct`SchwarzschildPerturbations`Disclaimer[]:=Print["These are points 11 and 12 of the General Public License:\n\nBECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM `AS IS\.b4 WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.\n\nIN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES."]
+On[General::shdw]
+
+
+If[xAct`xCore`Private`$LastPackage==="xAct`SchwarzschildPerturbations`",
+Print[xAct`xCore`Private`bars];
+Print["These packages come with ABSOLUTELY NO WARRANTY; for details type Disclaimer[]. This is free software, and you are welcome to redistribute it under certain conditions. See the General Public License for details."];
+Print[xAct`xCore`Private`bars]];
+
+
+ReportSet[$PrePrint,ScreenDollarIndices];
+ReportSet[$DefInfoQ,False];
+ReportSet[$CVVerbose,False];
 
 
 (* ::Section::Closed:: *)
@@ -156,12 +191,6 @@ Begin["`Private`"]
 (* ::Section::Closed:: *)
 (*Definitions*)
 
-
-<<xAct`xTensor`;
-<<xAct`xCoba`;
-$DefInfoQ=False;
-$CVVerbose=False;
-$PrePrint=ScreenDollarIndices;
 
 DefManifold[S2,2,{A,B,F,G,H,J,P,Q}];
 DefMetric[1,\[CapitalOmega][-A,-B],CDS2,SymbolOfCovD->{"|","D "}];
@@ -633,5 +662,5 @@ Return[func]];
 
 
 End[];
-Protect @@ Names["SchwarzschildPerturbations`*"];
+Protect /@ xAct`SchwarzschildPerturbations`Private`SchwarzschildPerturbationsSymbols;
 EndPackage[];
