@@ -72,7 +72,7 @@ RWGaugeConditionVectorHarmonicdecompform::usage = "Rule that imposes the Regge--
 f::usage = "Schwarzschild's function, f[r[]]=1-2M/r[], see ftoMrule"
 M::usage = "Mass"
 mu::usage = "coefficient in terms of l, see mutolambdarule"
-(***r::usage = "Boyer\[Dash]Lindquist radial coordinates" ***)
+r::usage = "Boyer\[Dash]Lindquist radial coordinates"
 t::usage = "Boyer\[Dash]Lindquist time coordinates"
 
 Coupling::usage = "Coupling[LI[l], LI[m], LI[s], -LI[l'], -LI[m'], -LI[s'], -LI[l''], -LI[m''], -LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]"
@@ -91,7 +91,6 @@ sigmarule::usage = "Rule for {\[Sigma]\[Rule](-1)^(\[ScriptQ]+\[ScriptL]+\[Scrip
 
 
 
-R::usage ="radial coordinate"
 BL::usage ="Boyer--Lindquist coordinates"
 h::usage ="metric perturbation"
 NP::usage ="Newman--Penrose tetrad basis"
