@@ -52,123 +52,126 @@ ReportSet[$CVVerbose,False];
 (*Rules*)
 
 
-CarterToBLShRule::usage = "Rule that Expresses Carter tertrad modes of the metric perturbation in terms of Barack--Lousto--Sago modes."
-CarterToBLS::usage = "Rule that takes a quantity expressed in terms of its Carter modes with its inputs also in terms of Carter modes, and rexpresses the quantity in terms of its the Barack--Lousto--Sago modes with Barack--Lousto--Sago mode inputs. The resulting list is the BLS mode number from 1 to 10."
+CarterToBLShRule::usage = "Rule that Expresses Carter tertrad modes of the metric perturbation in terms of Barack-Lousto-Sago modes.";
+CarterToBLS::usage = "Rule that takes a quantity expressed in terms of its Carter modes with its inputs also in terms of Carter modes, and rexpresses the quantity in terms of its the Barack-Lousto-Sago modes with Barack-Lousto-Sago mode inputs. The resulting list is the BLS mode number from 1 to 10.";
 
-BLStotrhRule::usage = "Rule that Expresses Barack--Lousto--Sago modes of the metric perturbation in terms of trTensor basis modes."
-BLStotr::usage = "Rule that takes a quantity expressed in terms of its Barack--Lousto--Sago modes, and rexpresses the quantity in terms of its the tr modes. The resulting list is the tr mode number in the following order {\!\(\*SubscriptBox[\(S\), \(tt\)]\),\!\(\*SubscriptBox[\(S\), \(tr\)]\),\!\(\*SubscriptBox[\(S\), \(rr\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\[EmptyCircle]\)]\),\!\(\*SubscriptBox[\(S\), \(+\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(-\)]\)}."
-
-
-CarterToKinnersleyhRule::usage = "Rule that takes Expresses Carter tertrad modes of the metric perturbation in terms of the Kinnersley tetrad modes."
-CarterToKinnersley::usage = "Rule that takes a quantity expressed in terms of its Carter modes with its inputs also in terms of Carter modes, and rexpresses the quantity in terms of its the Kinnersley tetrad modes with the Kinnersley tetrad mode inputs."
+BLStotrhRule::usage = "Rule that Expresses Barack-Lousto-Sago modes of the metric perturbation in terms of trTensor basis modes.";
+BLStotr::usage = "Rule that takes a quantity expressed in terms of its Barack-Lousto-Sago modes, and rexpresses the quantity in terms of its tr modes. The resulting list is the tr mode number in the following order {\!\(\*SubscriptBox[\(S\), \(tt\)]\),\!\(\*SubscriptBox[\(S\), \(tr\)]\),\!\(\*SubscriptBox[\(S\), \(rr\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\[EmptyCircle]\)]\),\!\(\*SubscriptBox[\(S\), \(+\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(-\)]\)}.";
 
 
-FrequencyDomainConversion::usage = "Rule for converting t derivatives to frequency domain. Assumes the time dependence is Exp[-i\[Omega]t]"
+CarterToKinnersleyhRule::usage = "Rule that takes Expresses Carter tertrad modes of the metric perturbation in terms of the Kinnersley tetrad modes.";
+CarterToKinnersley::usage = "Rule that takes a quantity expressed in terms of its Carter modes with its inputs also in terms of Carter modes, and rexpresses the quantity in terms of its the Kinnersley tetrad modes with the Kinnersley tetrad mode inputs.";
 
 
-RWGaugeConditionNPform::usage = "Rule that imposes the Regge--Wheeler gauge in the Carter tetrad."
-RWGaugeConditionVectorHarmonicdecompform::usage = "Rule that imposes the Regge--Wheeler gauge in the Vector harmonic decomposition."
-
-f::usage = "Schwarzschild's function, f[r[]]=1-2M/r[], see ftoMrule"
-M::usage = "Mass"
-mu::usage = "coefficient in terms of l, see mutolambdarule"
-r::usage = "Boyer\[Dash]Lindquist radial coordinates"
-t::usage = "Boyer\[Dash]Lindquist time coordinates"
-
-Coupling::usage = "Coupling[LI[l], LI[m], LI[s], -LI[l'], -LI[m'], -LI[s'], -LI[l''], -LI[m''], -LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]"
-CInt::usage = "CInt[LI[l], LI[m], LI[s], -LI[l'], -LI[m'], -LI[s'], -LI[l''], -LI[m''], -LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]"
-
-\[Sigma]m::usage = "see sigmarule"
-\[Sigma]p::usage = "see sigmarule"
-\[Sigma]::usage = "see sigmarule"
+FrequencyDomainConversion::usage = "Rule for converting t derivatives to frequency domain. Assumes the time dependence is Exp[-i\[Omega]t].";
 
 
-ftoMrule::usage = "Rule for f[a_]\[RuleDelayed]1-2M/a"
-mutolrule::usage = "Rule for mu[LI[l_],LI[s_]]:>Sqrt[(l-s)(l+1+s)]"
-lambdatolrule::usage = "Rule for {\[Lambda]1[l_]\[Rule]Sqrt[(l)(l+1)],\[Lambda]2[l_]\[Rule]Sqrt[(l-1)(l+2)]}"
-sigmarule::usage = "Rule for {\[Sigma]\[Rule](-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]),\[Sigma]p\[Rule]\[Sigma]+1,\[Sigma]m\[Rule]\[Sigma]-1}"
+RWGaugeConditionNPform::usage = "Rule that imposes the Regge-Wheeler gauge in the Carter tetrad.";
+RWGaugeConditionVectorHarmonicdecompform::usage = "Rule that imposes the Regge-Wheeler gauge in the Vector harmonic decomposition.";
 
 
+ftoMrule::usage = "Rule for f(r)=1-2M/r.";
+mutolrule::usage = "Rule for \[Mu]=\!\(\*SqrtBox[\(\((l - s)\) \((l + 1 + s)\)\)]\).";
+lambdatolrule::usage = "Rule for \[Lambda]1=\!\(\*SqrtBox[\(l \((l + 1)\)\)]\) and \[Lambda]2=\!\(\*SqrtBox[\(\((l - 1)\) \((l + 2)\)\)]\).";
+sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 
 
-BL::usage ="Boyer--Lindquist coordinates"
-h::usage ="metric perturbation"
-NP::usage ="Newman--Penrose tetrad basis"
-l::usage ="angular number l"
-l1::usage ="angular number l1"
-l2::usage ="angular number l2"
-m::usage ="magnetic number m"
-m1::usage ="magnetic number m1"
-m2::usage ="magnetic number m2"
-
-hBS::usage ="metric perturbation in the Barack--Sago basis"
+(* ::Subsection::Closed:: *)
+(*Coupling coefficients*)
 
 
-hab::usage ="metric perturbation in tr basis"
-haA::usage ="metric perturbation in tr and angular basis"
-hAB::usage ="metric perturbation in angular basis"
-hablm::usage ="modes of metric perturbation in tr basis"
-htrab::usage ="trace of metric perturbation in tr basis"
-hap::usage ="metric perturbation in tr basis plus angular part"
-ham::usage ="metric perturbation in tr basis minus angular part"
-htrAB::usage ="trace of metric perturbation in angular basis"
-hp::usage ="metric perturbation plus angular part"
-hm::usage ="metric perturbation minus angular part"
+Coupling::usage = "Coupling[LI[l], LI[m], LI[s], -LI[l'], -LI[m'], -LI[s'], -LI[l''], -LI[m''], -LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]";
+CInt::usage = "CInt[LI[l], LI[m], LI[s], -LI[l'], -LI[m'], -LI[s'], -LI[l''], -LI[m''], -LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]";
 
-htt::usage ="tt component of the metric perturbation"
-htr::usage ="tr component of the metric perturbation"
-hrr::usage ="rr component of the metric perturbation"
-htp::usage ="t component of the plus angular part of the metric perturbation"
-hrp::usage ="r component of the plus angular part of the metric perturbation"
-htm::usage ="t component of the minus angular part of the metric perturbation"
-hrm::usage ="r component of the minus angular part of the metric perturbation"
 
+mu::usage = "\[Mu]=\!\(\*SqrtBox[\(\((l - s)\) \((l + 1 + s)\)\)]\)";
+
+
+\[Sigma]::usage = "\[Sigma] = (-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP])";
+\[Sigma]m::usage = "\[Sigma]-1";
+\[Sigma]p::usage = "\[Sigma]+1";
+
+
+(* ::Subsection::Closed:: *)
+(*Coordinates*)
+
+
+BL::usage ="Boyer-Lindquist coordinates.";
+NP::usage ="Newman-Penrose tetrad basis.";
+
+
+r::usage = "Boyer\[Dash]Lindquist radial coordinate.";
+t::usage = "Boyer\[Dash]Lindquist time coordinate.";
+f::usage = "Schwarzschild's function, f(r)=1-2M/r.";
+M::usage = "Mass.";
+
+
+(* ::Subsection::Closed:: *)
+(*Mode numbers*)
+
+
+l::usage ="Angular number l.";
+l1::usage ="Angular number l1.";
+l2::usage ="Angular number l2.";
+
+
+m::usage ="Magnetic number m.";
+m1::usage ="Magnetic number m1.";
+m2::usage ="Magnetic number m2.";
+
+
+\[Omega]::usage ="Frequency \[Omega].";
+\[Omega]1::usage ="Frequency \[Omega]1.";
+\[Omega]2::usage ="Frequency \[Omega]2.";
+
+
+(* ::Subsection::Closed:: *)
+(*Metric perturbations*)
+
+
+h::usage ="Metric perturbation.";
+
+
+hBS::usage ="Metric perturbation in the Barack-Sago basis.";
+
+
+hK::usage ="Metric perturbation in the Kinnersley basis.";
+
+
+hab::usage ="Metric perturbation in t-r basis.";
+haA::usage ="Metric perturbation in t-r and angular basis.";
+hAB::usage ="Metric perturbation in angular basis.";
+
+
+hablm::usage ="Modes of metric perturbation in t-r basis.";
+htrab::usage ="Trace of metric perturbation in t-r basis.";
+hap::usage ="Metric perturbation in t-r basis plus angular part.";
+ham::usage ="Metric perturbation in t-r basis minus angular part.";
+htrAB::usage ="Trace of metric perturbation in angular basis";
+hp::usage ="Metric perturbation plus angular part.";
+hm::usage ="Metric perturbation minus angular part.";
+
+
+htt::usage ="tt component of the metric perturbation.";
+htr::usage ="tr component of the metric perturbation.";
+hrr::usage ="rr component of the metric perturbation.";
+htp::usage ="t component of the plus angular part of the metric perturbation.";
+hrp::usage ="r component of the plus angular part of the metric perturbation.";
+htm::usage ="t component of the minus angular part of the metric perturbation.";
+hrm::usage ="r component of the minus angular part of the metric perturbation.";
 
 
 (* ::Subsection::Closed:: *)
 (*Functions*)
 
 
-SchwarzschildQuadraticOperator::usage = "Function for generating decomposed, Boyer\[Dash]Lindquist coordinate form, quadratic opperators for second-order Schwarzschild sources. The functions are quadratic in the metric perturbation. 
-
-SchwarzschildQuadraticOperator[Source_,Gauge_:\"Generic\",OutputBasis_:\"Carter\",InputBasis_:\"Carter\"]
-
-Arguments:
-			Source: The type of source {\"d2G\", \"d2R\", \"S4d2G\", \"S0d2G\"}.
-
-			Gauge: The Infinitesimal gauge the metric perturbation will be in {\"Generic\", \"Lorenz\", \"ReggeWheeler\", \"IngoingRadiationGauge\", \"TraceFreeIngoingRadiationGauge\", \"OutgoingRadiationGauge\", \"TraceFreeOutgoingRadiationGauge\"}.
-
-			OutputBasis: The basis the output will be in {\"Carter\",\"BLS\",\"tr\",\"Kinnersley\"}. Note, for a source of type {\"S4d2G\", \"S0d2G\"} the output can only be in the \"Carter\" basis.
-
-			InputBasis: The basis the input metric perturbation will be in {\"Carter\",\"BLS\",\"tr\",\"Kinnersley\"}.
-
-"
+SchwarzschildQuadraticOperator::usage = "SchwarzschildQuadraticOperator[source, gauge, output, input] generates decomposed, Boyer\[Dash]Lindquist coordinate form, quadratic opperators for second-order sources in Schwarzschild spacetime.";
 
 
-SchwarzschildLinearOperator::usage = "Function for generating decomposed, Boyer\[Dash]Lindquist coordinate form, linear opperators in Schwarzschild. 
-
-SchwarzschildLinearOperator[Source_,Gauge_:\"Generic\",OutputBasis_:\"Carter\",InputBasis_:\"Carter\"]
-
-Arguments:
-			Source: The type of source {\"dG\", \"dR\"}.
-
-			Gauge: The Infinitesimal gauge the metric perturbation will be in {\"Generic\", \"Lorenz\", \"ReggeWheeler\", \"IngoingRadiationGauge\", \"TraceFreeIngoingRadiationGauge\", \"OutgoingRadiationGauge\", \"TraceFreeOutgoingRadiationGauge\"}.
-
-			OutputBasis: The basis the output will be in {\"Carter\",\"BLS\",\"tr\",\"Kinnersley\"}. 
-
-			InputBasis: The basis the input metric perturbation will be in {\"Carter\",\"BLS\",\"tr\",\"Kinnersley\"}.
-
-"
+SchwarzschildLinearOperator::usage = "SchwarzschildLinearOperator[source, gauge, output, input] generated decomposed, Boyer\[Dash]Lindquist coordinate form, linear opperators in Schwarzschild spacetime.";
 
 
-SchwarzschildQuadraticCovariantSource::usage = "Function for generating d2G, a second-order Schwarzschild source, in the tr covariant manifold. SchwarzschildCovariantSource[Source_,Gauge_:\"Generic\"]
-
-Arguments:
-			Source: The type of source {\"d2G\"}.
-
-			Gauge: The Infinitesimal gauge the metric perturbation will be in {\"Generic\", \"ReggeWheeler\"}.
-
-"
+SchwarzschildQuadraticCovariantSource::usage = "SchwarzschildQuadraticCovariantSource[source, gauge] generates d2G, a second-order source in Schwarzschild spacetime, in the t-r covariant manifold.";
 
 
 (* ::Subsection::Closed:: *)
