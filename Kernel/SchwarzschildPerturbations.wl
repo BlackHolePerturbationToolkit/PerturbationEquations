@@ -288,9 +288,6 @@ FormatBasis[PDNP[{4,-NP}],"\!\(\*OverscriptBox[\(\[Delta]\), \(_\)]\)"];
 xTensorFormStart[];
 
 
-DefMetricPerturbation[g,h,\[Epsilon]]
-
-
 DefTensor[CInt[],M4,PrintAs->"C "];
 DefTensor[mu[],M4,PrintAs->"\[Mu] "];
 
