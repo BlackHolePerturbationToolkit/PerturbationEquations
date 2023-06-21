@@ -1,0 +1,1693 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     63059,       1683]
+NotebookOptionsPosition[     60587,       1639]
+NotebookOutlinePosition[     61016,       1656]
+CellTagsIndexPosition[     60973,       1653]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Get", "[", 
+  "\"\<C:\\\\Users\\\\pmzas2\\\\OneDrive - The University of \
+Nottingham\\\\Documents\\\\Git\\\\SecondOrderModeCoupling\\\\\
+SchwarzschildPerturbations.wl\>\"", "]"}]], "Input",
+ EmphasizeSyntaxErrors->True,
+ CellLabel->"In[2]:=",ExpressionUUID->"912b3da3-7aaa-4976-a0c1-e2b764541583"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.8963402483045464`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"1106e205-9181-49ea-874c-e119ce77a1aa"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2015", ",", "8", ",", "23"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.2.3", ", ", {2015, 8, 23}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8963402483135233`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"427a5136-294b-4523-9735-dc04ceae30cf"],
+
+Cell[BoxData["\<\"CopyRight (C) 2003-2020, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.8963402483195057`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"72a77a88-2031-4773-ae06-cba00931c453"],
+
+Cell[BoxData["\<\"Connecting to external MinGW executable...\"\>"], "Print",
+ CellChangeTimes->{3.8963402484471655`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"2a6f15a0-4b54-44ac-b2d3-3bc9b8f663c7"],
+
+Cell[BoxData["\<\"Connection established.\"\>"], "Print",
+ CellChangeTimes->{3.8963402485907974`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"5a24668d-79f1-4e34-8e34-2ee65773e4f4"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.8963402485957837`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"6d12b39d-861d-484b-b170-25a8d03ca555"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTensor`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2021", ",", "10", ",", "17"}], "}"}]}],
+  SequenceForm[
+  "Package xAct`xTensor`  version ", "1.2.0", ", ", {2021, 10, 17}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8963402486017666`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"75e75265-2906-4230-8276-a7a5ad2977a6"],
+
+Cell[BoxData["\<\"CopyRight (C) 2002-2021, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.8963402486067533`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"2da2b066-980b-40db-acec-4494dc198e01"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.8963402486277027`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"93cd74c4-750c-4d56-8d4b-f895c2fd14ae"],
+
+Cell[BoxData["\<\"These packages come with ABSOLUTELY NO WARRANTY; for \
+details type Disclaimer[]. This is free software, and you are welcome to \
+redistribute it under certain conditions. See the General Public License for \
+details.\"\>"], "Print",
+ CellChangeTimes->{3.89634024863468*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"784181cb-9565-4837-acdc-cb0adbf2da06"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.8963402486396646`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"1eecf71d-ad3e-47ac-af50-e4b798684999"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.896340248911091*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"cf09d4c4-a3b1-4304-bb18-156764acb067"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xCoba`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.8.6\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2021", ",", "2", ",", "28"}], "}"}]}],
+  SequenceForm["Package xAct`xCoba`  version ", "0.8.6", ", ", {2021, 2, 28}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.896340248911091*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"57f87d01-5064-4e75-9da4-be9eb89e9705"],
+
+Cell[BoxData["\<\"CopyRight (C) 2005-2021, David Yllanes and Jose M. \
+Martin-Garcia, under the General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.8963402489211287`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"2b0a7350-e33f-44a1-a7c8-0fb57abdb8f0"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.896340248953684*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"7316922a-4174-4c81-a44a-99ce7aec0f1f"],
+
+Cell[BoxData["\<\"These packages come with ABSOLUTELY NO WARRANTY; for \
+details type Disclaimer[]. This is free software, and you are welcome to \
+redistribute it under certain conditions. See the General Public License for \
+details.\"\>"], "Print",
+ CellChangeTimes->{3.896340248958665*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"71255ca2-88b1-46f6-9367-7b0bb731e39f"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.896340248963651*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"aa247a99-5d5e-4e60-8d69-84ccc6c92838"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SchwarzschildLinearOperator", "[", 
+   RowBox[{
+   "\"\<dR\>\"", ",", "\"\<Generic\>\"", ",", "\"\<Kinnersley\>\"", ",", 
+    "\"\<Kinnersley\>\""}], "]"}], "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellLabel->"In[3]:=",ExpressionUUID->"77e84688-2ef4-495f-86a6-c53df2616e80"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{
+      InterpretationBox[
+       StyleBox["f",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       SchwarzschildPerturbations`f,
+       Editable->False], "[", 
+      InterpretationBox[
+       StyleBox["r",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       SchwarzschildPerturbations`R[],
+       Editable->False], "]"}], "2"], " ", 
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["r",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      SchwarzschildPerturbations`R[],
+      Editable->False], "3"]}]], 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     SqrtBox[
+      RowBox[{
+       InterpretationBox[
+        StyleBox["f",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        SchwarzschildPerturbations`f,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["r",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        SchwarzschildPerturbations`R[],
+        Editable->False], "]"}]], " ", 
+     InterpretationBox[
+      StyleBox[GridBox[{
+         {
+          RowBox[{"\[Mu]", " "}], 
+          StyleBox[GridBox[{
+             {
+              SubscriptBox["l", "1"], " "},
+             {" ", "1"}
+            },
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.]}, "Rows" -> {{
+                 Offset[0.]}}}],
+           FontSize->Rational[39, 4]]}
+        },
+        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      SchwarzschildPerturbations`mu[
+       xAct`xTensor`LI[SchwarzschildPerturbations`l1], -xAct`xTensor`LI[1]],
+      Editable->False], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{
+          InterpretationBox[
+           StyleBox["M",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           SchwarzschildPerturbations`M,
+           Editable->False], " ", 
+          SqrtBox[
+           RowBox[{
+            InterpretationBox[
+             StyleBox["f",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             SchwarzschildPerturbations`f,
+             Editable->False], "[", 
+            InterpretationBox[
+             StyleBox["r",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             SchwarzschildPerturbations`R[],
+             Editable->False], "]"}]], " ", 
+          InterpretationBox[
+           StyleBox[GridBox[{
+              {
+               SubscriptBox["h", "K"], 
+               StyleBox[GridBox[{
+                  {" ", " ", "1", 
+                   SubscriptBox["l", "1"], 
+                   SubscriptBox["m", "1"]},
+                  {
+                   StyleBox["1",
+                    FontColor->RGBColor[0., 0., 1.]], 
+                   StyleBox["3",
+                    FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                 },
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+                FontSize->Rational[39, 4]]}
+             },
+             GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+             GridBoxSpacings->{"Columns" -> {
+                 Offset[0.27999999999999997`], {
+                  Offset[0.034999999999999996`]}, 
+                 Offset[0.27999999999999997`]}, "Rows" -> {
+                 Offset[0.2], {
+                  Offset[0.4]}, 
+                 Offset[0.2]}}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           
+           SchwarzschildPerturbations`Private`hK[{
+            1, -SchwarzschildPerturbations`NP}, {
+            3, -SchwarzschildPerturbations`NP}, 
+            xAct`xTensor`LI[1], 
+            xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+            xAct`xTensor`LI[SchwarzschildPerturbations`m1]],
+           Editable->False]}], 
+         SqrtBox["2"]]}], "+", 
+       FractionBox[
+        RowBox[{
+         InterpretationBox[
+          StyleBox["M",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          SchwarzschildPerturbations`M,
+          Editable->False], " ", 
+         SqrtBox[
+          RowBox[{
+           InterpretationBox[
+            StyleBox["f",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            SchwarzschildPerturbations`f,
+            Editable->False], "[", 
+           InterpretationBox[
+            StyleBox["r",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            SchwarzschildPerturbations`R[],
+            Editable->False], "]"}]], " ", 
+         InterpretationBox[
+          StyleBox[GridBox[{
+             {
+              SubscriptBox["h", "K"], 
+              StyleBox[GridBox[{
+                 {" ", " ", 
+                  RowBox[{"-", "1"}], 
+                  SubscriptBox["l", "1"], 
+                  SubscriptBox["m", "1"]},
+                 {
+                  StyleBox["1",
+                   FontColor->RGBColor[0., 0., 1.]], 
+                  StyleBox["4",
+                   FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                },
+                GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+               FontSize->Rational[39, 4]]}
+            },
+            GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.4]}, 
+                Offset[0.2]}}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          
+          SchwarzschildPerturbations`Private`hK[{
+           1, -SchwarzschildPerturbations`NP}, {
+           4, -SchwarzschildPerturbations`NP}, 
+           xAct`xTensor`LI[-1], 
+           xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+           xAct`xTensor`LI[SchwarzschildPerturbations`m1]],
+          Editable->False]}], 
+        SqrtBox["2"]], "+", 
+       RowBox[{
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["r",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          SchwarzschildPerturbations`R[],
+          Editable->False], "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            SqrtBox[
+             RowBox[{
+              InterpretationBox[
+               StyleBox["f",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               SchwarzschildPerturbations`f,
+               Editable->False], "[", 
+              InterpretationBox[
+               StyleBox["r",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               SchwarzschildPerturbations`R[],
+               Editable->False], "]"}]], " ", 
+            InterpretationBox[
+             StyleBox[
+              RowBox[{
+               SubscriptBox["\[PartialD]", 
+                StyleBox["0",
+                 FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+                 {
+                  SubscriptBox["h", "K"], 
+                  StyleBox[GridBox[{
+                    {" ", " ", "1", 
+                    SubscriptBox["l", "1"], 
+                    SubscriptBox["m", "1"]},
+                    {
+                    StyleBox["1",
+                    FontColor->RGBColor[0., 0., 1.]], 
+                    StyleBox["3",
+                    FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                    },
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+                   FontSize->Rational[39, 4]]}
+                },
+                
+                GridBoxAlignment->{
+                 "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}]}],
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             xAct`xTensor`PD[{0, -SchwarzschildPerturbations`BL}][
+              
+              SchwarzschildPerturbations`Private`hK[{
+               1, -SchwarzschildPerturbations`NP}, {
+               3, -SchwarzschildPerturbations`NP}, 
+               xAct`xTensor`LI[1], 
+               xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+               xAct`xTensor`LI[SchwarzschildPerturbations`m1]]],
+             Editable->False]}], 
+           SqrtBox["2"]], "-", 
+          FractionBox[
+           RowBox[{
+            SqrtBox[
+             RowBox[{
+              InterpretationBox[
+               StyleBox["f",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               SchwarzschildPerturbations`f,
+               Editable->False], "[", 
+              InterpretationBox[
+               StyleBox["r",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               SchwarzschildPerturbations`R[],
+               Editable->False], "]"}]], " ", 
+            InterpretationBox[
+             StyleBox[
+              RowBox[{
+               SubscriptBox["\[PartialD]", 
+                StyleBox["0",
+                 FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+                 {
+                  SubscriptBox["h", "K"], 
+                  StyleBox[GridBox[{
+                    {" ", " ", 
+                    RowBox[{"-", "1"}], 
+                    SubscriptBox["l", "1"], 
+                    SubscriptBox["m", "1"]},
+                    {
+                    StyleBox["1",
+                    FontColor->RGBColor[0., 0., 1.]], 
+                    StyleBox["4",
+                    FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                    },
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+                   FontSize->Rational[39, 4]]}
+                },
+                
+                GridBoxAlignment->{
+                 "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}]}],
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             xAct`xTensor`PD[{0, -SchwarzschildPerturbations`BL}][
+              
+              SchwarzschildPerturbations`Private`hK[{
+               1, -SchwarzschildPerturbations`NP}, {
+               4, -SchwarzschildPerturbations`NP}, 
+               xAct`xTensor`LI[-1], 
+               xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+               xAct`xTensor`LI[SchwarzschildPerturbations`m1]]],
+             Editable->False]}], 
+           SqrtBox["2"]]}], ")"}]}]}], ")"}]}], "+", 
+    RowBox[{"2", " ", 
+     InterpretationBox[
+      StyleBox["M",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      SchwarzschildPerturbations`M,
+      Editable->False], " ", 
+     InterpretationBox[
+      StyleBox["r",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      SchwarzschildPerturbations`R[],
+      Editable->False], " ", 
+     InterpretationBox[
+      StyleBox[
+       RowBox[{
+        SubscriptBox["\[PartialD]", 
+         StyleBox["0",
+          FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+          {
+           SubscriptBox["h", "K"], 
+           StyleBox[GridBox[{
+              {" ", " ", "0", 
+               SubscriptBox["l", "1"], 
+               SubscriptBox["m", "1"]},
+              {
+               StyleBox["3",
+                FontColor->RGBColor[0., 0., 1.]], 
+               StyleBox["4",
+                FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+             },
+             GridBoxSpacings->{"Columns" -> {
+                 Offset[0.], {
+                  Offset[0.034999999999999996`]}, 
+                 Offset[0.]}, "Rows" -> {{
+                  Offset[0.]}}}],
+            FontSize->Rational[39, 4]]}
+         },
+         GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.27999999999999997`]}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}}]}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      xAct`xTensor`PD[{0, -SchwarzschildPerturbations`BL}][
+       SchwarzschildPerturbations`Private`hK[{
+        3, -SchwarzschildPerturbations`NP}, {
+        4, -SchwarzschildPerturbations`NP}, 
+        xAct`xTensor`LI[0], 
+        xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+        xAct`xTensor`LI[SchwarzschildPerturbations`m1]]],
+      Editable->False]}], "-", 
+    RowBox[{
+     SuperscriptBox[
+      InterpretationBox[
+       StyleBox["r",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       SchwarzschildPerturbations`R[],
+       Editable->False], "3"], " ", 
+     InterpretationBox[
+      StyleBox[
+       RowBox[{
+        SubscriptBox["\[PartialD]", 
+         StyleBox["0",
+          FontColor->RGBColor[1., 0., 0.]]], 
+        SubscriptBox["\[PartialD]", 
+         StyleBox["0",
+          FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+          {
+           SubscriptBox["h", "K"], 
+           StyleBox[GridBox[{
+              {" ", " ", "0", 
+               SubscriptBox["l", "1"], 
+               SubscriptBox["m", "1"]},
+              {
+               StyleBox["3",
+                FontColor->RGBColor[0., 0., 1.]], 
+               StyleBox["4",
+                FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+             },
+             GridBoxSpacings->{"Columns" -> {
+                 Offset[0.], {
+                  Offset[0.034999999999999996`]}, 
+                 Offset[0.]}, "Rows" -> {{
+                  Offset[0.]}}}],
+            FontSize->Rational[39, 4]]}
+         },
+         GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.27999999999999997`]}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}}]}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      xAct`xTensor`PD[{0, -SchwarzschildPerturbations`BL}][
+       xAct`xTensor`PD[{0, -SchwarzschildPerturbations`BL}][
+        SchwarzschildPerturbations`Private`hK[{
+         3, -SchwarzschildPerturbations`NP}, {
+         4, -SchwarzschildPerturbations`NP}, 
+         xAct`xTensor`LI[0], 
+         xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+         xAct`xTensor`LI[SchwarzschildPerturbations`m1]]]],
+      Editable->False]}], "+", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{
+       InterpretationBox[
+        StyleBox["f",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        SchwarzschildPerturbations`f,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["r",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        SchwarzschildPerturbations`R[],
+        Editable->False], "]"}], 
+      RowBox[{"3", "/", "2"}]], " ", 
+     InterpretationBox[
+      StyleBox[GridBox[{
+         {
+          RowBox[{"\[Mu]", " "}], 
+          StyleBox[GridBox[{
+             {
+              SubscriptBox["l", "1"], " "},
+             {" ", "1"}
+            },
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.]}, "Rows" -> {{
+                 Offset[0.]}}}],
+           FontSize->Rational[39, 4]]}
+        },
+        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      SchwarzschildPerturbations`mu[
+       xAct`xTensor`LI[SchwarzschildPerturbations`l1], -xAct`xTensor`LI[1]],
+      Editable->False], " ", 
+     InterpretationBox[
+      StyleBox["r",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      SchwarzschildPerturbations`R[],
+      Editable->False], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        RowBox[{
+         SqrtBox[
+          RowBox[{
+           InterpretationBox[
+            StyleBox["f",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            SchwarzschildPerturbations`f,
+            Editable->False], "[", 
+           InterpretationBox[
+            StyleBox["r",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            SchwarzschildPerturbations`R[],
+            Editable->False], "]"}]], " ", 
+         InterpretationBox[
+          StyleBox[GridBox[{
+             {
+              SubscriptBox["h", "K"], 
+              StyleBox[GridBox[{
+                 {" ", " ", "1", 
+                  SubscriptBox["l", "1"], 
+                  SubscriptBox["m", "1"]},
+                 {
+                  StyleBox["1",
+                   FontColor->RGBColor[0., 0., 1.]], 
+                  StyleBox["3",
+                   FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                },
+                GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+               FontSize->Rational[39, 4]]}
+            },
+            GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.4]}, 
+                Offset[0.2]}}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          
+          SchwarzschildPerturbations`Private`hK[{
+           1, -SchwarzschildPerturbations`NP}, {
+           3, -SchwarzschildPerturbations`NP}, 
+           xAct`xTensor`LI[1], 
+           xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+           xAct`xTensor`LI[SchwarzschildPerturbations`m1]],
+          Editable->False]}], 
+        SqrtBox["2"]], "-", 
+       FractionBox[
+        RowBox[{
+         SqrtBox[
+          RowBox[{
+           InterpretationBox[
+            StyleBox["f",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            SchwarzschildPerturbations`f,
+            Editable->False], "[", 
+           InterpretationBox[
+            StyleBox["r",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            SchwarzschildPerturbations`R[],
+            Editable->False], "]"}]], " ", 
+         InterpretationBox[
+          StyleBox[GridBox[{
+             {
+              SubscriptBox["h", "K"], 
+              StyleBox[GridBox[{
+                 {" ", " ", 
+                  RowBox[{"-", "1"}], 
+                  SubscriptBox["l", "1"], 
+                  SubscriptBox["m", "1"]},
+                 {
+                  StyleBox["1",
+                   FontColor->RGBColor[0., 0., 1.]], 
+                  StyleBox["4",
+                   FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                },
+                GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+               FontSize->Rational[39, 4]]}
+            },
+            GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.4]}, 
+                Offset[0.2]}}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          
+          SchwarzschildPerturbations`Private`hK[{
+           1, -SchwarzschildPerturbations`NP}, {
+           4, -SchwarzschildPerturbations`NP}, 
+           xAct`xTensor`LI[-1], 
+           xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+           xAct`xTensor`LI[SchwarzschildPerturbations`m1]],
+          Editable->False]}], 
+        SqrtBox["2"]], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["r",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         SchwarzschildPerturbations`R[],
+         Editable->False], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            FractionBox[
+             RowBox[{
+              InterpretationBox[
+               StyleBox["M",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               SchwarzschildPerturbations`M,
+               Editable->False], " ", 
+              InterpretationBox[
+               StyleBox[GridBox[{
+                  {
+                   SubscriptBox["h", "K"], 
+                   StyleBox[GridBox[{
+                    {" ", " ", "1", 
+                    SubscriptBox["l", "1"], 
+                    SubscriptBox["m", "1"]},
+                    {
+                    StyleBox["1",
+                    FontColor->RGBColor[0., 0., 1.]], 
+                    StyleBox["3",
+                    FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                    },
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+                    FontSize->Rational[39, 4]]}
+                 },
+                 
+                 GridBoxAlignment->{
+                  "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               
+               SchwarzschildPerturbations`Private`hK[{
+                1, -SchwarzschildPerturbations`NP}, {
+                3, -SchwarzschildPerturbations`NP}, 
+                xAct`xTensor`LI[1], 
+                xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+                xAct`xTensor`LI[SchwarzschildPerturbations`m1]],
+               Editable->False]}], 
+             RowBox[{
+              SqrtBox[
+               RowBox[{
+                InterpretationBox[
+                 StyleBox["f",
+                  ShowAutoStyles->False,
+                  AutoSpacing->False],
+                 SchwarzschildPerturbations`f,
+                 Editable->False], "[", 
+                InterpretationBox[
+                 StyleBox["r",
+                  ShowAutoStyles->False,
+                  AutoSpacing->False],
+                 SchwarzschildPerturbations`R[],
+                 Editable->False], "]"}]], " ", 
+              SuperscriptBox[
+               InterpretationBox[
+                StyleBox["r",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                SchwarzschildPerturbations`R[],
+                Editable->False], "2"]}]], "+", 
+            RowBox[{
+             SqrtBox[
+              RowBox[{
+               InterpretationBox[
+                StyleBox["f",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                SchwarzschildPerturbations`f,
+                Editable->False], "[", 
+               InterpretationBox[
+                StyleBox["r",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                SchwarzschildPerturbations`R[],
+                Editable->False], "]"}]], " ", 
+             InterpretationBox[
+              StyleBox[
+               RowBox[{
+                SubscriptBox["\[PartialD]", 
+                 StyleBox["1",
+                  FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+                  {
+                   SubscriptBox["h", "K"], 
+                   StyleBox[GridBox[{
+                    {" ", " ", "1", 
+                    SubscriptBox["l", "1"], 
+                    SubscriptBox["m", "1"]},
+                    {
+                    StyleBox["1",
+                    FontColor->RGBColor[0., 0., 1.]], 
+                    StyleBox["3",
+                    FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                    },
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+                    FontSize->Rational[39, 4]]}
+                 },
+                 
+                 GridBoxAlignment->{
+                  "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}]}],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              xAct`xTensor`PD[{1, -SchwarzschildPerturbations`BL}][
+               
+               SchwarzschildPerturbations`Private`hK[{
+                1, -SchwarzschildPerturbations`NP}, {
+                3, -SchwarzschildPerturbations`NP}, 
+                xAct`xTensor`LI[1], 
+                xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+                xAct`xTensor`LI[SchwarzschildPerturbations`m1]]],
+              Editable->False]}]}], 
+           SqrtBox["2"]], "-", 
+          FractionBox[
+           RowBox[{
+            FractionBox[
+             RowBox[{
+              InterpretationBox[
+               StyleBox["M",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               SchwarzschildPerturbations`M,
+               Editable->False], " ", 
+              InterpretationBox[
+               StyleBox[GridBox[{
+                  {
+                   SubscriptBox["h", "K"], 
+                   StyleBox[GridBox[{
+                    {" ", " ", 
+                    RowBox[{"-", "1"}], 
+                    SubscriptBox["l", "1"], 
+                    SubscriptBox["m", "1"]},
+                    {
+                    StyleBox["1",
+                    FontColor->RGBColor[0., 0., 1.]], 
+                    StyleBox["4",
+                    FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                    },
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+                    FontSize->Rational[39, 4]]}
+                 },
+                 
+                 GridBoxAlignment->{
+                  "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}],
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               
+               SchwarzschildPerturbations`Private`hK[{
+                1, -SchwarzschildPerturbations`NP}, {
+                4, -SchwarzschildPerturbations`NP}, 
+                xAct`xTensor`LI[-1], 
+                xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+                xAct`xTensor`LI[SchwarzschildPerturbations`m1]],
+               Editable->False]}], 
+             RowBox[{
+              SqrtBox[
+               RowBox[{
+                InterpretationBox[
+                 StyleBox["f",
+                  ShowAutoStyles->False,
+                  AutoSpacing->False],
+                 SchwarzschildPerturbations`f,
+                 Editable->False], "[", 
+                InterpretationBox[
+                 StyleBox["r",
+                  ShowAutoStyles->False,
+                  AutoSpacing->False],
+                 SchwarzschildPerturbations`R[],
+                 Editable->False], "]"}]], " ", 
+              SuperscriptBox[
+               InterpretationBox[
+                StyleBox["r",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                SchwarzschildPerturbations`R[],
+                Editable->False], "2"]}]], "+", 
+            RowBox[{
+             SqrtBox[
+              RowBox[{
+               InterpretationBox[
+                StyleBox["f",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                SchwarzschildPerturbations`f,
+                Editable->False], "[", 
+               InterpretationBox[
+                StyleBox["r",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                SchwarzschildPerturbations`R[],
+                Editable->False], "]"}]], " ", 
+             InterpretationBox[
+              StyleBox[
+               RowBox[{
+                SubscriptBox["\[PartialD]", 
+                 StyleBox["1",
+                  FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+                  {
+                   SubscriptBox["h", "K"], 
+                   StyleBox[GridBox[{
+                    {" ", " ", 
+                    RowBox[{"-", "1"}], 
+                    SubscriptBox["l", "1"], 
+                    SubscriptBox["m", "1"]},
+                    {
+                    StyleBox["1",
+                    FontColor->RGBColor[0., 0., 1.]], 
+                    StyleBox["4",
+                    FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                    },
+                    GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+                    FontSize->Rational[39, 4]]}
+                 },
+                 
+                 GridBoxAlignment->{
+                  "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}}]}],
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              xAct`xTensor`PD[{1, -SchwarzschildPerturbations`BL}][
+               
+               SchwarzschildPerturbations`Private`hK[{
+                1, -SchwarzschildPerturbations`NP}, {
+                4, -SchwarzschildPerturbations`NP}, 
+                xAct`xTensor`LI[-1], 
+                xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+                xAct`xTensor`LI[SchwarzschildPerturbations`m1]]],
+              Editable->False]}]}], 
+           SqrtBox["2"]]}], ")"}]}]}], ")"}]}], "+", 
+    RowBox[{
+     RowBox[{
+      InterpretationBox[
+       StyleBox["f",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       SchwarzschildPerturbations`f,
+       Editable->False], "[", 
+      InterpretationBox[
+       StyleBox["r",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       SchwarzschildPerturbations`R[],
+       Editable->False], "]"}], " ", 
+     InterpretationBox[
+      StyleBox["r",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      SchwarzschildPerturbations`R[],
+      Editable->False], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        FractionBox["1", "2"], " ", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["f",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          SchwarzschildPerturbations`f,
+          Editable->False], "[", 
+         InterpretationBox[
+          StyleBox["r",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          SchwarzschildPerturbations`R[],
+          Editable->False], "]"}], " ", 
+        InterpretationBox[
+         StyleBox[GridBox[{
+            {
+             SubscriptBox["h", "K"], 
+             StyleBox[GridBox[{
+                {" ", " ", "0", 
+                 SubscriptBox["l", "1"], 
+                 SubscriptBox["m", "1"]},
+                {
+                 StyleBox["1",
+                  FontColor->RGBColor[0., 0., 1.]], 
+                 StyleBox["1",
+                  FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+               },
+               GridBoxSpacings->{"Columns" -> {
+                   Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                   Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+              FontSize->Rational[39, 4]]}
+           },
+           GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.27999999999999997`]}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         SchwarzschildPerturbations`Private`hK[{
+          1, -SchwarzschildPerturbations`NP}, {
+          1, -SchwarzschildPerturbations`NP}, 
+          xAct`xTensor`LI[0], 
+          xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+          xAct`xTensor`LI[SchwarzschildPerturbations`m1]],
+         Editable->False], " ", 
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox[GridBox[{
+             {
+              RowBox[{"\[Mu]", " "}], 
+              StyleBox[GridBox[{
+                 {
+                  SubscriptBox["l", "1"], " "},
+                 {" ", "1"}
+                },
+                GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+               FontSize->Rational[39, 4]]}
+            },
+            GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.4]}, 
+                Offset[0.2]}}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          SchwarzschildPerturbations`mu[
+           xAct`xTensor`LI[SchwarzschildPerturbations`l1], -
+           xAct`xTensor`LI[1]],
+          Editable->False], "2"]}], "-", 
+       RowBox[{"2", " ", 
+        InterpretationBox[
+         StyleBox["r",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         SchwarzschildPerturbations`R[],
+         Editable->False], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", 
+            FractionBox["1", "2"]}], " ", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["f",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             SchwarzschildPerturbations`f,
+             Editable->False], "[", 
+            InterpretationBox[
+             StyleBox["r",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             SchwarzschildPerturbations`R[],
+             Editable->False], "]"}], " ", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              SubscriptBox["\[PartialD]", 
+               StyleBox["0",
+                FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+                {
+                 SubscriptBox["h", "K"], 
+                 StyleBox[GridBox[{
+                    {" ", " ", "0", 
+                    SubscriptBox["l", "1"], 
+                    SubscriptBox["m", "1"]},
+                    {
+                    StyleBox["1",
+                    FontColor->RGBColor[0., 0., 1.]], 
+                    StyleBox["1",
+                    FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                   },
+                   GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+                  FontSize->Rational[39, 4]]}
+               },
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+               GridBoxSpacings->{"Columns" -> {
+                   Offset[0.27999999999999997`], {
+                    Offset[0.034999999999999996`]}, 
+                   Offset[0.27999999999999997`]}, "Rows" -> {
+                   Offset[0.2], {
+                    Offset[0.4]}, 
+                   Offset[0.2]}}]}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            xAct`xTensor`PD[{0, -SchwarzschildPerturbations`BL}][
+             
+             SchwarzschildPerturbations`Private`hK[{
+              1, -SchwarzschildPerturbations`NP}, {
+              1, -SchwarzschildPerturbations`NP}, 
+              xAct`xTensor`LI[0], 
+              xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+              xAct`xTensor`LI[SchwarzschildPerturbations`m1]]],
+            Editable->False]}], "+", 
+          InterpretationBox[
+           StyleBox[
+            RowBox[{
+             SubscriptBox["\[PartialD]", 
+              StyleBox["0",
+               FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+               {
+                SubscriptBox["h", "K"], 
+                StyleBox[GridBox[{
+                   {" ", " ", "0", 
+                    SubscriptBox["l", "1"], 
+                    SubscriptBox["m", "1"]},
+                   {
+                    StyleBox["1",
+                    FontColor->RGBColor[0., 0., 1.]], 
+                    StyleBox["2",
+                    FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                  },
+                  GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+                 FontSize->Rational[39, 4]]}
+              },
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.27999999999999997`], {
+                   Offset[0.034999999999999996`]}, 
+                  Offset[0.27999999999999997`]}, "Rows" -> {
+                  Offset[0.2], {
+                   Offset[0.4]}, 
+                  Offset[0.2]}}]}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           xAct`xTensor`PD[{0, -SchwarzschildPerturbations`BL}][
+            
+            SchwarzschildPerturbations`Private`hK[{
+             1, -SchwarzschildPerturbations`NP}, {
+             2, -SchwarzschildPerturbations`NP}, 
+             xAct`xTensor`LI[0], 
+             xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+             xAct`xTensor`LI[SchwarzschildPerturbations`m1]]],
+           Editable->False], "+", 
+          InterpretationBox[
+           StyleBox[
+            RowBox[{
+             SubscriptBox["\[PartialD]", 
+              StyleBox["0",
+               FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+               {
+                SubscriptBox["h", "K"], 
+                StyleBox[GridBox[{
+                   {" ", " ", "0", 
+                    SubscriptBox["l", "1"], 
+                    SubscriptBox["m", "1"]},
+                   {
+                    StyleBox["3",
+                    FontColor->RGBColor[0., 0., 1.]], 
+                    StyleBox["4",
+                    FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                  },
+                  GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+                 FontSize->Rational[39, 4]]}
+              },
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.27999999999999997`], {
+                   Offset[0.034999999999999996`]}, 
+                  Offset[0.27999999999999997`]}, "Rows" -> {
+                  Offset[0.2], {
+                   Offset[0.4]}, 
+                  Offset[0.2]}}]}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           xAct`xTensor`PD[{0, -SchwarzschildPerturbations`BL}][
+            
+            SchwarzschildPerturbations`Private`hK[{
+             3, -SchwarzschildPerturbations`NP}, {
+             4, -SchwarzschildPerturbations`NP}, 
+             xAct`xTensor`LI[0], 
+             xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+             xAct`xTensor`LI[SchwarzschildPerturbations`m1]]],
+           Editable->False], "+", 
+          RowBox[{
+           InterpretationBox[
+            StyleBox["r",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            SchwarzschildPerturbations`R[],
+            Editable->False], " ", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              SubscriptBox["\[PartialD]", 
+               StyleBox["1",
+                FontColor->RGBColor[1., 0., 0.]]], 
+              SubscriptBox["\[PartialD]", 
+               StyleBox["0",
+                FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+                {
+                 SubscriptBox["h", "K"], 
+                 StyleBox[GridBox[{
+                    {" ", " ", "0", 
+                    SubscriptBox["l", "1"], 
+                    SubscriptBox["m", "1"]},
+                    {
+                    StyleBox["3",
+                    FontColor->RGBColor[0., 0., 1.]], 
+                    StyleBox["4",
+                    FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                   },
+                   GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+                  FontSize->Rational[39, 4]]}
+               },
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}},
+               GridBoxSpacings->{"Columns" -> {
+                   Offset[0.27999999999999997`], {
+                    Offset[0.034999999999999996`]}, 
+                   Offset[0.27999999999999997`]}, "Rows" -> {
+                   Offset[0.2], {
+                    Offset[0.4]}, 
+                   Offset[0.2]}}]}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            xAct`xTensor`PD[{1, -SchwarzschildPerturbations`BL}][
+             xAct`xTensor`PD[{0, -SchwarzschildPerturbations`BL}][
+              
+              SchwarzschildPerturbations`Private`hK[{
+               3, -SchwarzschildPerturbations`NP}, {
+               4, -SchwarzschildPerturbations`NP}, 
+               xAct`xTensor`LI[0], 
+               xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+               xAct`xTensor`LI[SchwarzschildPerturbations`m1]]]],
+            Editable->False]}]}], ")"}]}]}], ")"}]}], "-", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{
+       InterpretationBox[
+        StyleBox["f",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        SchwarzschildPerturbations`f,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["r",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        SchwarzschildPerturbations`R[],
+        Editable->False], "]"}], "2"], " ", 
+     SuperscriptBox[
+      InterpretationBox[
+       StyleBox["r",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       SchwarzschildPerturbations`R[],
+       Editable->False], "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", " ", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           SubscriptBox["\[PartialD]", 
+            StyleBox["1",
+             FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+             {
+              SubscriptBox["h", "K"], 
+              StyleBox[GridBox[{
+                 {" ", " ", "0", 
+                  SubscriptBox["l", "1"], 
+                  SubscriptBox["m", "1"]},
+                 {
+                  StyleBox["1",
+                   FontColor->RGBColor[0., 0., 1.]], 
+                  StyleBox["2",
+                   FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                },
+                GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+               FontSize->Rational[39, 4]]}
+            },
+            GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.4]}, 
+                Offset[0.2]}}]}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         xAct`xTensor`PD[{1, -SchwarzschildPerturbations`BL}][
+          
+          SchwarzschildPerturbations`Private`hK[{
+           1, -SchwarzschildPerturbations`NP}, {
+           2, -SchwarzschildPerturbations`NP}, 
+           xAct`xTensor`LI[0], 
+           xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+           xAct`xTensor`LI[SchwarzschildPerturbations`m1]]],
+         Editable->False]}], "+", 
+       RowBox[{"2", " ", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           SubscriptBox["\[PartialD]", 
+            StyleBox["1",
+             FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+             {
+              SubscriptBox["h", "K"], 
+              StyleBox[GridBox[{
+                 {" ", " ", "0", 
+                  SubscriptBox["l", "1"], 
+                  SubscriptBox["m", "1"]},
+                 {
+                  StyleBox["3",
+                   FontColor->RGBColor[0., 0., 1.]], 
+                  StyleBox["4",
+                   FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                },
+                GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+               FontSize->Rational[39, 4]]}
+            },
+            GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.4]}, 
+                Offset[0.2]}}]}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         xAct`xTensor`PD[{1, -SchwarzschildPerturbations`BL}][
+          
+          SchwarzschildPerturbations`Private`hK[{
+           3, -SchwarzschildPerturbations`NP}, {
+           4, -SchwarzschildPerturbations`NP}, 
+           xAct`xTensor`LI[0], 
+           xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+           xAct`xTensor`LI[SchwarzschildPerturbations`m1]]],
+         Editable->False]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["r",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         SchwarzschildPerturbations`R[],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           SubscriptBox["\[PartialD]", 
+            StyleBox["1",
+             FontColor->RGBColor[1., 0., 0.]]], 
+           SubscriptBox["\[PartialD]", 
+            StyleBox["1",
+             FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+             {
+              SubscriptBox["h", "K"], 
+              StyleBox[GridBox[{
+                 {" ", " ", "0", 
+                  SubscriptBox["l", "1"], 
+                  SubscriptBox["m", "1"]},
+                 {
+                  StyleBox["3",
+                   FontColor->RGBColor[0., 0., 1.]], 
+                  StyleBox["4",
+                   FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+                },
+                GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+               FontSize->Rational[39, 4]]}
+            },
+            GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.4]}, 
+                Offset[0.2]}}]}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         xAct`xTensor`PD[{1, -SchwarzschildPerturbations`BL}][
+          xAct`xTensor`PD[{1, -SchwarzschildPerturbations`BL}][
+           
+           SchwarzschildPerturbations`Private`hK[{
+            3, -SchwarzschildPerturbations`NP}, {
+            4, -SchwarzschildPerturbations`NP}, 
+            xAct`xTensor`LI[0], 
+            xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+            xAct`xTensor`LI[SchwarzschildPerturbations`m1]]]],
+         Editable->False]}]}], ")"}]}]}], ")"}]}]], "Output",
+ CellChangeTimes->{3.8963402518923593`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"f5d86ee5-26a9-4041-9bbe-43039f9dbb5f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    RowBox[{
+     SubscriptBox["\[PartialD]", 
+      StyleBox["0",
+       FontColor->RGBColor[1., 0., 0.]]], GridBox[{
+       {
+        SubscriptBox["h", "K"], 
+        StyleBox[GridBox[{
+           {" ", " ", "0", 
+            SubscriptBox["l", "1"], 
+            SubscriptBox["m", "1"]},
+           {
+            StyleBox["3",
+             FontColor->RGBColor[0., 0., 1.]], 
+            StyleBox["4",
+             FontColor->RGBColor[0., 0., 1.]], " ", " ", " "}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}]}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`PD[{0, -SchwarzschildPerturbations`BL}][
+    SchwarzschildPerturbations`Private`hK[{
+     3, -SchwarzschildPerturbations`NP}, {4, -SchwarzschildPerturbations`NP}, 
+     xAct`xTensor`LI[0], 
+     xAct`xTensor`LI[SchwarzschildPerturbations`l1], 
+     xAct`xTensor`LI[SchwarzschildPerturbations`m1]]],
+   Editable->False], "//", "InputForm"}]], "Input",
+ CellChangeTimes->{{3.896340256913297*^9, 3.896340258508319*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"14f6fd24-f294-477b-b47d-0c04761cc540"],
+
+Cell["\<\
+xAct`xTensor`PD[{0, -BL}][SchwarzschildPerturbations`Private`hK[{3, -NP}, {4, \
+-NP}, xAct`xTensor`LI[0], xAct`xTensor`LI[l1], xAct`xTensor`LI[m1]]]\
+\>", "Output",
+ CellChangeTimes->{3.8963402592360144`*^9},
+ CellLabel->
+  "Out[4]//InputForm=",ExpressionUUID->"a134e5fe-5eb0-4f8c-ba44-e779cf61d908"]
+}, Open  ]]
+},
+Evaluator->"Kernel-2",
+WindowSize->{1440., 747.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"fc1422aa-9c12-4f19-8201-b0b76d5ec99a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 322, 6, 28, "Input",ExpressionUUID->"912b3da3-7aaa-4976-a0c1-e2b764541583"],
+Cell[CellGroupData[{
+Cell[927, 32, 244, 5, 22, "Print",ExpressionUUID->"1106e205-9181-49ea-874c-e119ce77a1aa"],
+Cell[1174, 39, 513, 12, 22, "Print",ExpressionUUID->"427a5136-294b-4523-9735-dc04ceae30cf"],
+Cell[1690, 53, 265, 5, 22, "Print",ExpressionUUID->"72a77a88-2031-4773-ae06-cba00931c453"],
+Cell[1958, 60, 224, 4, 22, "Print",ExpressionUUID->"2a6f15a0-4b54-44ac-b2d3-3bc9b8f663c7"],
+Cell[2185, 66, 205, 4, 22, "Print",ExpressionUUID->"5a24668d-79f1-4e34-8e34-2ee65773e4f4"],
+Cell[2393, 72, 244, 5, 22, "Print",ExpressionUUID->"6d12b39d-861d-484b-b170-25a8d03ca555"],
+Cell[2640, 79, 522, 13, 22, "Print",ExpressionUUID->"75e75265-2906-4230-8276-a7a5ad2977a6"],
+Cell[3165, 94, 265, 5, 22, "Print",ExpressionUUID->"2da2b066-980b-40db-acec-4494dc198e01"],
+Cell[3433, 101, 244, 5, 22, "Print",ExpressionUUID->"93cd74c4-750c-4d56-8d4b-f895c2fd14ae"],
+Cell[3680, 108, 396, 7, 40, "Print",ExpressionUUID->"784181cb-9565-4837-acdc-cb0adbf2da06"],
+Cell[4079, 117, 244, 5, 22, "Print",ExpressionUUID->"1eecf71d-ad3e-47ac-af50-e4b798684999"],
+Cell[4326, 124, 242, 5, 22, "Print",ExpressionUUID->"cf09d4c4-a3b1-4304-bb18-156764acb067"],
+Cell[4571, 131, 511, 12, 22, "Print",ExpressionUUID->"57f87d01-5064-4e75-9da4-be9eb89e9705"],
+Cell[5085, 145, 283, 5, 22, "Print",ExpressionUUID->"2b0a7350-e33f-44a1-a7c8-0fb57abdb8f0"],
+Cell[5371, 152, 242, 5, 22, "Print",ExpressionUUID->"7316922a-4174-4c81-a44a-99ce7aec0f1f"],
+Cell[5616, 159, 397, 7, 40, "Print",ExpressionUUID->"71255ca2-88b1-46f6-9367-7b0bb731e39f"],
+Cell[6016, 168, 242, 5, 22, "Print",ExpressionUUID->"aa247a99-5d5e-4e60-8d69-84ccc6c92838"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6307, 179, 319, 7, 28, "Input",ExpressionUUID->"77e84688-2ef4-495f-86a6-c53df2616e80"],
+Cell[6629, 188, 51928, 1390, 275, "Output",ExpressionUUID->"f5d86ee5-26a9-4041-9bbe-43039f9dbb5f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58594, 1583, 1664, 45, 34, "Input",ExpressionUUID->"14f6fd24-f294-477b-b47d-0c04761cc540"],
+Cell[60261, 1630, 310, 6, 45, "Output",ExpressionUUID->"a134e5fe-5eb0-4f8c-ba44-e779cf61d908"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
