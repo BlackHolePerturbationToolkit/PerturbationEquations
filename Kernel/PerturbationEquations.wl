@@ -84,7 +84,6 @@ sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 (*Coupling coefficients*)
 
 
-Coupling::usage = "Coupling[LI[l], LI[m], LI[s], -LI[l'], -LI[m'], -LI[s'], -LI[l''], -LI[m''], -LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]";
 CInt::usage = "CInt[LI[l], LI[m], LI[s], -LI[l'], -LI[m'], -LI[s'], -LI[l''], -LI[m''], -LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]";
 
 
@@ -260,7 +259,6 @@ DefTensor[haup[LI[l],LI[\[ScriptM]],a],R2,PrintAs->"\!\(\*SubscriptBox[\(h\), \(
 DefScalarFunction[\[Lambda]1,PrintAs->"\!\(\*SubscriptBox[\(\[Lambda]\), \(1\)]\)"];DefScalarFunction[\[Lambda]2,PrintAs->"\!\(\*SubscriptBox[\(\[Lambda]\), \(2\)]\)"];DefScalarFunction[\[Lambda]3,PrintAs->"\!\(\*SubscriptBox[\(\[Lambda]\), \(3\)]\)"];DefScalarFunction[\[Lambda]4,PrintAs->"\!\(\*SubscriptBox[\(\[Lambda]\), \(4\)]\)"];
 
 DefConstantSymbol[\[ScriptL]];DefConstantSymbol[\[ScriptP],PrintAs->"\!\(\*SuperscriptBox[\(\[ScriptL]\), \(\[Prime]\)]\)"];DefConstantSymbol[\[ScriptQ], PrintAs->"\!\(\*SuperscriptBox[\(\[ScriptL]\), \(\[Prime]\[Prime]\)]\)"];DefConstantSymbol[\[ScriptM]];DefConstantSymbol[\[ScriptM]p,PrintAs->"\!\(\*SuperscriptBox[\(\[ScriptM]\), \(\[Prime]\)]\)"];DefConstantSymbol[\[ScriptM]pp, PrintAs->"\!\(\*SuperscriptBox[\(\[ScriptM]\), \(\[Prime]\[Prime]\)]\)"];DefConstantSymbol[L]; DefConstantSymbol[Lp,PrintAs->"\!\(\*SuperscriptBox[\(L\), \(\[Prime]\)]\)"];
-DefTensor[Coupling[LI[\[ScriptQ]],LI[\[ScriptM]pp],LI[spp],-LI[\[ScriptL]],-LI[\[ScriptM]],-LI[s],-LI[\[ScriptP]],-LI[\[ScriptM]p],-LI[sp]],{},PrintAs->"C"];
 
 
 DefBasis[NP,TangentM4,{1,2,3,4},BasisColor->RGBColor[0,0,1]];
