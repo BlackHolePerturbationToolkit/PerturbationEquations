@@ -490,10 +490,10 @@ RWGaugeConditionVectorHarmonicdecompform={hap[___]->0,hp[___]->0,hm[___]->0};
 (*Radiation gauge condition rule*)
 
 
-OutgoingRadiationGauge={h[{1,-NP},{1,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{1,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{1,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{1,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>0};
-IngoingRadiationGauge={h[{2,-NP},{1,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{2,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{2,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{2,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>0};
+OutgoingRadiationGauge={h[{1,-NP}, _, LI[s_], LI[l_], LI[m_]] -> 0, h[_, {1,-NP}, LI[s_], LI[l_], LI[m_]] -> 0};
+IngoingRadiationGauge={h[{2,-NP}, _, LI[s_], LI[l_], LI[m_]] -> 0, h[_, {2,-NP}, LI[s_], LI[l_], LI[m_]] -> 0};
 
-TraceFreeGauge={h[{1,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{3,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>0};
+TraceFreeGauge={h[{1,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]] -> 0, h[{3,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]] -> 0};
 
 
 (* ::Section::Closed:: *)
