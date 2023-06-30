@@ -356,8 +356,8 @@ PD[{0,-BL}][f[r[]]]=0;
 Protect[PD];
 
 DefConstantSymbol[\[Omega]]
-DefConstantSymbol[\[Omega]1]
-DefConstantSymbol[\[Omega]2]
+DefConstantSymbol[\[Omega]1,PrintAs->"\!\(\*SubscriptBox[\(\[Omega]\), \(1\)]\)"]
+DefConstantSymbol[\[Omega]2PrintAs->"\!\(\*SubscriptBox[\(\[Omega]\), \(2\)]\)"]
 
 
 (* ::Section::Closed:: *)
