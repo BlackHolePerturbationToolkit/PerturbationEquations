@@ -613,7 +613,7 @@ If[!MemberQ[{"Generic","Lorenz","ReggeWheeler","OutgoingRadiationGauge","TraceFr
 If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},OutputBasis],Message[SchwarzschildSource::argserror,OutputBasis]];
 If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},InputBasis],Message[SchwarzschildSource::argserror,InputBasis]];
 
-If[MemberQ[{"S4d2G","S0d2G"},Source]&&MemberQ[{"BLS","trTensor","Kinnersley"},OutputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]];
+If[MemberQ[{"S4d2G","S0d2G"},Source]&&MemberQ[{"BLS","trTensor","Kinnersley"},OutputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]&&Abort[]];
 
 
 If[Source=="d2G"&&Gauge=="Generic",func=d2GCarter];
