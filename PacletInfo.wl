@@ -13,6 +13,14 @@ Paclet[
       "Context" -> {
         "xAct`PerturbationEquations`"
       }
+    },
+    { "Documentation",
+      "Language" -> "English",
+      "MainPage" -> "Guides/PerturbationEquations",
+      "Resources" ->
+      {
+        "Guides/PerturbationEquations"
+      }
     }
   }
 ]
