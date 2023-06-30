@@ -44,7 +44,7 @@ ReportSet[$DefInfoQ,False];
 ReportSet[$CVVerbose,False];
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Usage messages*)
 
 
@@ -76,7 +76,7 @@ lambdatolrule::usage = "Rule for \[Lambda]1=\!\(\*SqrtBox[\(l \((l + 1)\)\)]\) a
 sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Symbols*)
 
 
@@ -159,7 +159,7 @@ f::usage = "Schwarzschild's function, f(r)=1-2M/r.";
 M::usage = "Mass.";
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Mode numbers*)
 
 
@@ -243,7 +243,7 @@ SchwarzschildCovariantSource::argserror = "Argument `1` is unknown";
 Begin["`Private`"]
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Definitions*)
 
 
