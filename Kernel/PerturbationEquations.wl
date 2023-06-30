@@ -87,7 +87,34 @@ sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 CInt::usage = "CInt[LI[l], LI[m], LI[s], -LI[l'], -LI[m'], -LI[s'], -LI[l''], -LI[m''], -LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]";
 
 
+CIntrule::usage = "Converts CInt to ThreeJSymbols: {SchwarzschildPerturbations`CInt[xAct`xTensor`LI[Pattern[SchwarzschildPerturbations`l, Blank[]]], xAct`xTensor`LI[Pattern[SchwarzschildPerturbations`m, Blank[]]], xAct`xTensor`LI[Pattern[s, Blank[]]], -xAct`xTensor`LI[Pattern[SchwarzschildPerturbations`l1, Blank[]]], -xAct`xTensor`LI[Pattern[SchwarzschildPerturbations`m1, Blank[]]], -xAct`xTensor`LI[Pattern[s1, Blank[]]], -xAct`xTensor`LI[Pattern[SchwarzschildPerturbations`l2, Blank[]]], -xAct`xTensor`LI[Pattern[SchwarzschildPerturbations`m2, Blank[]]], -xAct`xTensor`LI[Pattern[s2, Blank[]]]]\[RuleDelayed](-1\!\(\*SuperscriptBox[\()\), \(\*InterpretationBox[
+StyleBox[\"m\",\nShowAutoStyles->False,\nAutoSpacing->False],
+SchwarzschildPerturbations`m,\nEditable->False] + s\)]\) \!\(\*SqrtBox[FractionBox[
+RowBox[{
+RowBox[{\"(\", 
+RowBox[{
+RowBox[{\"2\", \" \", InterpretationBox[
+StyleBox[\"l\",\nShowAutoStyles->False,\nAutoSpacing->False],
+SchwarzschildPerturbations`l,\nEditable->False]}], \"+\", \"1\"}], \")\"}], \" \", 
+RowBox[{\"(\", 
+RowBox[{
+RowBox[{\"2\", \" \", InterpretationBox[
+StyleBox[SubscriptBox[\"l\", \"1\"],\nShowAutoStyles->False,\nAutoSpacing->False],
+SchwarzschildPerturbations`l1,\nEditable->False]}], \"+\", \"1\"}], \")\"}], \" \", 
+RowBox[{\"(\", 
+RowBox[{
+RowBox[{\"2\", \" \", InterpretationBox[
+StyleBox[SubscriptBox[\"l\", \"2\"],\nShowAutoStyles->False,\nAutoSpacing->False],
+SchwarzschildPerturbations`l2,\nEditable->False]}], \"+\", \"1\"}], \")\"}]}], 
+RowBox[{\"4\", \" \", \"\[Pi]\"}]]]\) ThreeJSymbol[{SchwarzschildPerturbations`l,s},{SchwarzschildPerturbations`l1,-s1},{SchwarzschildPerturbations`l2,-s2}] ThreeJSymbol[{SchwarzschildPerturbations`l,-SchwarzschildPerturbations`m},{SchwarzschildPerturbations`l1,SchwarzschildPerturbations`m1},{SchwarzschildPerturbations`l2,SchwarzschildPerturbations`m2}]}";
+
+
 mu::usage = "\[Mu]=\!\(\*SqrtBox[\(\((l - s)\) \((l + 1 + s)\)\)]\)";
+
+
+lmReplacerule::usage = "lmReplaceRule[func_,ld_,md_,l1d_,m1d_,l2d_,m2d_]:=func/.l->ld/.m->md/.l1->l1d/.m1->m1d/.l2->l2d/.m2->m2d/.CIntRule/.mutolrule. 
+
+Replaces l, m, \!\(\*SubscriptBox[\(l\), \(1\)]\), \!\(\*SubscriptBox[\(m\), \(1\)]\), \!\(\*SubscriptBox[\(l\), \(2\)]\), \!\(\*SubscriptBox[\(m\), \(2\)]\) with ld, md, l1d, m1d, l2d, m2d respectivly. Note, CIntRule is applied before mutolrule to avoid spurious Indeterminate quantities";
 
 
 \[Sigma]::usage = "\[Sigma] = (-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP])";
@@ -542,6 +569,12 @@ Derivative[n_][f] := Evaluate[Function[{r}, Evaluate[D[1-2M/r,{r,n}]]]];
 lambdatolrule={\[Lambda]1[l_]->Sqrt[(l)(l+1)],\[Lambda]2[l_]->Sqrt[(l-1)(l+2)]};
 mutolrule=mu[LI[l_],-LI[s_]]:>Sqrt[(l-s)(l+1+s)];
 sigmarule={\[Sigma]->(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]),\[Sigma]p->\[Sigma]+1,\[Sigma]m->\[Sigma]-1};
+
+
+CIntrule={CInt[xAct`xTensor`LI[l_],xAct`xTensor`LI[m_],xAct`xTensor`LI[s_],-xAct`xTensor`LI[l1_],-xAct`xTensor`LI[m1_],-xAct`xTensor`LI[s1_],-xAct`xTensor`LI[l2_],-xAct`xTensor`LI[m2_],-xAct`xTensor`LI[s2_]]:>(-1)^(m+s)Sqrt[(2l+1)(2l1+1)(2l2+1)/(4 Pi)]ThreeJSymbol[{l,s},{l1,-s1},{l2,-s2}]ThreeJSymbol[{l,-m},{l1,m1},{l2,m2}]};
+
+
+lmReplacerule[func_,ld_,md_,l1d_,m1d_,l2d_,m2d_]:=func/.l->ld/.m->md/.l1->l1d/.m1->m1d/.l2->l2d/.m2->m2d/.CIntrule/.mutolrule;
 
 
 (* ::Section::Closed:: *)
