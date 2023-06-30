@@ -44,7 +44,7 @@ ReportSet[$DefInfoQ,False];
 ReportSet[$CVVerbose,False];
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Usage messages*)
 
 
@@ -76,7 +76,7 @@ lambdatolrule::usage = "Rule for \[Lambda]1=\!\(\*SqrtBox[\(l \((l + 1)\)\)]\) a
 sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Symbols*)
 
 
@@ -159,7 +159,7 @@ f::usage = "Schwarzschild's function, f(r)=1-2M/r.";
 M::usage = "Mass.";
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Mode numbers*)
 
 
@@ -243,7 +243,7 @@ SchwarzschildCovariantSource::argserror = "Argument `1` is unknown";
 Begin["`Private`"]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Definitions*)
 
 
@@ -357,7 +357,7 @@ Protect[PD];
 
 DefConstantSymbol[\[Omega]]
 DefConstantSymbol[\[Omega]1,PrintAs->"\!\(\*SubscriptBox[\(\[Omega]\), \(1\)]\)"]
-DefConstantSymbol[\[Omega]2PrintAs->"\!\(\*SubscriptBox[\(\[Omega]\), \(2\)]\)"]
+DefConstantSymbol[\[Omega]2,PrintAs->"\!\(\*SubscriptBox[\(\[Omega]\), \(2\)]\)"]
 
 
 (* ::Section::Closed:: *)
