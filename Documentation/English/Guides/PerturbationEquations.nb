@@ -1,0 +1,304 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11196,        296]
+NotebookOptionsPosition[      7438,        213]
+NotebookOutlinePosition[      7966,        231]
+CellTagsIndexPosition[      7923,        228]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["PerturbationEquations", "GuideTitle",
+ CellID->1006637448,ExpressionUUID->"864ad9d1-39ae-4bbf-9911-9793a74d5103"],
+
+Cell["\<\
+Generate equations for perturbations of black hole spacetimes.\
+\>", "GuideAbstract",
+ CellChangeTimes->{{3.897121182953376*^9, 3.8971211927003107`*^9}},
+ CellID->679417470,ExpressionUUID->"82f0cccf-4c0f-49b4-a0f4-50af735ca0ad"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "GuideFunctionsSection",
+ CellID->798867191,ExpressionUUID->"8bc9e8a6-4295-41a5-8518-b072c151a59c"],
+
+Cell[TextData[{
+ Cell[BoxData["SchwarzschildLinearOperator"], "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"c40ac8e4-27e1-4161-a8df-4d4f38357a23",ExpressionUUID->
+  "4e3e19fb-27c6-43f6-ad38-38833aa3a70f"],
+ " \[LongDash] generate expressions for linear operators in Schwarzschild \
+spacetime."
+}], "GuideText",
+ CellChangeTimes->{{3.897121074125699*^9, 3.897121094069992*^9}},
+ CellID->493118093,ExpressionUUID->"ce1bd308-e14a-4965-8248-6c9e2ed20627"],
+
+Cell[TextData[{
+ Cell[BoxData["SchwarzschildQuadraticOperator"], "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"c5c6736a-1ff4-4e4e-8fcf-2d9846cbae62",ExpressionUUID->
+  "861b9498-871b-4835-97ae-74435acf6410"],
+ " \[LongDash] generates quadratic operators for second-order sources in \
+Schwarzschild spacetime."
+}], "GuideText",
+ CellChangeTimes->{{3.89712109563238*^9, 3.897121103147098*^9}, {
+  3.8971211508239937`*^9, 3.897121157577932*^9}},
+ CellID->696395278,ExpressionUUID->"0e207851-a23b-493f-8ccd-1f10414a5864"],
+
+Cell[TextData[{
+ Cell[BoxData[
+ "SchwarzschildQuadraticCovariantSource"], "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"925aabc7-3422-4bcd-a13e-da8feff3454f",ExpressionUUID->
+  "5562a8c4-517b-4654-93c6-9001f5863c80"],
+ " \[LongDash] generates d2G, a second-order source in Schwarzschild \
+spacetime, in the t-r covariant manifold."
+}], "GuideText",
+ CellChangeTimes->{{3.897121115143368*^9, 3.8971211322229013`*^9}},
+ CellID->1644658054,ExpressionUUID->"bf5c376f-42d4-40b2-9ecd-2566665278c5"],
+
+Cell[CellGroupData[{
+
+Cell["\t", "GuideDelimiter",
+ CellID->529561196,ExpressionUUID->"7c3bd558-519e-4f66-9e4a-ca0d5a68c488"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TagBox[
+   FrameBox["\<\"XXXX\"\>"],
+   "FunctionPlaceholder"]], "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
+  "933f6fba-2293-4d4f-8e0c-90e9b576efad"],
+ Cell[BoxData[
+  RowBox[{
+  Cell[TextData[StyleBox[
+   " \[FilledVerySmallSquare] ", "InlineSeparator"]],ExpressionUUID->
+    "9dec8fe3-7161-410d-aa5c-48405d486c5e"], 
+   DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
+    "aa391d0e-8348-4b2f-a479-ed406c51e1c9", 
+     "0da269ab-8819-472f-b553-da4ded59498d"], $CellContext`cellobj$$ = 
+    CellObject[
+    "74671403-ec60-4132-ab07-737947bde1cf", 
+     "222ef6bb-6abd-4e35-8300-caf3787ced5e"]}, 
+    TemplateBox[{
+      GraphicsBox[{{
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         CircleBox[{0, 0}]}, {
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         LineBox[{{0, 0.62}, {0, -0.62}}]}, {
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         LineBox[{{-0.62, 0}, {0.62, 0}}]}}, 
+       ImagePadding -> {{1., 1.}, {2.4, 1.}}, ImageSize -> 16, 
+       PlotRange -> {{-1.06, 1.06}, {-1.06, 1.06}}, 
+       BaselinePosition -> (Center -> 
+        Center)], $CellContext`nbobj$$, $CellContext`cellobj$$},
+     "InlineListingAddButton"],
+    Initialization:>($CellContext`nbobj$$ = 
+      EvaluationNotebook[]; $CellContext`cellobj$$ = EvaluationCell[])]}]], 
+  "InlineListingAddButton",ExpressionUUID->
+  "74671403-ec60-4132-ab07-737947bde1cf"]
+}], "InlineGuideFunctionListing",
+ CellID->1162788004,ExpressionUUID->"170e677a-b62f-4c93-b4a7-f913ac3995c1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tech Notes", "GuideTutorialsSection",
+ CellID->876795528,ExpressionUUID->"9ab21986-8651-484b-b3f4-2e30238aa270"],
+
+Cell["XXXX", "GuideTutorial",
+ CellID->269653382,ExpressionUUID->"976ac42a-8f88-4872-87c7-dbea176c68c2"],
+
+Cell["XXXX", "GuideTutorial",
+ CellID->873896104,ExpressionUUID->"da0e1f5d-6990-4301-98aa-94fa6b622797"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Guides", "GuideMoreAboutSection",
+ CellChangeTimes->{{3.8430423939366693`*^9, 3.843042395176153*^9}},
+ CellID->931158095,ExpressionUUID->"7b3c0e45-096b-4e3e-9efa-5af15f959d19"],
+
+Cell["XXXX", "GuideMoreAbout",
+ CellID->1260766976,ExpressionUUID->"30975111-db54-4361-aa11-20dd6e5f337e"],
+
+Cell["XXXX", "GuideMoreAbout",
+ CellID->489420683,ExpressionUUID->"8f9d3dde-3b68-4c2a-b8e4-a82b7afa14eb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "GuideRelatedLinksSection",
+ CellID->831051171,ExpressionUUID->"21c4e176-00f2-407f-86d7-207e60e519a9"],
+
+Cell[TextData[ButtonBox["PerturbationEquations website",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://bhptoolkit.org/PerturbationEquations"], None},
+ ButtonNote->
+  "https://bhptoolkit.org/PerturbationEquations"]], "GuideRelatedLinks",
+ CellID->1833759894,ExpressionUUID->"9071ea35-8780-4714-815e-79ed2e3f6bf0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Metadata", "MetadataSection",
+ CellID->243390909,ExpressionUUID->"3371e376-b2c7-4f63-84a7-4f8f212665af"],
+
+Cell[TextData[{
+ "New in: ",
+ Cell["XX", "HistoryData",
+  CellTags->"New",ExpressionUUID->"7f24fd73-25b8-4461-a762-d618976688eb"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified",ExpressionUUID->"1ad0abe4-e7a4-4741-be42-ff0b39c75e28"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete",ExpressionUUID->
+  "7d74a26f-b2e2-4745-b63c-f6cf75618f4c"]
+}], "History",
+ CellID->1862143675,ExpressionUUID->"7949844c-7109-489b-b86d-b3d57c62e245"],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1769557994,ExpressionUUID->"0ca1e5cf-dd79-41a6-8fd5-4b9acb363e0c"],
+
+Cell["Guide", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->460177855,ExpressionUUID->"b2c6c632-005b-4f4d-b7cf-2b734833585f"],
+
+Cell["PerturbationEquations", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->1120596138,ExpressionUUID->"b2e48ee9-7d7f-4f67-827a-8f25bb0567d1"],
+
+Cell["xAct`PerturbationEquations`", "Categorization",
+ CellLabel->"Context",
+ CellID->427707176,ExpressionUUID->"c235a641-8a29-45a6-bdf0-a0e660be6163"],
+
+Cell["PerturbationEquations/guide/PerturbationEquations", "Categorization",
+ CellLabel->"URI",
+ CellID->846740523,ExpressionUUID->"22b91092-50b5-4e3a-b1a6-bc8202f35744"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1941325039,ExpressionUUID->"f1bde567-8b5d-4ae1-84ed-5cd0e7cf9b61"],
+
+Cell["XXXX", "Keywords",
+ CellID->1130881602,ExpressionUUID->"b86f1866-3913-46cd-bf7e-b612480c9e2f"]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{492, Automatic}, {Automatic, 50}},
+TaggingRules-><|"Paclet" -> "PerturbationEquations"|>,
+FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (January 30, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStylesExt.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"aa391d0e-8348-4b2f-a479-ed406c51e1c9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 119, 1, 88, "GuideTitle",ExpressionUUID->"864ad9d1-39ae-4bbf-9911-9793a74d5103",
+ CellID->1006637448],
+Cell[702, 25, 238, 4, 29, "GuideAbstract",ExpressionUUID->"82f0cccf-4c0f-49b4-a0f4-50af735ca0ad",
+ CellID->679417470]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[977, 34, 108, 1, 72, "GuideFunctionsSection",ExpressionUUID->"8bc9e8a6-4295-41a5-8518-b072c151a59c",
+ CellID->798867191],
+Cell[1088, 37, 485, 9, 43, "GuideText",ExpressionUUID->"ce1bd308-e14a-4965-8248-6c9e2ed20627",
+ CellID->493118093],
+Cell[1576, 48, 551, 10, 43, "GuideText",ExpressionUUID->"0e207851-a23b-493f-8ccd-1f10414a5864",
+ CellID->696395278],
+Cell[2130, 60, 526, 10, 43, "GuideText",ExpressionUUID->"bf5c376f-42d4-40b2-9ecd-2566665278c5",
+ CellID->1644658054],
+Cell[CellGroupData[{
+Cell[2681, 74, 103, 1, 27, "GuideDelimiter",ExpressionUUID->"7c3bd558-519e-4f66-9e4a-ca0d5a68c488",
+ CellID->529561196],
+Cell[2787, 77, 1671, 42, 30, "InlineGuideFunctionListing",ExpressionUUID->"170e677a-b62f-4c93-b4a7-f913ac3995c1",
+ CellID->1162788004]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4507, 125, 118, 1, 74, "GuideTutorialsSection",ExpressionUUID->"9ab21986-8651-484b-b3f4-2e30238aa270",
+ CellID->876795528],
+Cell[4628, 128, 104, 1, 24, "GuideTutorial",ExpressionUUID->"976ac42a-8f88-4872-87c7-dbea176c68c2",
+ CellID->269653382],
+Cell[4735, 131, 104, 1, 24, "GuideTutorial",ExpressionUUID->"da0e1f5d-6990-4301-98aa-94fa6b622797",
+ CellID->873896104]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4876, 137, 190, 2, 74, "GuideMoreAboutSection",ExpressionUUID->"7b3c0e45-096b-4e3e-9efa-5af15f959d19",
+ CellID->931158095],
+Cell[5069, 141, 106, 1, 24, "GuideMoreAbout",ExpressionUUID->"30975111-db54-4361-aa11-20dd6e5f337e",
+ CellID->1260766976],
+Cell[5178, 144, 105, 1, 24, "GuideMoreAbout",ExpressionUUID->"8f9d3dde-3b68-4c2a-b8e4-a82b7afa14eb",
+ CellID->489420683]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5320, 150, 124, 1, 74, "GuideRelatedLinksSection",ExpressionUUID->"21c4e176-00f2-407f-86d7-207e60e519a9",
+ CellID->831051171],
+Cell[5447, 153, 322, 6, 24, "GuideRelatedLinks",ExpressionUUID->"9071ea35-8780-4714-815e-79ed2e3f6bf0",
+ CellID->1833759894]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5806, 164, 110, 1, 72, "MetadataSection",ExpressionUUID->"3371e376-b2c7-4f63-84a7-4f8f212665af",
+ CellID->243390909],
+Cell[5919, 167, 477, 12, 26, "History",ExpressionUUID->"7949844c-7109-489b-b86d-b3d57c62e245",
+ CellID->1862143675],
+Cell[CellGroupData[{
+Cell[6421, 183, 123, 1, 21, "CategorizationSection",ExpressionUUID->"0ca1e5cf-dd79-41a6-8fd5-4b9acb363e0c",
+ CellID->1769557994],
+Cell[6547, 186, 133, 2, 70, "Categorization",ExpressionUUID->"b2c6c632-005b-4f4d-b7cf-2b734833585f",
+ CellID->460177855],
+Cell[6683, 190, 150, 2, 70, "Categorization",ExpressionUUID->"b2e48ee9-7d7f-4f67-827a-8f25bb0567d1",
+ CellID->1120596138],
+Cell[6836, 194, 151, 2, 70, "Categorization",ExpressionUUID->"c235a641-8a29-45a6-bdf0-a0e660be6163",
+ CellID->427707176],
+Cell[6990, 198, 169, 2, 70, "Categorization",ExpressionUUID->"22b91092-50b5-4e3a-b1a6-bc8202f35744",
+ CellID->846740523]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7196, 205, 111, 1, 21, "KeywordsSection",ExpressionUUID->"f1bde567-8b5d-4ae1-84ed-5cd0e7cf9b61",
+ CellID->1941325039],
+Cell[7310, 208, 100, 1, 70, "Keywords",ExpressionUUID->"b86f1866-3913-46cd-bf7e-b612480c9e2f",
+ CellID->1130881602]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
