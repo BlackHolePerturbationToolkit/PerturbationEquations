@@ -92,6 +92,18 @@ The ordering of the output terms is {\!\(\*SubscriptBox[\(h\), \(tt\)]\),\!\(\*S
 
 
 (* ::Subsubsection::Closed:: *)
+(*Gauges*)
+
+
+Lorenz::usage="The Lorenz gauge, \!\(\*SuperscriptBox[\(\[Del]\), \(a\)]\)\!\(\*SubscriptBox[OverscriptBox[\(h\), \(_\)], \(ab\)]\)=0, where \!\(\*SubscriptBox[OverscriptBox[\(h\), \(_\)], \(ab\)]\)=\!\(\*SubscriptBox[\(h\), \(ab\)]\)-\!\(\*FractionBox[\(1\), \(2\)]\)\!\(\*SuperscriptBox[\(g\), \(ab\)]\)\!\(\*SubscriptBox[\(h\), \(ab\)]\)."
+ReggeWheeler::usage="The Regge--Wheeler gauge, {\!\(\*SubscriptBox[\(h\), \(+\)]\)==0,\!\(\*SubscriptBox[\(h\), \(-\)]\)==0,\!\(\*SuperscriptBox[SubscriptBox[\(h\), \(+\)], \(a\)]\)==0}."
+IngoingRadiationGauge::usage="The Ingoing Radiation Gauge, \!\(\*SubscriptBox[\(h\), \(la\)]\)=0."
+TraceFreeIngoingRadiationGauge::usage="The Trace free Ingoing Radiation Gauge, \!\(\*SubscriptBox[\(h\), \(la\)]\)=0=\!\(\*SubscriptBox[\(h\), \(m \*OverscriptBox[\(m\), \(_\)]\)]\)."
+OutgoingRadiationGauge::usage="The Outgoing Radiation Gauge, \!\(\*SubscriptBox[\(h\), \(na\)]\)=0."
+TraceFreeOutgoingRadiationGauge::usage="The Trace free Outgoing Radiation Gauge, \!\(\*SubscriptBox[\(h\), \(na\)]\)=0=\!\(\*SubscriptBox[\(h\), \(m \*OverscriptBox[\(m\), \(_\)]\)]\)."
+
+
+(* ::Subsubsection::Closed:: *)
 (*Coupling coefficients*)
 
 
