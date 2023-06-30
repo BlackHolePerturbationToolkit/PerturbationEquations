@@ -631,6 +631,7 @@ If[Source=="d2R"&&Gauge=="OutgoingRadiationGauge",func=d2RCarter/.OutgoingRadiat
 If[Source=="d2R"&&Gauge=="TraceFreeOutgoingRadiationGauge",func=d2RCarter/.OutgoingRadiationGauge/.TraceFreeGauge];
 If[Source=="d2R"&&Gauge=="IngoingRadiationGauge",func=d2RCarter/.IngoingRadiationGauge];
 If[Source=="d2R"&&Gauge=="TraceFreeIngoingRadiationGauge",func=d2RCarter/.IngoingRadiationGauge/.TraceFreeGauge];
+func = Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"} -> func];
 
 If[Source=="S4d2G"&&Gauge=="Generic",func=S4d2GCarter];
 If[Source=="S4d2G"&&Gauge=="ReggeWheeler",func=S4d2GCarter/.RWGaugeConditionNPform];
@@ -649,9 +650,9 @@ If[Source=="S0d2G"&&Gauge=="IngoingRadiationGauge",func=S0d2GCarter/.IngoingRadi
 If[Source=="S0d2G"&&Gauge=="TraceFreeIngoingRadiationGauge",func=S0d2GCarter/.IngoingRadiationGauge/.TraceFreeGauge];
 
 
-If[OutputBasis=="BLS"&&MemberQ[{"d2G","d2R"},Source],func=CarterToBLS[func]];
-If[OutputBasis=="trTensor"&&MemberQ[{"d2G","d2R"},Source],func=BLStotr[CarterToBLS[func]]];
-If[OutputBasis=="Kinnersley"&&MemberQ[{"d2G","d2R"},Source],func=CarterToKinnersley[func]];
+If[OutputBasis=="BLS"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[Range[1,10]->CarterToBLS[Values[func]]]];
+If[OutputBasis=="trTensor"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[{"tt","tr","rr","t+","r+","\[EmptyCircle]","+","t-","r-","-"}->BLStotr[CarterToBLS[Values[func]]]]];
+If[OutputBasis=="Kinnersley"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"}->CarterToKinnersley[Values[func]]]];
 
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
 If[InputBasis=="trTensor",func=(func/.CarterToBLShRule)/.BLStotrhRule];
@@ -688,11 +689,11 @@ If[Source=="dR"&&Gauge=="OutgoingRadiationGauge",func=dRCarter/.OutgoingRadiatio
 If[Source=="dR"&&Gauge=="TraceFreeOutgoingRadiationGauge",func=dRCarter/.OutgoingRadiationGauge/.TraceFreeGauge];
 If[Source=="dR"&&Gauge=="IngoingRadiationGauge",func=dRCarter/.IngoingRadiationGauge];
 If[Source=="dR"&&Gauge=="TraceFreeIngoingRadiationGauge",func=dRCarter/.IngoingRadiationGauge/.TraceFreeGauge];
+func = Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"} -> func];
 
-
-If[OutputBasis=="BLS"&&MemberQ[{"dG","dR"},Source],func=CarterToBLS[func]];
-If[OutputBasis=="trTensor"&&MemberQ[{"dG","dR"},Source],func=BLStotr[CarterToBLS[func]]];
-If[OutputBasis=="Kinnersley"&&MemberQ[{"dG","dR"},Source],func=CarterToKinnersley[func]];
+If[OutputBasis=="BLS"&&MemberQ[{"dG","dR"},Source],func=Association@@Thread[Range[1,10]->CarterToBLS[Values[func]]]];
+If[OutputBasis=="trTensor"&&MemberQ[{"dG","dR"},Source],func=Association@@Thread[{"tt","tr","rr","t+","r+","\[EmptyCircle]","+","t-","r-","-"}->BLStotr[CarterToBLS[Values[func]]]]];
+If[OutputBasis=="Kinnersley"&&MemberQ[{"dG","dR"},Source],func=Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"}->CarterToKinnersley[Values[func]]]];
 
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
 If[InputBasis=="trTensor",func=(func/.CarterToBLShRule)/.BLStotrhRule];
