@@ -77,6 +77,10 @@ sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 
 
 (* ::Subsection::Closed:: *)
+(*Symbols*)
+
+
+(* ::Subsubsection::Closed:: *)
 (*Coupling coefficients*)
 
 
@@ -92,7 +96,7 @@ mu::usage = "\[Mu]=\!\(\*SqrtBox[\(\((l - s)\) \((l + 1 + s)\)\)]\)";
 \[Sigma]p::usage = "\[Sigma]+1";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsubsection::Closed:: *)
 (*Coordinates*)
 
 
@@ -106,7 +110,7 @@ f::usage = "Schwarzschild's function, f(r)=1-2M/r.";
 M::usage = "Mass.";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsubsection::Closed:: *)
 (*Mode numbers*)
 
 
@@ -125,7 +129,7 @@ m2::usage ="Magnetic number m2.";
 \[Omega]2::usage ="Frequency \[Omega]2.";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsubsection::Closed:: *)
 (*Metric perturbations*)
 
 
