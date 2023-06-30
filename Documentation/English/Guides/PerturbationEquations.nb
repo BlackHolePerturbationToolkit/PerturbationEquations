@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      9086,        240]
-NotebookOptionsPosition[      5624,        163]
-NotebookOutlinePosition[      6152,        181]
-CellTagsIndexPosition[      6109,        178]
+NotebookDataLength[      9619,        257]
+NotebookOptionsPosition[      6153,        180]
+NotebookOutlinePosition[      6681,        198]
+CellTagsIndexPosition[      6638,        195]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -36,18 +36,29 @@ Cell["", "GuideFunctionsSection",
  CellID->798867191,ExpressionUUID->"8bc9e8a6-4295-41a5-8518-b072c151a59c"],
 
 Cell[TextData[{
- Cell[BoxData["SchwarzschildLinearOperator"], "InlineGuideFunction",
+ Cell[BoxData[
+  ButtonBox["SchwarzschildLinearOperator",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:PerturbationEquations/ref/SchwarzschildLinearOperator"]], 
+  "InlineGuideFunction",
   TaggingRules->{"PageType" -> "Function"},
   CellTags->"c40ac8e4-27e1-4161-a8df-4d4f38357a23",ExpressionUUID->
   "4e3e19fb-27c6-43f6-ad38-38833aa3a70f"],
  " \[LongDash] generate expressions for linear operators in Schwarzschild \
 spacetime."
 }], "GuideText",
- CellChangeTimes->{{3.897121074125699*^9, 3.897121094069992*^9}},
+ CellChangeTimes->{{3.897121074125699*^9, 3.897121094069992*^9}, {
+  3.8971245351126633`*^9, 3.897124535112722*^9}},
  CellID->493118093,ExpressionUUID->"ce1bd308-e14a-4965-8248-6c9e2ed20627"],
 
 Cell[TextData[{
- Cell[BoxData["SchwarzschildQuadraticOperator"], "InlineGuideFunction",
+ Cell[BoxData[
+  ButtonBox["SchwarzschildQuadraticOperator",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:PerturbationEquations/ref/SchwarzschildQuadraticOperator"]], 
+  "InlineGuideFunction",
   TaggingRules->{"PageType" -> "Function"},
   CellTags->"c5c6736a-1ff4-4e4e-8fcf-2d9846cbae62",ExpressionUUID->
   "861b9498-871b-4835-97ae-74435acf6410"],
@@ -55,19 +66,25 @@ Cell[TextData[{
 Schwarzschild spacetime."
 }], "GuideText",
  CellChangeTimes->{{3.89712109563238*^9, 3.897121103147098*^9}, {
-  3.8971211508239937`*^9, 3.897121157577932*^9}},
+  3.8971211508239937`*^9, 3.897121157577932*^9}, {3.897124538494041*^9, 
+  3.897124538494091*^9}},
  CellID->696395278,ExpressionUUID->"0e207851-a23b-493f-8ccd-1f10414a5864"],
 
 Cell[TextData[{
  Cell[BoxData[
- "SchwarzschildQuadraticCovariantSource"], "InlineGuideFunction",
+  ButtonBox["SchwarzschildQuadraticCovariantSource",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:PerturbationEquations/ref/SchwarzschildQuadraticCovariantSource"]]\
+, "InlineGuideFunction",
   TaggingRules->{"PageType" -> "Function"},
   CellTags->"925aabc7-3422-4bcd-a13e-da8feff3454f",ExpressionUUID->
   "5562a8c4-517b-4654-93c6-9001f5863c80"],
  " \[LongDash] generates d2G, a second-order source in Schwarzschild \
 spacetime, in the t-r covariant manifold."
 }], "GuideText",
- CellChangeTimes->{{3.897121115143368*^9, 3.8971211322229013`*^9}},
+ CellChangeTimes->{{3.897121115143368*^9, 3.8971211322229013`*^9}, {
+  3.8971245422879143`*^9, 3.89712454228797*^9}},
  CellID->1644658054,ExpressionUUID->"bf5c376f-42d4-40b2-9ecd-2566665278c5"]
 }, Open  ]],
 
@@ -189,56 +206,56 @@ Cell[702, 25, 238, 4, 29, "GuideAbstract",ExpressionUUID->"82f0cccf-4c0f-49b4-a0
 Cell[CellGroupData[{
 Cell[977, 34, 108, 1, 72, "GuideFunctionsSection",ExpressionUUID->"8bc9e8a6-4295-41a5-8518-b072c151a59c",
  CellID->798867191],
-Cell[1088, 37, 485, 9, 43, "GuideText",ExpressionUUID->"ce1bd308-e14a-4965-8248-6c9e2ed20627",
+Cell[1088, 37, 659, 15, 44, "GuideText",ExpressionUUID->"ce1bd308-e14a-4965-8248-6c9e2ed20627",
  CellID->493118093],
-Cell[1576, 48, 551, 10, 43, "GuideText",ExpressionUUID->"0e207851-a23b-493f-8ccd-1f10414a5864",
+Cell[1750, 54, 726, 16, 44, "GuideText",ExpressionUUID->"0e207851-a23b-493f-8ccd-1f10414a5864",
  CellID->696395278],
-Cell[2130, 60, 526, 10, 43, "GuideText",ExpressionUUID->"bf5c376f-42d4-40b2-9ecd-2566665278c5",
+Cell[2479, 72, 706, 15, 44, "GuideText",ExpressionUUID->"bf5c376f-42d4-40b2-9ecd-2566665278c5",
  CellID->1644658054]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2693, 75, 118, 1, 74, "GuideTutorialsSection",ExpressionUUID->"9ab21986-8651-484b-b3f4-2e30238aa270",
+Cell[3222, 92, 118, 1, 74, "GuideTutorialsSection",ExpressionUUID->"9ab21986-8651-484b-b3f4-2e30238aa270",
  CellID->876795528],
-Cell[2814, 78, 104, 1, 24, "GuideTutorial",ExpressionUUID->"976ac42a-8f88-4872-87c7-dbea176c68c2",
+Cell[3343, 95, 104, 1, 24, "GuideTutorial",ExpressionUUID->"976ac42a-8f88-4872-87c7-dbea176c68c2",
  CellID->269653382],
-Cell[2921, 81, 104, 1, 24, "GuideTutorial",ExpressionUUID->"da0e1f5d-6990-4301-98aa-94fa6b622797",
+Cell[3450, 98, 104, 1, 24, "GuideTutorial",ExpressionUUID->"da0e1f5d-6990-4301-98aa-94fa6b622797",
  CellID->873896104]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3062, 87, 190, 2, 74, "GuideMoreAboutSection",ExpressionUUID->"7b3c0e45-096b-4e3e-9efa-5af15f959d19",
+Cell[3591, 104, 190, 2, 74, "GuideMoreAboutSection",ExpressionUUID->"7b3c0e45-096b-4e3e-9efa-5af15f959d19",
  CellID->931158095],
-Cell[3255, 91, 106, 1, 24, "GuideMoreAbout",ExpressionUUID->"30975111-db54-4361-aa11-20dd6e5f337e",
+Cell[3784, 108, 106, 1, 24, "GuideMoreAbout",ExpressionUUID->"30975111-db54-4361-aa11-20dd6e5f337e",
  CellID->1260766976],
-Cell[3364, 94, 105, 1, 24, "GuideMoreAbout",ExpressionUUID->"8f9d3dde-3b68-4c2a-b8e4-a82b7afa14eb",
+Cell[3893, 111, 105, 1, 24, "GuideMoreAbout",ExpressionUUID->"8f9d3dde-3b68-4c2a-b8e4-a82b7afa14eb",
  CellID->489420683]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3506, 100, 124, 1, 74, "GuideRelatedLinksSection",ExpressionUUID->"21c4e176-00f2-407f-86d7-207e60e519a9",
+Cell[4035, 117, 124, 1, 74, "GuideRelatedLinksSection",ExpressionUUID->"21c4e176-00f2-407f-86d7-207e60e519a9",
  CellID->831051171],
-Cell[3633, 103, 322, 6, 24, "GuideRelatedLinks",ExpressionUUID->"9071ea35-8780-4714-815e-79ed2e3f6bf0",
+Cell[4162, 120, 322, 6, 24, "GuideRelatedLinks",ExpressionUUID->"9071ea35-8780-4714-815e-79ed2e3f6bf0",
  CellID->1833759894]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3992, 114, 110, 1, 72, "MetadataSection",ExpressionUUID->"3371e376-b2c7-4f63-84a7-4f8f212665af",
+Cell[4521, 131, 110, 1, 72, "MetadataSection",ExpressionUUID->"3371e376-b2c7-4f63-84a7-4f8f212665af",
  CellID->243390909],
-Cell[4105, 117, 477, 12, 26, "History",ExpressionUUID->"7949844c-7109-489b-b86d-b3d57c62e245",
+Cell[4634, 134, 477, 12, 26, "History",ExpressionUUID->"7949844c-7109-489b-b86d-b3d57c62e245",
  CellID->1862143675],
 Cell[CellGroupData[{
-Cell[4607, 133, 123, 1, 21, "CategorizationSection",ExpressionUUID->"0ca1e5cf-dd79-41a6-8fd5-4b9acb363e0c",
+Cell[5136, 150, 123, 1, 21, "CategorizationSection",ExpressionUUID->"0ca1e5cf-dd79-41a6-8fd5-4b9acb363e0c",
  CellID->1769557994],
-Cell[4733, 136, 133, 2, 70, "Categorization",ExpressionUUID->"b2c6c632-005b-4f4d-b7cf-2b734833585f",
+Cell[5262, 153, 133, 2, 70, "Categorization",ExpressionUUID->"b2c6c632-005b-4f4d-b7cf-2b734833585f",
  CellID->460177855],
-Cell[4869, 140, 150, 2, 70, "Categorization",ExpressionUUID->"b2e48ee9-7d7f-4f67-827a-8f25bb0567d1",
+Cell[5398, 157, 150, 2, 70, "Categorization",ExpressionUUID->"b2e48ee9-7d7f-4f67-827a-8f25bb0567d1",
  CellID->1120596138],
-Cell[5022, 144, 151, 2, 70, "Categorization",ExpressionUUID->"c235a641-8a29-45a6-bdf0-a0e660be6163",
+Cell[5551, 161, 151, 2, 70, "Categorization",ExpressionUUID->"c235a641-8a29-45a6-bdf0-a0e660be6163",
  CellID->427707176],
-Cell[5176, 148, 169, 2, 70, "Categorization",ExpressionUUID->"22b91092-50b5-4e3a-b1a6-bc8202f35744",
+Cell[5705, 165, 169, 2, 70, "Categorization",ExpressionUUID->"22b91092-50b5-4e3a-b1a6-bc8202f35744",
  CellID->846740523]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[5382, 155, 111, 1, 21, "KeywordsSection",ExpressionUUID->"f1bde567-8b5d-4ae1-84ed-5cd0e7cf9b61",
+Cell[5911, 172, 111, 1, 21, "KeywordsSection",ExpressionUUID->"f1bde567-8b5d-4ae1-84ed-5cd0e7cf9b61",
  CellID->1941325039],
-Cell[5496, 158, 100, 1, 70, "Keywords",ExpressionUUID->"b86f1866-3913-46cd-bf7e-b612480c9e2f",
+Cell[6025, 175, 100, 1, 70, "Keywords",ExpressionUUID->"b86f1866-3913-46cd-bf7e-b612480c9e2f",
  CellID->1130881602]
 }, Closed]]
 }, Open  ]]
