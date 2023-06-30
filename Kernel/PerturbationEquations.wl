@@ -81,6 +81,17 @@ sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 
 
 (* ::Subsubsection::Closed:: *)
+(*Basis*)
+
+
+Kinnersley::usage="The Kinnersley tetrad basis. The ordering of the output terms is {ll,ln,lm,l\!\(\*OverscriptBox[\(m\), \(_\)]\),nn,nm,n\!\(\*OverscriptBox[\(m\), \(_\)]\),mm,m\!\(\*OverscriptBox[\(m\), \(_\)]\),\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)}=={11,12,13,14,22,23,24,33,34,44}."
+Carter::usage="The Carter tetrad basis. The ordering of the output terms is {ll,ln,lm,l\!\(\*OverscriptBox[\(m\), \(_\)]\),nn,nm,n\!\(\*OverscriptBox[\(m\), \(_\)]\),mm,m\!\(\*OverscriptBox[\(m\), \(_\)]\),\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)}=={11,12,13,14,22,23,24,33,34,44}."
+BLS::usage="The Barack--Lousto--Sago basis."
+trTensor::usage="The Boyer--Lindquist coordinate t r basis with the angular dependence expressed using scalar, vector and tenser spherical harmonics.  
+The ordering of the output terms is {\!\(\*SubscriptBox[\(h\), \(tt\)]\),\!\(\*SubscriptBox[\(h\), \(tr\)]\),\!\(\*SubscriptBox[\(h\), \(rr\)]\),\!\(\*SubscriptBox[\(h\), \(\(t\)\(+\)\)]\),\!\(\*SubscriptBox[\(h\), \(\(r\)\(+\)\)]\),\!\(\*SubscriptBox[\(h\), \(\[EmptyCircle]\)]\),\!\(\*SubscriptBox[\(h\), \(p\)]\),\!\(\*SubscriptBox[\(h\), \(\(t\)\(-\)\)]\),\!\(\*SubscriptBox[\(h\), \(rm\)]\),\!\(\*SubscriptBox[\(h\), \(-\)]\)}"
+
+
+(* ::Subsubsection::Closed:: *)
 (*Coupling coefficients*)
 
 
