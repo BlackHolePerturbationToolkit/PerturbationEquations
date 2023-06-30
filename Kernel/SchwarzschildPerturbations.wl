@@ -370,63 +370,63 @@ PD[{0,-BL}][htrAB[LI[l],LI[m]]]:>-I \[Omega] htrAB[LI[l],LI[m]]
 (*dG*)
 
 
-Get["Kernel/dGCarter.wl"];
+Get["xAct`SchwarzschildPerturbations`dGCarter`"];
 
 
-Get["Kernel/dGLorenzCarter.wl"];
+Get["xAct`SchwarzschildPerturbations`dGLorenzCarter`"];
 
 
 (* ::Subsection::Closed:: *)
 (*dR*)
 
 
-Get["Kernel/dRCarter.wl"];
+Get["xAct`SchwarzschildPerturbations`dRCarter`"];
 
 
-Get["Kernel/dRLorenzCarter.wl"];
+Get["xAct`SchwarzschildPerturbations`dRLorenzCarter`"];
 
 
 (* ::Subsection::Closed:: *)
 (*d2R*)
 
 
-Get["Kernel/d2RCarter.wl"];
+Get["xAct`SchwarzschildPerturbations`d2RCarter`"];
 
 
-Get["Kernel/d2RLorenzCarter.wl"];
+Get["xAct`SchwarzschildPerturbations`d2RLorenzCarter`"];
 
 
 (* ::Subsection::Closed:: *)
 (*d2G*)
 
 
-Get["Kernel/d2GCarter.wl"];
+Get["xAct`SchwarzschildPerturbations`d2GCarter`"];
 
 
-Get["Kernel/d2GLorenzCarter.wl"];
+Get["xAct`SchwarzschildPerturbations`d2GLorenzCarter`"];
 
 
 (* ::Subsection::Closed:: *)
 (*d2G Vector Harmonics*)
 
 
-Get["Kernel/d2GVectorHarmonics.wl"];
+Get["xAct`SchwarzschildPerturbations`d2GVectorHarmonics`"];
 
 
 (* ::Subsection::Closed:: *)
 (*Sd2G*)
 
 
-Get["Kernel/S0d2GCarter.wl"];
+Get["xAct`SchwarzschildPerturbations`S0d2GCarter`"];
 
 
-Get["Kernel/S0d2GLorenzCarter.wl"];
+Get["xAct`SchwarzschildPerturbations`S0d2GLorenzCarter`"];
 
 
-Get["Kernel/S4d2GCarter.wl"];
+Get["xAct`SchwarzschildPerturbations`S4d2GCarter`"];
 
 
-Get["Kernel/S4d2GLorenzCarter.wl"];
+Get["xAct`SchwarzschildPerturbations`S4d2GLorenzCarter`"];
 
 
 (* ::Section::Closed:: *)

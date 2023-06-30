@@ -1,5 +1,5 @@
 Paclet[
-  "Name" -> "xAct`SchwarzschildPerturbations`",
+  "Name" -> "SchwarzschildPerturbations",
   "Version" -> "1.0.0",
   "MathematicaVersion" -> "10.2+",
   "Creator" -> "Andrew Spiers, Adam Pound, Barry Wardell",
