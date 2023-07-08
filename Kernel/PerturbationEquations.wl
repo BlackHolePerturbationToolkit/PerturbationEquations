@@ -564,6 +564,34 @@ BLStotr[x_]:={1/Sqrt[2](f[r[]]x[[3]]+x[[1]]),1/(Sqrt[2]f[r[]])x[[2]],1/(Sqrt[2]f
 
 
 (* ::Section::Closed:: *)
+(*Carter tetrad to tr basis*)
+
+
+CarterTotrhRule={h[{1, -NP}, {1, -NP}, LI[0], LI[l_], LI[m_]] :> hrr[LI[l], LI[m]]/(2*f[r[]]) + htr[LI[l], LI[m]] + (f[r[]]*htt[LI[l], LI[m]])/2, 
+h[{2, -NP}, {2, -NP}, LI[0], LI[l_], LI[m_]] :> (hrr[LI[l], LI[m]]/f[r[]] - 2*htr[LI[l], LI[m]] + f[r[]]*htt[LI[l], LI[m]])/2, 
+h[{1, -NP}, {2, -NP}, LI[0], LI[l_], LI[m_]] :> -1/2*hrr[LI[l], LI[m]]/f[r[]] + (f[r[]]*htt[LI[l], LI[m]])/2, 
+h[{3, -NP}, {4, -NP}, LI[0], LI[l_], LI[m_]] :> htrAB[LI[l], LI[m]]/r[]^2,
+h[{1, -NP}, {3, -NP}, LI[1], LI[l_], LI[m_]] :> -1/2*((f[r[]]*(I*hrm[LI[l], LI[m]] + hrp[LI[l], LI[m]]) + I*htm[LI[l], LI[m]] + htp[LI[l], LI[m]])*mu[LI[l], -LI[1]])/(Sqrt[f[r[]]]*r[]), 
+h[{1, -NP}, {4, -NP}, LI[-1], LI[l_], LI[m_]] :> ((f[r[]]*((-I)*hrm[LI[l], LI[m]] + hrp[LI[l], LI[m]]) - I*htm[LI[l], LI[m]] + htp[LI[l], LI[m]])*mu[LI[l], -LI[1]])/(2*Sqrt[f[r[]]]*r[]),
+h[{2, -NP}, {3, -NP}, LI[1], LI[l_], LI[m_]] :> ((f[r[]]*(I*hrm[LI[l], LI[m]] + hrp[LI[l], LI[m]]) - I*htm[LI[l], LI[m]] - htp[LI[l], LI[m]])*mu[LI[l], -LI[1]])/(2*Sqrt[f[r[]]]*r[]), 
+h[{2, -NP}, {4, -NP}, LI[-1], LI[l_], LI[m_]] :> ((I*f[r[]]*(hrm[LI[l], LI[m]] + I*hrp[LI[l], LI[m]]) - I*htm[LI[l], LI[m]] + htp[LI[l], LI[m]])*mu[LI[l], -LI[1]])/(2*Sqrt[f[r[]]]*r[]),
+h[{3, -NP}, {3, -NP}, LI[2], LI[l_], LI[m_]] :> ((I*hm[LI[l], LI[m]] + hp[LI[l], LI[m]])*mu[LI[l], -LI[1]]*mu[LI[l], -LI[2]])/(2*r[]^2), 
+h[{4, -NP}, {4, -NP}, LI[-2], LI[l_], LI[m_]] :> (((-I)*hm[LI[l], LI[m]] + hp[LI[l], LI[m]])*mu[LI[l], -LI[1]]*mu[LI[l], -LI[2]])/(2*r[]^2)}
+
+
+CarterTotr[x_]:={(f[r[]]*(x[[1]] + 2*x[[2]] + x[[5]]))/2,
+(x[[1]] - x[[5]])/2,
+(x[[1]] - 2*x[[2]] + x[[5]])/(2*f[r[]]),
+(Sqrt[f[r[]]]*(-x[[3]] + x[[4]] - x[[6]] + x[[7]])*r[])/(2*mu[LI[l], -LI[1]]),
+(Sqrt[f[r[]]]*(-x[[3]] + x[[4]] + x[[6]] - x[[7]])*r[])/(2*mu[LI[l], -LI[1]]),
+x[[9]]*r[]^2,
+((x[[8]] + x[[10]])*r[]^2)/(mu[LI[l], -LI[1]]*mu[LI[l], -LI[2]]),
+((I/2)*Sqrt[f[r[]]]*(x[[3]] + x[[4]] + x[[6]] + x[[7]])*r[])/mu[LI[l], -LI[1]],
+((I/2)*Sqrt[f[r[]]]*(x[[3]] + x[[4]] - x[[6]] - x[[7]])*r[])/mu[LI[l], -LI[1]],
+((-I)*(x[[8]] - x[[10]])*r[]^2)/(mu[LI[l], -LI[1]]*mu[LI[l], -LI[2]])}
+
+
+(* ::Section::Closed:: *)
 (*From Carter to Kinnersley tetrad rule and function*)
 
 
@@ -651,11 +679,11 @@ If[Source=="S0d2G"&&Gauge=="TraceFreeIngoingRadiationGauge",func=S0d2GCarter/.In
 
 
 If[OutputBasis=="BLS"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[Range[1,10]->CarterToBLS[Values[func]]]];
-If[OutputBasis=="trTensor"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[{"tt","tr","rr","t+","r+","\[EmptyCircle]","+","t-","r-","-"}->BLStotr[CarterToBLS[Values[func]]]]];
+If[OutputBasis=="trTensor"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[{"tt","tr","rr","t+","r+","\[EmptyCircle]","+","t-","r-","-"}->CarterTotr[Values[func]]]];
 If[OutputBasis=="Kinnersley"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"}->CarterToKinnersley[Values[func]]]];
 
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
-If[InputBasis=="trTensor",func=(func/.CarterToBLShRule)/.BLStotrhRule];
+If[InputBasis=="trTensor",func=func/.CarterTotrhRule];
 If[InputBasis=="Kinnersley",func=func/.CarterToKinnersleyhRule];
 
 Return[func]];
@@ -692,11 +720,11 @@ If[Source=="dR"&&Gauge=="TraceFreeIngoingRadiationGauge",func=dRCarter/.IngoingR
 func = Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"} -> func];
 
 If[OutputBasis=="BLS"&&MemberQ[{"dG","dR"},Source],func=Association@@Thread[Range[1,10]->CarterToBLS[Values[func]]]];
-If[OutputBasis=="trTensor"&&MemberQ[{"dG","dR"},Source],func=Association@@Thread[{"tt","tr","rr","t+","r+","\[EmptyCircle]","+","t-","r-","-"}->BLStotr[CarterToBLS[Values[func]]]]];
+If[OutputBasis=="trTensor"&&MemberQ[{"dG","dR"},Source],func=Association@@Thread[{"tt","tr","rr","t+","r+","\[EmptyCircle]","+","t-","r-","-"}->CarterTotr[Values[func]]]];
 If[OutputBasis=="Kinnersley"&&MemberQ[{"dG","dR"},Source],func=Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"}->CarterToKinnersley[Values[func]]]];
 
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
-If[InputBasis=="trTensor",func=(func/.CarterToBLShRule)/.BLStotrhRule];
+If[InputBasis=="trTensor",func=func/.CarterTotrhRule];
 If[InputBasis=="Kinnersley",func=func/.CarterToKinnersleyhRule];
 
 Return[func]];
