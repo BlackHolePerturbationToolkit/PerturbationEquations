@@ -15,7 +15,7 @@ To run this package you will need to install [xAct](http://www.xact.es/).
 After installing xAct and the package you load it using
 
 ```
-xact`PerturbationEquations`
+<<xAct`PerturbationEquations`
 ```
 
 You can find examples in the documentation for the `SchwarzschildLinearOperator` and `SchwarzschildQuadraticOperator` functions.
