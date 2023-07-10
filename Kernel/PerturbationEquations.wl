@@ -59,6 +59,10 @@ BLStotrhRule::usage = "Rule that Expresses Barack-Lousto-Sago modes of the metri
 BLStotr::usage = "Rule that takes a quantity expressed in terms of its Barack-Lousto-Sago modes, and rexpresses the quantity in terms of its tr modes. The resulting list is the tr mode number in the following order {\!\(\*SubscriptBox[\(S\), \(tt\)]\),\!\(\*SubscriptBox[\(S\), \(tr\)]\),\!\(\*SubscriptBox[\(S\), \(rr\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\[EmptyCircle]\)]\),\!\(\*SubscriptBox[\(S\), \(+\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(-\)]\)}.";
 
 
+CarterTotrhRule::usage = "Rule that expresses Carter tetrad modes of the metric perturbation in terms of trTensor basis modes.";
+CarterTotr::usage = "Rule that takes a quantity expressed in terms of its Carter modes and reexpresses the quantity in terms of its tr modes. The resulting list is the tr mode number in the following order {\!\(\*SubscriptBox[\(S\), \(tt\)]\),\!\(\*SubscriptBox[\(S\), \(tr\)]\),\!\(\*SubscriptBox[\(S\), \(rr\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\[EmptyCircle]\)]\),\!\(\*SubscriptBox[\(S\), \(+\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(-\)]\)}.";
+
+
 CarterToKinnersleyhRule::usage = "Rule that takes Expresses Carter tertrad modes of the metric perturbation in terms of the Kinnersley tetrad modes.";
 CarterToKinnersley::usage = "Rule that takes a quantity expressed in terms of its Carter modes with its inputs also in terms of Carter modes, and rexpresses the quantity in terms of its the Kinnersley tetrad modes with the Kinnersley tetrad mode inputs.";
 
