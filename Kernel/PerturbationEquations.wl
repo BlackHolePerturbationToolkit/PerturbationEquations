@@ -52,26 +52,26 @@ ReportSet[$CVVerbose,False];
 (*Rules*)
 
 
-CarterToBLShRule::usage = "Rule that Expresses Carter tertrad modes of the metric perturbation in terms of Barack-Lousto-Sago modes.";
-CarterToBLS::usage = "Rule that takes a quantity expressed in terms of its Carter modes with its inputs also in terms of Carter modes, and rexpresses the quantity in terms of its the Barack-Lousto-Sago modes with Barack-Lousto-Sago mode inputs. The resulting list is the BLS mode number from 1 to 10.";
+CarterToBLShRule::usage = "Rule that expresses Carter tetrad modes of the metric perturbation in terms of Barack-Lousto-Sago modes.";
+CarterToBLS::usage = "Rule that takes a quantity expressed in terms of its Carter modes with its inputs also in terms of Carter modes, and reexpresses the quantity in terms of its the Barack-Lousto-Sago modes with Barack-Lousto-Sago mode inputs. The resulting list is the BLS mode number from 1 to 10.";
 
-BLStotrhRule::usage = "Rule that Expresses Barack-Lousto-Sago modes of the metric perturbation in terms of trTensor basis modes.";
-BLStotr::usage = "Rule that takes a quantity expressed in terms of its Barack-Lousto-Sago modes, and rexpresses the quantity in terms of its tr modes. The resulting list is the tr mode number in the following order {\!\(\*SubscriptBox[\(S\), \(tt\)]\),\!\(\*SubscriptBox[\(S\), \(tr\)]\),\!\(\*SubscriptBox[\(S\), \(rr\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\[EmptyCircle]\)]\),\!\(\*SubscriptBox[\(S\), \(+\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(-\)]\)}.";
 
+BLStotrhRule::usage = "Rule that expresses Barack-Lousto-Sago modes of the metric perturbation in terms of trTensor basis modes.";
+BLStotr::usage = "Rule that takes a quantity expressed in terms of its Barack-Lousto-Sago modes, and reexpresses the quantity in terms of its tr modes. The resulting list is the tr mode number in the following order {\!\(\*SubscriptBox[\(S\), \(tt\)]\),\!\(\*SubscriptBox[\(S\), \(tr\)]\),\!\(\*SubscriptBox[\(S\), \(rr\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\[EmptyCircle]\)]\),\!\(\*SubscriptBox[\(S\), \(+\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(-\)]\)}.";
 
 CarterTotrhRule::usage = "Rule that expresses Carter tetrad modes of the metric perturbation in terms of trTensor basis modes.";
 CarterTotr::usage = "Rule that takes a quantity expressed in terms of its Carter modes and reexpresses the quantity in terms of its tr modes. The resulting list is the tr mode number in the following order {\!\(\*SubscriptBox[\(S\), \(tt\)]\),\!\(\*SubscriptBox[\(S\), \(tr\)]\),\!\(\*SubscriptBox[\(S\), \(rr\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(+\)\)]\),\!\(\*SubscriptBox[\(S\), \(\[EmptyCircle]\)]\),\!\(\*SubscriptBox[\(S\), \(+\)]\),\!\(\*SubscriptBox[\(S\), \(\(t\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(\(r\)\(-\)\)]\),\!\(\*SubscriptBox[\(S\), \(-\)]\)}.";
 
 
-CarterToKinnersleyhRule::usage = "Rule that takes Expresses Carter tertrad modes of the metric perturbation in terms of the Kinnersley tetrad modes.";
-CarterToKinnersley::usage = "Rule that takes a quantity expressed in terms of its Carter modes with its inputs also in terms of Carter modes, and rexpresses the quantity in terms of its the Kinnersley tetrad modes with the Kinnersley tetrad mode inputs.";
+CarterToKinnersleyhRule::usage = "Rule that expresses Carter tetrad modes of the metric perturbation in terms of the Kinnersley tetrad modes.";
+CarterToKinnersley::usage = "Rule that takes a quantity expressed in terms of its Carter modes with its inputs also in terms of Carter modes, and reexpresses the quantity in terms of Kinnersley tetrad modes with the Kinnersley tetrad mode inputs.";
 
 
 FrequencyDomainConversion::usage = "Rule for converting t derivatives to frequency domain. Assumes the time dependence is Exp[-i\[Omega]t].";
 
 
 RWGaugeConditionNPform::usage = "Rule that imposes the Regge-Wheeler gauge in the Carter tetrad.";
-RWGaugeConditionVectorHarmonicdecompform::usage = "Rule that imposes the Regge-Wheeler gauge in the Vector harmonic decomposition.";
+RWGaugeConditionVectorHarmonicdecompform::usage = "Rule that imposes the Regge-Wheeler gauge in the vector harmonic decomposition.";
 
 
 ftoMrule::usage = "Rule for f(r)=1-2M/r.";
@@ -222,10 +222,10 @@ hrm::usage ="r component of the minus angular part of the metric perturbation.";
 (*Functions*)
 
 
-SchwarzschildQuadraticOperator::usage = "SchwarzschildQuadraticOperator[source, gauge, output, input] generates decomposed, Boyer\[Dash]Lindquist coordinate form, quadratic opperators for second-order sources in Schwarzschild spacetime.";
+SchwarzschildQuadraticOperator::usage = "SchwarzschildQuadraticOperator[source, gauge, output, input] generates decomposed, Boyer\[Dash]Lindquist coordinate form, quadratic operators for second-order sources in Schwarzschild spacetime.";
 
 
-SchwarzschildLinearOperator::usage = "SchwarzschildLinearOperator[source, gauge, output, input] generated decomposed, Boyer\[Dash]Lindquist coordinate form, linear opperators in Schwarzschild spacetime.";
+SchwarzschildLinearOperator::usage = "SchwarzschildLinearOperator[source, gauge, output, input] generates decomposed, Boyer\[Dash]Lindquist coordinate form, linear operators in Schwarzschild spacetime.";
 
 
 SchwarzschildQuadraticCovariantSource::usage = "SchwarzschildQuadraticCovariantSource[source, gauge] generates d2G, a second-order source in Schwarzschild spacetime, in the t-r covariant manifold.";
