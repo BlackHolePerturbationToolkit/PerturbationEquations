@@ -481,11 +481,11 @@ Get["xAct`PerturbationEquations`S4d2GCarter`"];
 Get["xAct`PerturbationEquations`S4d2GLorenzCarter`"];
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Regge-Wheeler gauge condition rule*)
 
 
-RWGaugeConditionNPform={h[{3,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{4,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{1,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>h[{1,-NP},{3,-NP},LI[-s],LI[l],LI[m]],h[{2,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>h[{2,-NP},{4,-NP},LI[-s],LI[l],LI[m]]}
+RWGaugeConditionNPform={h[{3,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{4,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{1,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>h[{1,-NP},{3,-NP},LI[-s],LI[l],LI[m]],h[{2,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>h[{2,-NP},{3,-NP},LI[-s],LI[l],LI[m]]}
 
 RWGaugeConditionVectorHarmonicdecompform={hap[___]->0,hp[___]->0,hm[___]->0};
 
