@@ -481,7 +481,7 @@ Get["xAct`PerturbationEquations`S4d2GCarter`"];
 Get["xAct`PerturbationEquations`S4d2GLorenzCarter`"];
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Regge-Wheeler gauge condition rule*)
 
 
