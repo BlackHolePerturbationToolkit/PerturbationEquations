@@ -629,6 +629,17 @@ sigmarule={\[Sigma]->(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]),\[Sigma]p->\[Sigma]
 CIntrule={CInt[xAct`xTensor`LI[l_],xAct`xTensor`LI[m_],xAct`xTensor`LI[s_],-xAct`xTensor`LI[l1_],-xAct`xTensor`LI[m1_],-xAct`xTensor`LI[s1_],-xAct`xTensor`LI[l2_],-xAct`xTensor`LI[m2_],-xAct`xTensor`LI[s2_]]:>(-1)^(m+s)Sqrt[(2l+1)(2l1+1)(2l2+1)/(4 Pi)]ThreeJSymbol[{l,s},{l1,-s1},{l2,-s2}]ThreeJSymbol[{l,-m},{l1,m1},{l2,m2}]};
 
 
+(* ::Text:: *)
+(*Automatically set coupling terms that violate the 3j-symbol selection rules to 0*)
+
+
+CInt[LI[l_], LI[m_], LI[s_], -LI[l1_], -LI[m1_], -LI[s1_], -LI[l2_], -LI[m2_], -LI[s2_]] := 0 /; s!=s1+s2
+CInt[LI[l_], LI[m_], LI[s_], -LI[l1_], -LI[m1_], -LI[s1_], -LI[l2_], -LI[m2_], -LI[s2_]] := 0 /; m!=m1+m2
+CInt[LI[l_], LI[m_], LI[s_], -LI[l1_], -LI[m1_], -LI[s1_], -LI[l2_], -LI[m2_], -LI[s2_]] := 0 /; m>Abs[l] || m<-Abs[l] || m1>Abs[l1] || m1<-Abs[l1] || m2>Abs[l2] || m2<-Abs[l2]
+CInt[LI[l_], LI[m_], LI[s_], -LI[l1_], -LI[m1_], -LI[s1_], -LI[l2_], -LI[m2_], -LI[s2_]] := 0 /; -s>Abs[l] || -s<-Abs[l] || -s1>Abs[l1] || -s1<-Abs[l1] || -s2>Abs[l2] || -s2<-Abs[l2]
+CInt[LI[l_], LI[m_], LI[s_], -LI[l1_], -LI[m1_], -LI[s1_], -LI[l2_], -LI[m2_], -LI[s2_]] := 0 /; Abs[l1-l2]>l || l>l1+l2
+
+
 lmReplacerule[func_,ld_,md_,l1d_,m1d_,l2d_,m2d_]:=func/.l->ld/.m->md/.l1->l1d/.m1->m1d/.l2->l2d/.m2->m2d/.CIntrule/.mutolrule;
 
 
