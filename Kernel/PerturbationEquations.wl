@@ -344,8 +344,8 @@ FormatBasis[PDNP[{4,-NP}],"\!\(\*OverscriptBox[\(\[Delta]\), \(_\)]\)"];
 xTensorFormStart[];
 
 
-DefTensor[CInt[],M4,PrintAs->"C "];
-DefTensor[mu[],M4,PrintAs->"\[Mu] "];
+DefTensor[CInt[LI[l],LI[m],LI[s],-LI[l1],-LI[m1],-LI[s1],-LI[l2],-LI[m2],-LI[s2]],M4,PrintAs->"C"];
+DefTensor[mu[LI[l],-LI[s]],M4,PrintAs->"\[Mu]"];
 
 
 Unprotect[PD];
