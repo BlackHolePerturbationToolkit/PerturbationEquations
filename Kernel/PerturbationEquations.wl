@@ -44,11 +44,11 @@ ReportSet[$DefInfoQ,False];
 ReportSet[$CVVerbose,False];
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Usage messages*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Rules*)
 
 
@@ -487,7 +487,7 @@ Get["xAct`PerturbationEquations`S4d2GLorenzCarter`"];
 
 RWGaugeConditionNPform={h[{3,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{4,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>0,h[{1,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>h[{1,-NP},{3,-NP},LI[-s],LI[l],LI[m]],h[{2,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>h[{2,-NP},{3,-NP},LI[-s],LI[l],LI[m]]}
 
-RWGaugeConditionVectorHarmonicdecompform={hap[___]->0,hp[___]->0,hm[___]->0};
+RWGaugeConditionVectorHarmonicdecompform={(hap|htp|hrp|hp|hm)[___]->0};
 
 
 (* ::Section::Closed:: *)
@@ -730,6 +730,8 @@ If[OutputBasis=="Kinnersley"&&MemberQ[{"dG","dR"},Source],func=Association@@Thre
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
 If[InputBasis=="trTensor",func=func/.CarterTotrhRule];
 If[InputBasis=="Kinnersley",func=func/.CarterToKinnersleyhRule];
+
+If[Gauge=="ReggeWheeler",func=func/.RWGaugeConditionVectorHarmonicdecompform];
 
 Return[func]];
 
