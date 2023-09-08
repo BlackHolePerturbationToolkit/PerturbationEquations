@@ -551,7 +551,7 @@ ail[[10]]/r[](I (x[[8]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] r[]-x[[10]] mu[LI[l]
 
 
 (* ::Section::Closed:: *)
-(*BLS to tr basis rule and function*)
+(*BLS to t-r basis rule and function*)
 
 
 BLStotrhRule={hBS[LI[1],LI[l_],LI[m_]]:>r[](f[r[]]^2 htt[LI[l],LI[m]]+hrr[LI[l],LI[m]]),
@@ -570,7 +570,7 @@ BLStotr[x_]:={1/Sqrt[2](f[r[]]x[[3]]+x[[1]]),1/(Sqrt[2]f[r[]])x[[2]],1/(Sqrt[2]f
 
 
 (* ::Section::Closed:: *)
-(*Carter tetrad to tr basis*)
+(*Carter tetrad to t-r basis*)
 
 
 CarterTotrhRule={h[{1, -NP}, {1, -NP}, LI[0], LI[l_], LI[m_]] :> hrr[LI[l], LI[m]]/(2*f[r[]]) + htr[LI[l], LI[m]] + (f[r[]]*htt[LI[l], LI[m]])/2, 
@@ -616,7 +616,7 @@ CarterToKinnersley[x_]:={2/f[r[]]x[[1]],x[[2]],Sqrt[2/f[r[]]]x[[3]],Sqrt[2/f[r[]
 
 
 (* ::Section::Closed:: *)
-(*Rules for quantities in my notation*)
+(*Rules for f(r), \!\(\*SubsuperscriptBox[\(\[Mu]\), \(s\), \(l\)]\), etc.*)
 
 
 ftoMrule=f->Function[{r},1-2M/r];
