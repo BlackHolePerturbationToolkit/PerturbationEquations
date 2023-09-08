@@ -241,13 +241,6 @@ SchwarzschildCovariantSource::argserror = "Argument `1` is unknown";
 
 
 (* ::Section::Closed:: *)
-(*Begin Private part of package*)
-
-
-Begin["`Private`"]
-
-
-(* ::Section::Closed:: *)
 (*Definitions*)
 
 
@@ -364,6 +357,13 @@ Protect[PD];
 DefConstantSymbol[\[Omega]]
 DefConstantSymbol[\[Omega]1,PrintAs->"\!\(\*SubscriptBox[\(\[Omega]\), \(1\)]\)"]
 DefConstantSymbol[\[Omega]2,PrintAs->"\!\(\*SubscriptBox[\(\[Omega]\), \(2\)]\)"]
+
+
+(* ::Section::Closed:: *)
+(*Begin Private part of package*)
+
+
+Begin["`Private`"]
 
 
 (* ::Section::Closed:: *)
