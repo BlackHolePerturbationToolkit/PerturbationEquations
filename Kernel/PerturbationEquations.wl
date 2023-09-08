@@ -44,7 +44,7 @@ ReportSet[$DefInfoQ,False];
 ReportSet[$CVVerbose,False];
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Usage messages*)
 
 
@@ -262,7 +262,9 @@ DefProductMetric[g[-\[Alpha],-\[Beta]],{{TangentR2,1},{TangentS2,r[]}},CD,Symbol
 
 DefConstantSymbol[M];
 DefScalarFunction[f];
-DefTensor[r[],M4];
+(*DefTensor[r[],M4];*)
+
+DefChart[BL,R2,{0,1},{t[],r[]}]
 
 $Assumptions=f[r[]]>0;
 
