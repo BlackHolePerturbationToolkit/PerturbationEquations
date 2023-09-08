@@ -616,7 +616,7 @@ CarterToKinnersley[x_]:={2/f[r[]]x[[1]],x[[2]],Sqrt[2/f[r[]]]x[[3]],Sqrt[2/f[r[]
 
 
 (* ::Section::Closed:: *)
-(*Rules for f(r), \!\(\*SubsuperscriptBox[\(\[Mu]\), \(s\), \(l\)]\), etc.*)
+(*Rules for f[r], mu[l,s], etc.*)
 
 
 ftoMrule=f->Function[{r},1-2M/r];
@@ -647,7 +647,7 @@ If[!MemberQ[{"Generic","Lorenz","ReggeWheeler","OutgoingRadiationGauge","TraceFr
 If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},OutputBasis],Message[SchwarzschildSource::argserror,OutputBasis]];
 If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},InputBasis],Message[SchwarzschildSource::argserror,InputBasis]];
 
-If[MemberQ[{"S4d2G","S0d2G"},Source]&&MemberQ[{"BLS","trTensor","Kinnersley"},OutputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]&&Abort[]];
+If[MemberQ[{"S4d2G","S0d2G"},Source]&&MemberQ[{"BLS","trTensor"},OutputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]&&Abort[]];
 
 
 If[Source=="d2G"&&Gauge=="Generic",func=d2GCarter];
@@ -687,6 +687,8 @@ If[Source=="S0d2G"&&Gauge=="TraceFreeIngoingRadiationGauge",func=S0d2GCarter/.In
 If[OutputBasis=="BLS"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[Range[1,10]->CarterToBLS[Values[func]]]];
 If[OutputBasis=="trTensor"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[{"tt","tr","rr","t+","r+","\[EmptyCircle]","+","t-","r-","-"}->CarterTotr[Values[func]]]];
 If[OutputBasis=="Kinnersley"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"}->CarterToKinnersley[Values[func]]]];
+If[OutputBasis=="Kinnersley"&&Source=="S0d2G",func=func*2/f[r[]]];
+If[OutputBasis=="Kinnersley"&&Source=="S4d2G",func=func*f[r[]]/2];
 
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
 If[InputBasis=="trTensor",func=func/.CarterTotrhRule];
