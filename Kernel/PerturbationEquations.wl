@@ -44,11 +44,11 @@ ReportSet[$DefInfoQ,False];
 ReportSet[$CVVerbose,False];
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Usage messages*)
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Rules*)
 
 
@@ -80,7 +80,7 @@ lambdatolrule::usage = "Rule for \[Lambda]1=\!\(\*SqrtBox[\(l \((l + 1)\)\)]\) a
 sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Symbols*)
 
 
@@ -107,7 +107,7 @@ OutgoingRadiationGauge::usage="The Outgoing Radiation Gauge, \!\(\*SubscriptBox[
 TraceFreeOutgoingRadiationGauge::usage="The Trace free Outgoing Radiation Gauge, \!\(\*SubscriptBox[\(h\), \(na\)]\)=0=\!\(\*SubscriptBox[\(h\), \(m \*OverscriptBox[\(m\), \(_\)]\)]\)."
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Coupling coefficients*)
 
 
@@ -136,7 +136,7 @@ SchwarzschildPerturbations`l2,\nEditable->False]}], \"+\", \"1\"}], \")\"}]}],
 RowBox[{\"4\", \" \", \"\[Pi]\"}]]]\) ThreeJSymbol[{SchwarzschildPerturbations`l,s},{SchwarzschildPerturbations`l1,-s1},{SchwarzschildPerturbations`l2,-s2}] ThreeJSymbol[{SchwarzschildPerturbations`l,-SchwarzschildPerturbations`m},{SchwarzschildPerturbations`l1,SchwarzschildPerturbations`m1},{SchwarzschildPerturbations`l2,SchwarzschildPerturbations`m2}]}";
 
 
-mu::usage = "\[Mu]=\!\(\*SqrtBox[\(\((l - s)\) \((l + 1 + s)\)\)]\)";
+mu::usage = "\[Mu]=\!\(\*SqrtBox[\(\((l + 1 - s)\) \((l + s)\)\)]\)";
 
 
 lmReplacerule::usage = "lmReplaceRule[func_,ld_,md_,l1d_,m1d_,l2d_,m2d_]:=func/.l->ld/.m->md/.l1->l1d/.m1->m1d/.l2->l2d/.m2->m2d/.CIntRule/.mutolrule. 
@@ -218,7 +218,7 @@ htm::usage ="t component of the minus angular part of the metric perturbation.";
 hrm::usage ="r component of the minus angular part of the metric perturbation.";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Functions*)
 
 
