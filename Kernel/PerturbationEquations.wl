@@ -735,6 +735,8 @@ If[InputBasis=="Kinnersley",func=func/.CarterToKinnersleyhRule];
 
 If[Gauge=="ReggeWheeler",func=func/.RWGaugeConditionVectorHarmonicdecompform];
 
+func=func/.{l1->l,m1->m};
+
 Return[func]];
 
 
