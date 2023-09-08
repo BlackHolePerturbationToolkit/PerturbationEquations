@@ -48,7 +48,7 @@ ReportSet[$CVVerbose,False];
 (*Usage messages*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Rules*)
 
 
@@ -80,7 +80,7 @@ lambdatolrule::usage = "Rule for \[Lambda]1=\!\(\*SqrtBox[\(l \((l + 1)\)\)]\) a
 sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Symbols*)
 
 
@@ -107,7 +107,7 @@ OutgoingRadiationGauge::usage="The Outgoing Radiation Gauge, \!\(\*SubscriptBox[
 TraceFreeOutgoingRadiationGauge::usage="The Trace free Outgoing Radiation Gauge, \!\(\*SubscriptBox[\(h\), \(na\)]\)=0=\!\(\*SubscriptBox[\(h\), \(m \*OverscriptBox[\(m\), \(_\)]\)]\)."
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Coupling coefficients*)
 
 
@@ -218,7 +218,7 @@ htm::usage ="t component of the minus angular part of the metric perturbation.";
 hrm::usage ="r component of the minus angular part of the metric perturbation.";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Functions*)
 
 
@@ -496,8 +496,8 @@ RWGaugeConditionVectorHarmonicdecompform={(hap|htp|hrp|hp|hm)[___]->0};
 (*Radiation gauge condition rule*)
 
 
-OutgoingRadiationGauge={h[{1,-NP}, _, LI[s_], LI[l_], LI[m_]] -> 0, h[_, {1,-NP}, LI[s_], LI[l_], LI[m_]] -> 0};
-IngoingRadiationGauge={h[{2,-NP}, _, LI[s_], LI[l_], LI[m_]] -> 0, h[_, {2,-NP}, LI[s_], LI[l_], LI[m_]] -> 0};
+IngoingRadiationGauge={h[{1,-NP}, _, LI[s_], LI[l_], LI[m_]] -> 0, h[_, {1,-NP}, LI[s_], LI[l_], LI[m_]] -> 0};
+OutgoingRadiationGauge={h[{2,-NP}, _, LI[s_], LI[l_], LI[m_]] -> 0, h[_, {2,-NP}, LI[s_], LI[l_], LI[m_]] -> 0};
 
 TraceFreeGauge={h[{1,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]] -> 0, h[{3,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]] -> 0};
 
