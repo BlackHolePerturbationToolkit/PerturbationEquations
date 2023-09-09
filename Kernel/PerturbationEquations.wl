@@ -569,18 +569,18 @@ hBS[LI[10],LI[l_],LI[m_]]:>-mu[LI[l],-LI[1]]^2 mu[LI[l],-LI[2]]^2/r[] hm[LI[l],L
 BLStotr[x_]:={1/Sqrt[2](f[r[]]x[[3]]+x[[1]]),1/(Sqrt[2]f[r[]])x[[2]],1/(Sqrt[2]f[r[]]^2)(-f[r[]]x[[3]]+x[[1]]),r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[4]],r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[5]],r[]^2/(Sqrt[2])x[[6]],Sqrt[2]r[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[7]],-r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[8]],-r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[9]],-Sqrt[2]r[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[10]]};
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Carter tetrad to t-r basis*)
 
 
-CarterTotrhRule={h[{1, -NP}, {1, -NP}, LI[0], LI[l_], LI[m_]] :> hrr[LI[l], LI[m]]/(2*f[r[]]) + htr[LI[l], LI[m]] + (f[r[]]*htt[LI[l], LI[m]])/2, 
-h[{2, -NP}, {2, -NP}, LI[0], LI[l_], LI[m_]] :> (hrr[LI[l], LI[m]]/f[r[]] - 2*htr[LI[l], LI[m]] + f[r[]]*htt[LI[l], LI[m]])/2, 
-h[{1, -NP}, {2, -NP}, LI[0], LI[l_], LI[m_]] :> -1/2*hrr[LI[l], LI[m]]/f[r[]] + (f[r[]]*htt[LI[l], LI[m]])/2, 
+CarterTotrhRule={h[{1, -NP}, {1, -NP}, LI[0], LI[l_], LI[m_]] :> hrr[LI[l], LI[m]]f[r[]]/2 + htr[LI[l], LI[m]] + htt[LI[l], LI[m]]/(2f[r[]]), 
+h[{2, -NP}, {2, -NP}, LI[0], LI[l_], LI[m_]] :> hrr[LI[l], LI[m]]f[r[]]/2 - htr[LI[l], LI[m]] + htt[LI[l], LI[m]]/(2f[r[]]), 
+h[{1, -NP}, {2, -NP}, LI[0], LI[l_], LI[m_]] :> -hrr[LI[l], LI[m]]f[r[]]/2 + htt[LI[l], LI[m]]/(2f[r[]]), 
 h[{3, -NP}, {4, -NP}, LI[0], LI[l_], LI[m_]] :> htrAB[LI[l], LI[m]]/r[]^2,
-h[{1, -NP}, {3, -NP}, LI[1], LI[l_], LI[m_]] :> -1/2*((f[r[]]*(I*hrm[LI[l], LI[m]] + hrp[LI[l], LI[m]]) + I*htm[LI[l], LI[m]] + htp[LI[l], LI[m]])*mu[LI[l], -LI[1]])/(Sqrt[f[r[]]]*r[]), 
+h[{1, -NP}, {3, -NP}, LI[1], LI[l_], LI[m_]] :> -((f[r[]]*(I*hrm[LI[l], LI[m]] + hrp[LI[l], LI[m]]) + I*htm[LI[l], LI[m]] + htp[LI[l], LI[m]])*mu[LI[l], -LI[1]])/(2*Sqrt[f[r[]]]*r[]), 
 h[{1, -NP}, {4, -NP}, LI[-1], LI[l_], LI[m_]] :> ((f[r[]]*((-I)*hrm[LI[l], LI[m]] + hrp[LI[l], LI[m]]) - I*htm[LI[l], LI[m]] + htp[LI[l], LI[m]])*mu[LI[l], -LI[1]])/(2*Sqrt[f[r[]]]*r[]),
-h[{2, -NP}, {3, -NP}, LI[1], LI[l_], LI[m_]] :> ((f[r[]]*(I*hrm[LI[l], LI[m]] + hrp[LI[l], LI[m]]) - I*htm[LI[l], LI[m]] - htp[LI[l], LI[m]])*mu[LI[l], -LI[1]])/(2*Sqrt[f[r[]]]*r[]), 
-h[{2, -NP}, {4, -NP}, LI[-1], LI[l_], LI[m_]] :> ((I*f[r[]]*(hrm[LI[l], LI[m]] + I*hrp[LI[l], LI[m]]) - I*htm[LI[l], LI[m]] + htp[LI[l], LI[m]])*mu[LI[l], -LI[1]])/(2*Sqrt[f[r[]]]*r[]),
+h[{2, -NP}, {3, -NP}, LI[1], LI[l_], LI[m_]] :> -((f[r[]]*(-I*hrm[LI[l], LI[m]] - hrp[LI[l], LI[m]]) + I*htm[LI[l], LI[m]] + htp[LI[l], LI[m]])*mu[LI[l], -LI[1]])/(2*Sqrt[f[r[]]]*r[]), 
+h[{2, -NP}, {4, -NP}, LI[-1], LI[l_], LI[m_]] :> ((f[r[]]*(I*hrm[LI[l], LI[m]] - hrp[LI[l], LI[m]]) - I*htm[LI[l], LI[m]] + htp[LI[l], LI[m]])*mu[LI[l], -LI[1]])/(2*Sqrt[f[r[]]]*r[]),
 h[{3, -NP}, {3, -NP}, LI[2], LI[l_], LI[m_]] :> ((I*hm[LI[l], LI[m]] + hp[LI[l], LI[m]])*mu[LI[l], -LI[1]]*mu[LI[l], -LI[2]])/(2*r[]^2), 
 h[{4, -NP}, {4, -NP}, LI[-2], LI[l_], LI[m_]] :> (((-I)*hm[LI[l], LI[m]] + hp[LI[l], LI[m]])*mu[LI[l], -LI[1]]*mu[LI[l], -LI[2]])/(2*r[]^2)}
 
