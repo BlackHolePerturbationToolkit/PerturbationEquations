@@ -1,6 +1,6 @@
 Paclet[
   "Name" -> "PerturbationEquations",
-  "Version" -> "0.1.0",
+  "Version" -> "0.2.0",
   "MathematicaVersion" -> "10.2+",
   "Creator" -> "Andrew Spiers, Adam Pound, Barry Wardell",
   "Description" -> "A set of functions for working with perturbations of black hole spacetime",
