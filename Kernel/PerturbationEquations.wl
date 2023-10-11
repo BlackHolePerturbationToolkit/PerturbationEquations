@@ -257,7 +257,9 @@ DefConstantSymbol[M];
 DefScalarFunction[f];
 (*DefTensor[r[],M4];*)
 
-DefChart[BL,R2,{0,1},{t[],r[]}]
+DefChart[BL,R2,{0,1},{t[],r[]}];
+
+MetricInBasis[q,-BL,{{-f[r[]],0},{0,1/f[r[]]}}];
 
 $Assumptions=f[r[]]>0;
 
@@ -274,6 +276,10 @@ DefConstantSymbol[\[Sigma]];DefConstantSymbol[\[Sigma]p,PrintAs->"\!\(\*Subscrip
 
 DefTensor[n[-a],{}];
 DefTensor[dt[-a],{}];
+
+ComponentValue[ComponentArray[n[{-a,BL}]],{0,1}];
+ComponentValue[ComponentArray[dt[{-a,BL}]],{1,0}];
+ComponentValue[ComponentArray[n[{a,BL}]],{0,f[r[]]}];
 
 DefTensor[h[-\[Alpha],-\[Beta]],M4,Symmetric[{-\[Alpha],-\[Beta]}]];
 DefTensor[hab[-a,-b],{R2,S2},Symmetric[{-a,-b}],PrintAs->"h"];
@@ -569,7 +575,7 @@ hBS[LI[10],LI[l_],LI[m_]]:>-mu[LI[l],-LI[1]]^2 mu[LI[l],-LI[2]]^2/r[] hm[LI[l],L
 BLStotr[x_]:={1/Sqrt[2](f[r[]]x[[3]]+x[[1]]),1/(Sqrt[2]f[r[]])x[[2]],1/(Sqrt[2]f[r[]]^2)(-f[r[]]x[[3]]+x[[1]]),r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[4]],r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[5]],r[]^2/(Sqrt[2])x[[6]],Sqrt[2]r[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[7]],-r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[8]],-r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[9]],-Sqrt[2]r[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[10]]};
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Carter tetrad to t-r basis*)
 
 
@@ -636,7 +642,7 @@ CIntrule={CInt[xAct`xTensor`LI[l_],xAct`xTensor`LI[m_],xAct`xTensor`LI[s_],-xAct
 lmReplacerule[func_,ld_,md_,l1d_,m1d_,l2d_,m2d_]:=func/.l->ld/.m->md/.l1->l1d/.m1->m1d/.l2->l2d/.m2->m2d/.CIntrule/.mutolrule;
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*SchwarzschildSource Function*)
 
 
@@ -736,6 +742,10 @@ If[OutputBasis=="Kinnersley"&&MemberQ[{"dG","dR"},Source],func=Association@@Thre
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
 If[InputBasis=="trTensor",func=func/.CarterTotrhRule];
 If[InputBasis=="Kinnersley",func=func/.CarterToKinnersleyhRule];
+
+If[InputBasis=="trTensor"&&OutputBasis=="trTensor",
+Do[func[key]=func[key]/.(htm|hrm|hm)[__]->0,{key,{"tt","tr","rr","t+","r+","\[EmptyCircle]","+"}}];
+Do[func[key]=func[key]/.(htp|hrp|hp)[__]->0,{key,{"t-","r-","-"}}]];
 
 If[Gauge=="ReggeWheeler",func=func/.RWGaugeConditionVectorHarmonicdecompform];
 
