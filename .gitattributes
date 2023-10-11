@@ -87,14 +87,14 @@
 # Caution: *.m also matches Matlab files.
 # ============
 *.nb             text diff=mathematica
-*.wls            text diff=mathematica
-*.wl             text diff=mathematica
-*.m              text diff=mathematica
+*.wls            text diff=wolfram
+*.wl             text diff=wolfram
+*.m              text diff=wolfram
 
 # Test files
 # ==========
-*.wlt            text diff=mathematica
-*.mt             text diff=mathematica
+*.wlt            text diff=wolfram
+*.mt             text diff=wolfram
 
 # Binary files
 # ============
