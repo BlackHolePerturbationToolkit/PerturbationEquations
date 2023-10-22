@@ -508,8 +508,11 @@ OutgoingRadiationGauge={h[{2,-NP}, _, LI[s_], LI[l_], LI[m_]] -> 0, h[_, {2,-NP}
 TraceFreeGauge={h[{1,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]] -> 0, h[{3,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]] -> 0};
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*From Carter to Barack--Lousto--Sago rule and function*)
+
+
+(*Note hBS[LI[i],LI[l],LI[m]] denote the coefficients hilm in h = sum_{ilm} (a/r)hilm Yilm, not the coefficients hbar_{ilm} in the analogous expansion of hbar.*)
 
 
 F=f[r[]]
@@ -554,6 +557,7 @@ ail[[8]]/r[](-I (Sqrt[f[r[]]] x[[3]] mu[LI[l], -LI[1]] r[]+Sqrt[f[r[]]] x[[4]] m
 ail[[9]]/r[](-I (Sqrt[f[r[]]] x[[3]] mu[LI[l], -LI[1]] r[]+Sqrt[f[r[]]] x[[4]] mu[LI[l], -LI[1]] r[]-Sqrt[f[r[]]] x[[6]] mu[LI[l], -LI[1]] r[]-Sqrt[f[r[]]] x[[7]] mu[LI[l], -LI[1]] r[])),
 
 ail[[10]]/r[](I (x[[8]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] r[]-x[[10]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] r[]))};
+(*Input order for CarterToBLS: "ll","ln","lm","lmbar","nn","nm","nmbar","mm","mmbar","mbarmbar"*)
 
 
 (* ::Section::Closed:: *)
@@ -653,7 +657,7 @@ CInt[LI[l_], LI[m_], LI[s_], -LI[l1_], -LI[m1_], -LI[s1_], -LI[l2_], -LI[m2_], -
 lmReplacerule[func_,ld_,md_,l1d_,m1d_,l2d_,m2d_]:=func/.l->ld/.m->md/.l1->l1d/.m1->m1d/.l2->l2d/.m2->m2d/.CIntrule/.mutolrule;
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*SchwarzschildSource Function*)
 
 
