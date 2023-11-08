@@ -5,7 +5,7 @@
 
 
 xAct`HelloWorldxTension`$xTensorVersionExpected={"1.2.0",{2021,10,17}};
-xAct`PerturbationEquations`$Version={"0.1.0",{2023,6,30}}
+xAct`PerturbationEquations`$Version={"0.2.0",{2023,10,11}}
 
 
 With[{xAct`PerturbationEquations`Private`PerturbationEquationsSymbols=DeleteCases[Join[Names["xAct`PerturbationEquations`*"],Names["xAct`PerturbationEquations`Private`*"]],"$Version"|"xAct`PerturbationEquations`$Version"|"$PerturbationEquationsVersionExpected"|"xAct`PerturbationEquations`$xTensorVersionExpected"]},
