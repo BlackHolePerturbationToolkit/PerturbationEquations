@@ -44,7 +44,7 @@ ReportSet[$DefInfoQ,False];
 ReportSet[$CVVerbose,False];
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Usage messages*)
 
 
@@ -231,7 +231,7 @@ SchwarzschildLinearOperator::usage = "SchwarzschildLinearOperator[source, gauge,
 SchwarzschildQuadraticCovariantSource::usage = "SchwarzschildQuadraticCovariantSource[source, gauge] generates d2G, a second-order source in Schwarzschild spacetime, in the t-r covariant manifold.";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Error Messages*)
 
 
@@ -508,7 +508,7 @@ OutgoingRadiationGauge={h[{2,-NP}, _, LI[s_], LI[l_], LI[m_]] -> 0, h[_, {2,-NP}
 TraceFreeGauge={h[{1,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]] -> 0, h[{3,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]] -> 0};
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*From Carter to Barack--Lousto--Sago rule and function*)
 
 
@@ -657,7 +657,7 @@ CInt[LI[l_], LI[m_], LI[s_], -LI[l1_], -LI[m1_], -LI[s1_], -LI[l2_], -LI[m2_], -
 lmReplacerule[func_,ld_,md_,l1d_,m1d_,l2d_,m2d_]:=func/.l->ld/.m->md/.l1->l1d/.m1->m1d/.l2->l2d/.m2->m2d/.CIntrule/.mutolrule;
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*SchwarzschildSource Function*)
 
 
@@ -667,11 +667,11 @@ SchwarzschildQuadraticOperator[Source_,Gauge_:"Generic",OutputBasis_:"Carter",In
 
 If[!MemberQ[{"d2G","d2R","S4d2G","S0d2G"},Source],Message[SchwarzschildSource::argserror,Source]];
 If[!MemberQ[{"Generic","Lorenz","ReggeWheeler","OutgoingRadiationGauge","TraceFreeOutgoingRadiationGauge","IngoingRadiationGauge","TraceFreeIngoingRadiationGauge"},Gauge],Message[SchwarzschildSource::argserror,Gauge]];
-If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},OutputBasis],Message[SchwarzschildSource::argserror,OutputBasis]];
+If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley","Master"},OutputBasis],Message[SchwarzschildSource::argserror,OutputBasis]];
 If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},InputBasis],Message[SchwarzschildSource::argserror,InputBasis]];
 
 If[MemberQ[{"S4d2G","S0d2G"},Source]&&MemberQ[{"BLS","trTensor"},OutputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]&&Abort[]];
-
+If[MemberQ[{"d2G","d2R"},Source]&&MemberQ[{"Master"},OutputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]&&Abort[]];
 
 If[Source=="d2G"&&Gauge=="Generic",func=d2GCarter];
 If[Source=="d2G"&&Gauge=="ReggeWheeler",func=d2GCarter/.RWGaugeConditionNPform];
@@ -712,6 +712,8 @@ If[OutputBasis=="trTensor"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thre
 If[OutputBasis=="Kinnersley"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"}->CarterToKinnersley[Values[func]]]];
 If[OutputBasis=="Kinnersley"&&Source=="S0d2G",func=func*2/f[r[]]];
 If[OutputBasis=="Kinnersley"&&Source=="S4d2G",func=func*f[r[]]/2];
+If[OutputBasis=="Master"&&Source=="S0d2G",func=func*-2*r^2/f[r[]]];
+If[OutputBasis=="Master"&&Source=="S4d2G",func=func*-2*r^4*f[r[]]];
 
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
 If[InputBasis=="trTensor",func=func/.CarterTotrhRule];
