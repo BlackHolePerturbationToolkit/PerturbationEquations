@@ -689,8 +689,8 @@ SchwarzschildQuadraticOperator[Source_,Gauge_:"Generic",OutputBasis_:"Carter",In
 
 If[!MemberQ[{"d2G","d2R","S4d2G","S0d2G"},Source],Message[SchwarzschildSource::argserror,Source]];
 If[!MemberQ[{"Generic","Lorenz","ReggeWheeler","OutgoingRadiationGauge","TraceFreeOutgoingRadiationGauge","IngoingRadiationGauge","TraceFreeIngoingRadiationGauge"},Gauge],Message[SchwarzschildSource::argserror,Gauge]];
-If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley","Master"},OutputBasis],Message[SchwarzschildSource::argserror,OutputBasis]];
-If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},InputBasis],Message[SchwarzschildSource::argserror,InputBasis]];
+If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley","HartleHawking","Master"},OutputBasis],Message[SchwarzschildSource::argserror,OutputBasis]];
+If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley","HartleHawking"},InputBasis],Message[SchwarzschildSource::argserror,InputBasis]];
 
 If[MemberQ[{"S4d2G","S0d2G"},Source]&&MemberQ[{"BLS","trTensor"},OutputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]&&Abort[]];
 If[MemberQ[{"d2G","d2R"},Source]&&MemberQ[{"Master"},OutputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]&&Abort[]];
@@ -734,12 +734,18 @@ If[OutputBasis=="trTensor"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thre
 If[OutputBasis=="Kinnersley"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"}->CarterToKinnersley[Values[func]]]];
 If[OutputBasis=="Kinnersley"&&Source=="S0d2G",func=func*2/f[r[]]];
 If[OutputBasis=="Kinnersley"&&Source=="S4d2G",func=func*f[r[]]/2];
+
+If[OutputBasis=="HartleHawking"&&MemberQ[{"d2G","d2R"},Source],func=Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"}->CarterToHartleHawking[Values[func]]]];
+If[OutputBasis=="HartleHawking"&&Source=="S0d2G",func=func*(2/f[r[]])^(-1)];
+If[OutputBasis=="HartleHawking"&&Source=="S4d2G",func=func*(f[r[]]/2)^(-1)];
+
 If[OutputBasis=="Master"&&Source=="S0d2G",func=func*-2*r^2/f[r[]]];
 If[OutputBasis=="Master"&&Source=="S4d2G",func=func*-2*r^4*f[r[]]];
 
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
 If[InputBasis=="trTensor",func=func/.CarterTotrhRule];
 If[InputBasis=="Kinnersley",func=func/.CarterToKinnersleyhRule];
+If[InputBasis=="HartleHawking",func=func/.CarterToHartleHawkinghRule];
 
 Return[func]];
 
