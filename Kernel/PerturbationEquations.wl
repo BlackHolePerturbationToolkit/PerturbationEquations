@@ -635,18 +635,18 @@ CarterToKinnersley[x_]:={2/f[r[]]x[[1]],x[[2]],Sqrt[2/f[r[]]]x[[3]],Sqrt[2/f[r[]
 (*From Carter to Hartle--Hawking tetrad rule and function*)
 
 
-CarterToHartleHawkinghRule={h[{1,-NP},{1,-NP},LI[s_],LI[l_],LI[m_]]:>f[r[]]/2hK[{1,-NP},{1,-NP},LI[s],LI[l],LI[m]],
+CarterToHartleHawkinghRule={h[{1,-NP},{1,-NP},LI[s_],LI[l_],LI[m_]]:>(f[r[]]/2)^(-1)hK[{1,-NP},{1,-NP},LI[s],LI[l],LI[m]],
 h[{1,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{1,-NP},{2,-NP},LI[s],LI[l],LI[m]],
-h[{1,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>Sqrt[f[r[]]/2]hK[{1,-NP},{3,-NP},LI[s],LI[l],LI[m]],
-h[{1,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>Sqrt[f[r[]]/2]hK[{1,-NP},{4,-NP},LI[s],LI[l],LI[m]],
-h[{2,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]]:>2/f[r[]]hK[{2,-NP},{2,-NP},LI[s],LI[l],LI[m]],
-h[{2,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>Sqrt[2/f[r[]]]hK[{2,-NP},{3,-NP},LI[s],LI[l],LI[m]],
-h[{2,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>Sqrt[2/f[r[]]]hK[{2,-NP},{4,-NP},LI[s],LI[l],LI[m]],
+h[{1,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>(Sqrt[f[r[]]/2])^(-1)hK[{1,-NP},{3,-NP},LI[s],LI[l],LI[m]],
+h[{1,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>(Sqrt[f[r[]]/2])^(-1)hK[{1,-NP},{4,-NP},LI[s],LI[l],LI[m]],
+h[{2,-NP},{2,-NP},LI[s_],LI[l_],LI[m_]]:>(2/f[r[]])^(-1)hK[{2,-NP},{2,-NP},LI[s],LI[l],LI[m]],
+h[{2,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>(Sqrt[2/f[r[]]])^(-1)hK[{2,-NP},{3,-NP},LI[s],LI[l],LI[m]],
+h[{2,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>(Sqrt[2/f[r[]]])^(-1)hK[{2,-NP},{4,-NP},LI[s],LI[l],LI[m]],
 h[{3,-NP},{3,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{3,-NP},{3,-NP},LI[s],LI[l],LI[m]],
 h[{3,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{3,-NP},{4,-NP},LI[s],LI[l],LI[m]],
 h[{4,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{4,-NP},{4,-NP},LI[s],LI[l],LI[m]]};
 
-CarterToHartleHawking[x_]:={2/f[r[]]x[[1]],x[[2]],Sqrt[2/f[r[]]]x[[3]],Sqrt[2/f[r[]]]x[[4]],f[r[]]/2  x[[5]],Sqrt[f[r[]]/2]x[[6]],Sqrt[f[r[]]/2]x[[7]],x[[8]],x[[9]],x[[10]]}
+CarterToHartleHawking[x_]:={(2/f[r[]])^(-1)x[[1]],x[[2]],(Sqrt[2/f[r[]]])^(-1)x[[3]],(Sqrt[2/f[r[]]])^(-1)x[[4]],(f[r[]]/2 )^(-1) x[[5]],(Sqrt[f[r[]]/2])^(-1)x[[6]],(Sqrt[f[r[]]/2])^(-1)x[[7]],x[[8]],x[[9]],x[[10]]}
 
 
 (* ::Section::Closed:: *)
