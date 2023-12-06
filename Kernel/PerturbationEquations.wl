@@ -758,8 +758,8 @@ SchwarzschildLinearOperator[Source_,Gauge_:"Generic",OutputBasis_:"Carter",Input
 
 If[!MemberQ[{"dG","dR"},Source],Message[SchwarzschildSource::argserror,Source]];
 If[!MemberQ[{"Generic","Lorenz","ReggeWheeler","OutgoingRadiationGauge","TraceFreeOutgoingRadiationGauge","IngoingRadiationGauge","TraceFreeIngoingRadiationGauge"},Gauge],Message[SchwarzschildSource::argserror,Gauge]];
-If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},OutputBasis],Message[SchwarzschildSource::argserror,OutputBasis]];
-If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley"},InputBasis],Message[SchwarzschildSource::argserror,InputBasis]];
+If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley","HartleHawking"},OutputBasis],Message[SchwarzschildSource::argserror,OutputBasis]];
+If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley","HartleHawking"},InputBasis],Message[SchwarzschildSource::argserror,InputBasis]];
 
 
 
@@ -783,10 +783,12 @@ func = Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)
 If[OutputBasis=="BLS"&&MemberQ[{"dG","dR"},Source],func=Association@@Thread[Range[1,10]->CarterToBLS[Values[func]]]];
 If[OutputBasis=="trTensor"&&MemberQ[{"dG","dR"},Source],func=Association@@Thread[{"tt","tr","rr","t+","r+","\[EmptyCircle]","+","t-","r-","-"}->CarterTotr[Values[func]]]];
 If[OutputBasis=="Kinnersley"&&MemberQ[{"dG","dR"},Source],func=Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"}->CarterToKinnersley[Values[func]]]];
+If[OutputBasis=="HartleHawking"&&MemberQ[{"dG","dR"},Source],func=Association@@Thread[{"ll","ln","lm","l\!\(\*OverscriptBox[\(m\), \(_\)]\)","nn","nm","n\!\(\*OverscriptBox[\(m\), \(_\)]\)","mm","m\!\(\*OverscriptBox[\(m\), \(_\)]\)","\!\(\*OverscriptBox[\(m\), \(_\)]\)\!\(\*OverscriptBox[\(m\), \(_\)]\)"}->CarterToHartleHawking[Values[func]]]]
 
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
 If[InputBasis=="trTensor",func=func/.CarterTotrhRule];
 If[InputBasis=="Kinnersley",func=func/.CarterToKinnersleyhRule];
+If[InputBasis=="HartleHawking",func=func/.CarterToHartleHawkinghRule];
 
 If[InputBasis=="trTensor"&&OutputBasis=="trTensor",
 Do[func[key]=func[key]/.(htm|hrm|hm)[__]->0,{key,{"tt","tr","rr","t+","r+","\[EmptyCircle]","+"}}];
