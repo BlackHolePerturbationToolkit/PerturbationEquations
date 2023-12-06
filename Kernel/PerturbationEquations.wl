@@ -68,7 +68,7 @@ CarterToKinnersley::usage = "Rule that takes a quantity expressed in terms of it
 
 
 CarterToHartleHawkinghRule::usage = "Rule that expresses Carter tetrad modes of the metric perturbation in terms of the Hartle--Hawking tetrad modes.";
-CarterToHartleHawkingKinnersley::usage = "Rule that takes a quantity expressed in terms of its Carter output modes, and reexpresses the quantity in terms of Hartle--Hawking tetrad output modes.
+CarterToHartleHawkingKinnersley::usage = "Rule that takes a quantity expressed in terms of its Carter output modes, and reexpresses the quantity in terms of Hartle--Hawking tetrad output modes."
 
 
 FrequencyDomainConversion::usage = "Rule for converting t derivatives to frequency domain. Assumes the time dependence is Exp[-i\[Omega]t].";
@@ -84,11 +84,13 @@ lambdatolrule::usage = "Rule for \[Lambda]1=\!\(\*SqrtBox[\(l \((l + 1)\)\)]\) a
 sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 
 
-(* ::Subsection::Closed:: *)
+
+
+(* ::Subsection:: *)
 (*Symbols*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Basis*)
 
 
@@ -99,7 +101,8 @@ trTensor::usage="The Boyer--Lindquist coordinate t r basis with the angular depe
 The ordering of the output terms is {\!\(\*SubscriptBox[\(h\), \(tt\)]\),\!\(\*SubscriptBox[\(h\), \(tr\)]\),\!\(\*SubscriptBox[\(h\), \(rr\)]\),\!\(\*SubscriptBox[\(h\), \(\(t\)\(+\)\)]\),\!\(\*SubscriptBox[\(h\), \(\(r\)\(+\)\)]\),\!\(\*SubscriptBox[\(h\), \(\[EmptyCircle]\)]\),\!\(\*SubscriptBox[\(h\), \(p\)]\),\!\(\*SubscriptBox[\(h\), \(\(t\)\(-\)\)]\),\!\(\*SubscriptBox[\(h\), \(rm\)]\),\!\(\*SubscriptBox[\(h\), \(-\)]\)}"
 
 
-(* ::Subsubsection::Closed:: *)
+
+(* ::Subsubsection:: *)
 (*Gauges*)
 
 
@@ -649,7 +652,7 @@ h[{4,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{4,-NP},{4,-NP},LI[s],LI[l],LI[m]]};
 CarterToHartleHawking[x_]:={(2/f[r[]])^(-1)x[[1]],x[[2]],(Sqrt[2/f[r[]]])^(-1)x[[3]],(Sqrt[2/f[r[]]])^(-1)x[[4]],(f[r[]]/2 )^(-1) x[[5]],(Sqrt[f[r[]]/2])^(-1)x[[6]],(Sqrt[f[r[]]/2])^(-1)x[[7]],x[[8]],x[[9]],x[[10]]}
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Rules for f[r], mu[l,s], etc.*)
 
 
