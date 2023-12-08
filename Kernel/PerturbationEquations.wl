@@ -742,8 +742,8 @@ If[OutputBasis=="HartleHawking"&&MemberQ[{"d2G","d2R"},Source],func=Association@
 If[OutputBasis=="HartleHawking"&&Source=="S0d2G",func=func*(2/f[r[]])^(-1)];
 If[OutputBasis=="HartleHawking"&&Source=="S4d2G",func=func*(f[r[]]/2)^(-1)];
 
-If[OutputBasis=="Master"&&Source=="S0d2G",func=func*-2*r^2/f[r[]]];
-If[OutputBasis=="Master"&&Source=="S4d2G",func=func*-2*r^6*f[r[]]];
+If[OutputBasis=="Master"&&Source=="S0d2G",func=func*-4*r^2/f[r[]]];
+If[OutputBasis=="Master"&&Source=="S4d2G",func=func*-r^6*f[r[]]];
 
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
 If[InputBasis=="trTensor",func=func/.CarterTotrhRule];
