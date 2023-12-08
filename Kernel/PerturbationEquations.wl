@@ -743,7 +743,7 @@ If[OutputBasis=="HartleHawking"&&Source=="S0d2G",func=func*(2/f[r[]])^(-1)];
 If[OutputBasis=="HartleHawking"&&Source=="S4d2G",func=func*(f[r[]]/2)^(-1)];
 
 If[OutputBasis=="Master"&&Source=="S0d2G",func=func*-2*r^2/f[r[]]];
-If[OutputBasis=="Master"&&Source=="S4d2G",func=func*-2*r^4*f[r[]]];
+If[OutputBasis=="Master"&&Source=="S4d2G",func=func*-2*r^6*f[r[]]];
 
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
 If[InputBasis=="trTensor",func=func/.CarterTotrhRule];
