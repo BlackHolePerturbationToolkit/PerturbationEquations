@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Begin Package*)
 
 
@@ -114,7 +114,7 @@ OutgoingRadiationGauge::usage="The Outgoing Radiation Gauge, \!\(\*SubscriptBox[
 TraceFreeOutgoingRadiationGauge::usage="The Trace free Outgoing Radiation Gauge, \!\(\*SubscriptBox[\(h\), \(na\)]\)=0=\!\(\*SubscriptBox[\(h\), \(m \*OverscriptBox[\(m\), \(_\)]\)]\)."
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Coupling coefficients*)
 
 
@@ -156,7 +156,7 @@ Replaces l, m, \!\(\*SubscriptBox[\(l\), \(1\)]\), \!\(\*SubscriptBox[\(m\), \(1
 \[Sigma]p::usage = "\[Sigma]+1";
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Coordinates*)
 
 
@@ -170,7 +170,7 @@ f::usage = "Schwarzschild's function, f(r)=1-2M/r.";
 M::usage = "Mass.";
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Mode numbers*)
 
 
@@ -189,7 +189,7 @@ m2::usage ="Magnetic number m2.";
 \[Omega]2::usage ="Frequency \[Omega]2.";
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Metric perturbations*)
 
 
@@ -225,7 +225,15 @@ htm::usage ="t component of the minus angular part of the metric perturbation.";
 hrm::usage ="r component of the minus angular part of the metric perturbation.";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
+(*Master Teukolsky Variables*)
+
+
+psiMasterplus2::usage ="spin +2 Master Teukolsky variable";
+psiMasterminus2::usage ="spin -2 Master Teukolsky variable";
+
+
+(* ::Subsection:: *)
 (*Functions*)
 
 
@@ -247,7 +255,7 @@ SchwarzschildSource::argserror2 = "Cannot put `1` in output basis `2`";
 SchwarzschildCovariantSource::argserror = "Argument `1` is unknown";
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Definitions*)
 
 
@@ -372,14 +380,20 @@ DefConstantSymbol[\[Omega]1,PrintAs->"\!\(\*SubscriptBox[\(\[Omega]\), \(1\)]\)"
 DefConstantSymbol[\[Omega]2,PrintAs->"\!\(\*SubscriptBox[\(\[Omega]\), \(2\)]\)"]
 
 
-(* ::Section::Closed:: *)
+DefTensor[psiMasterplus2[LI[l],LI[\[ScriptM]]],R2,PrintAs->"\!\(\*
+StyleBox[AdjustmentBox[\"2\",\nBoxBaselineShift->0.6276432914790547,\nBoxMargins->{{0., 0.}, {-0.6276432914790547, 0.6276432914790547}}],\nFontSize->9]\)\[Psi]"];
+DefTensor[psiMasterminus2[LI[l],LI[\[ScriptM]]],R2,PrintAs->"\!\(\*
+StyleBox[AdjustmentBox[\"-2\",\nBoxBaselineShift->0.6276432914790547,\nBoxMargins->{{0., 0.}, {-0.6276432914790547, 0.6276432914790547}}],\nFontSize->9]\)\[Psi]"];
+
+
+(* ::Section:: *)
 (*Begin Private part of package*)
 
 
 Begin["`Private`"]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Frequency domain decomposition*)
 
 
@@ -429,7 +443,7 @@ PD[{0,-BL}][htrAB[LI[l],LI[m]]]:>-I \[Omega] htrAB[LI[l],LI[m]]
 }
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Load expressions for dG, dR, d2G, d2R, S0d2G and S4d2G*)
 
 
@@ -494,6 +508,15 @@ Get["xAct`PerturbationEquations`S4d2GCarter`"];
 
 
 Get["xAct`PerturbationEquations`S4d2GLorenzCarter`"];
+
+
+(* ::Subsection:: *)
+(*Master Teukolsky*)
+
+
+MasterTeukolskyplus2=(psiMasterplus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]] (4 I xAct`PerturbationEquations`M xAct`PerturbationEquations`\[Omega]-xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] (-6+xAct`PerturbationEquations`l+xAct`PerturbationEquations`l^2-8 I xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[] (-4 I+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])))/xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]]+6 (xAct`PerturbationEquations`M+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]) xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterplus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]]]+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]^2 xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterplus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]]]];
+
+MasterTeukolskyminus2=(psiMasterminus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]] (-4 I xAct`PerturbationEquations`M xAct`PerturbationEquations`\[Omega]-xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] (-2+xAct`PerturbationEquations`l+xAct`PerturbationEquations`l^2+8 I xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[] (4 I+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])))/xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]]-2 (xAct`PerturbationEquations`M+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]) xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterminus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]]]+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]^2 xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterminus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]]]];
 
 
 (* ::Section::Closed:: *)
@@ -759,12 +782,15 @@ SchwarzschildLinearOperator[Source_,Gauge_:"Generic",OutputBasis_:"Carter",Input
 
 
 
-If[!MemberQ[{"dG","dR"},Source],Message[SchwarzschildSource::argserror,Source]];
+If[!MemberQ[{"dG","dR","Teukolsky"},Source],Message[SchwarzschildSource::argserror,Source]];
 If[!MemberQ[{"Generic","Lorenz","ReggeWheeler","OutgoingRadiationGauge","TraceFreeOutgoingRadiationGauge","IngoingRadiationGauge","TraceFreeIngoingRadiationGauge"},Gauge],Message[SchwarzschildSource::argserror,Gauge]];
-If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley","HartleHawking"},OutputBasis],Message[SchwarzschildSource::argserror,OutputBasis]];
-If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley","HartleHawking"},InputBasis],Message[SchwarzschildSource::argserror,InputBasis]];
+If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley","HartleHawking","+2","-2"},OutputBasis],Message[SchwarzschildSource::argserror,OutputBasis]];
+If[!MemberQ[{"Carter","BLS","trTensor","Kinnersley","HartleHawking","Master"},InputBasis],Message[SchwarzschildSource::argserror,InputBasis]];
 
-
+If[MemberQ[{"dG","dR"},Source]&&MemberQ[{"+2","-2"},OutputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]&&Abort[]];
+If[MemberQ[{"dG","dR"},Source]&&MemberQ[{"Master"},InputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]&&Abort[]];
+If[MemberQ[{"Teukolsky"},Source]&&MemberQ[{"Carter","BLS","trTensor","Kinnersley","HartleHawking"},OutputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]&&Abort[]];
+If[MemberQ[{"Teukolsky"},Source]&&MemberQ[{"Carter","BLS","trTensor","Kinnersley","HartleHawking"},InputBasis],Message[SchwarzschildSource::argserror2,Source,OutputBasis]&&Abort[]];
 
 If[Source=="dG"&&Gauge=="Generic",func=dGCarter];
 If[Source=="dG"&&Gauge=="ReggeWheeler",func=dGCarter/.RWGaugeConditionNPform];
@@ -798,6 +824,9 @@ Do[func[key]=func[key]/.(htm|hrm|hm)[__]->0,{key,{"tt","tr","rr","t+","r+","\[Em
 Do[func[key]=func[key]/.(htp|hrp|hp)[__]->0,{key,{"t-","r-","-"}}]];
 
 If[Gauge=="ReggeWheeler",func=func/.RWGaugeConditionVectorHarmonicdecompform];
+
+If[Source=="Teukolsky"&&OutputBasis=="+2"&&InputBasis=="Master",func=MasterTeukolskyplus2];
+If[Source=="Teukolsky"&&OutputBasis=="-2"&&InputBasis=="Master",func=MasterTeukolskyminus2];
 
 func=func/.{l1->l,m1->m};
 
