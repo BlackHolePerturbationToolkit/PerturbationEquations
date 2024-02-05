@@ -86,6 +86,9 @@ sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 
 
 
+HyperboloidalCoordinates::usage = "Rule for transforming to a hyperboloidal time coordinate with t=\[Tau]-h[r].";
+
+
 (* ::Subsection:: *)
 (*Symbols*)
 
@@ -160,14 +163,20 @@ Replaces l, m, \!\(\*SubscriptBox[\(l\), \(1\)]\), \!\(\*SubscriptBox[\(m\), \(1
 (*Coordinates*)
 
 
-BL::usage ="Boyer-Lindquist coordinates.";
-NP::usage ="Newman-Penrose tetrad basis.";
+
+
+
+BL::usage ="Boyer-Lindquist coordinate basis, {0,1,2,3}:={t,r,\[Theta],\[Phi]}.";
+Hyp::usage ="Hyperboloidal coordinate basis, {0,1,2,3}:={\[Tau],r,\[Theta],\[Phi]}, with t=\[Tau]-h[r] and H[r]=\!\(\*FractionBox[\(d\), SubscriptBox[\(dr\), \(*\)]]\)h[r]=\!\(\*FractionBox[\(1\), \(f\)]\)h'[r].";
+NP::usage ="Newman-Penrose tetrad basis, {1,2,3,4}:={l,n,m,\!\(\*OverscriptBox[\(m\), \(_\)]\)}.";
 
 
 r::usage = "Boyer\[Dash]Lindquist radial coordinate.";
 t::usage = "Boyer\[Dash]Lindquist time coordinate.";
 f::usage = "Schwarzschild's function, f(r)=1-2M/r.";
 M::usage = "Mass.";
+h::usage = "Height function relating the hyperboloidal time to the Boyer--Lindquist time, t=\[Tau]-h[r] and H[r]=\!\(\*FractionBox[\(d\), SubscriptBox[\(dr\), \(*\)]]\)h[r]=\!\(\*FractionBox[\(1\), \(f\)]\)h'[r].";
+h::usage = "\!\(\*SubscriptBox[\(r\), \(*\)]\) derivative of the Height function which relating the hyperboloidal time to the Boyer--Lindquist time, t=\[Tau]-h[r] and H[r]=\!\(\*FractionBox[\(d\), SubscriptBox[\(dr\), \(*\)]]\)h[r]=\!\(\*FractionBox[\(1\), \(f\)]\)h'[r].";
 
 
 (* ::Subsubsection:: *)
@@ -273,6 +282,8 @@ DefScalarFunction[f];
 (*DefTensor[r[],M4];*)
 
 DefChart[BL,R2,{0,1},{t[],r[]}];
+
+DefChart[Hyp,R2,{0,1},{\[Tau][],r[]},ChartColor->RGBColor[0,1,0]];
 
 MetricInBasis[q,-BL,{{-f[r[]],0},{0,1/f[r[]]}}];
 
@@ -439,7 +450,80 @@ PD[{0,-BL}][htm[LI[l],LI[m]]]:>-I \[Omega] htm[LI[l],LI[m]],
 
 PD[{0,-BL}][htrAB[LI[l1],LI[m1]]]:>-I \[Omega]1 htrAB[LI[l1],LI[m1]],
 PD[{0,-BL}][htrAB[LI[l2],LI[m2]]]:>-I \[Omega]2 htrAB[LI[l2],LI[m2]],
-PD[{0,-BL}][htrAB[LI[l],LI[m]]]:>-I \[Omega] htrAB[LI[l],LI[m]]
+PD[{0,-BL}][htrAB[LI[l],LI[m]]]:>-I \[Omega] htrAB[LI[l],LI[m]],
+
+
+PD[{0,-BL}][psiMasterminus2[LI[l1],LI[m1]]]:>-I \[Omega]1 psiMasterminus2[LI[l1],LI[m1]],
+PD[{0,-BL}][psiMasterminus2[LI[l2],LI[m2]]]:>-I \[Omega]2 psiMasterminus2[LI[l2],LI[m2]],
+PD[{0,-BL}][psiMasterminus2[LI[l],LI[m]]]:>-I \[Omega] psiMasterminus2[LI[l],LI[m]],
+
+PD[{0,-BL}][psiMasterplus2[LI[l1],LI[m1]]]:>-I \[Omega]1 psiMasterplus2[LI[l1],LI[m1]],
+PD[{0,-BL}][psiMasterplus2[LI[l2],LI[m2]]]:>-I \[Omega]2 psiMasterplus2[LI[l2],LI[m2]],
+PD[{0,-BL}][psiMasterplus2[LI[l],LI[m]]]:>-I \[Omega] psiMasterplus2[LI[l],LI[m]],
+
+
+
+
+PD[{0,-Hyp}][h[{A_,-NP},{B_,-NP},LI[C_],LI[l1],LI[m1]]]:>-I \[Omega]1 h[{A,-NP},{B,-NP},LI[C],LI[l1],LI[m1]],
+PD[{0,-Hyp}][h[{A_,-NP},{B_,-NP},LI[C_],LI[l2],LI[m2]]]:>-I \[Omega]2 h[{A,-NP},{B,-NP},LI[C],LI[l2],LI[m2]],
+PD[{0,-Hyp}][h[{A_,-NP},{B_,-NP},LI[C_],LI[l],LI[m]]]:>-I \[Omega] h[{A,-NP},{B,-NP},LI[C],LI[l],LI[m]],
+
+PD[{0,-Hyp}][hBS[LI[C_],LI[l1],LI[m1]]]:>-I \[Omega]1 hBS[LI[C],LI[l1],LI[m1]],
+PD[{0,-Hyp}][hBS[LI[C_],LI[l2],LI[m2]]]:>-I \[Omega]2 hBS[LI[C],LI[l2],LI[m2]],
+PD[{0,-Hyp}][hBS[LI[C_],LI[l],LI[m]]]:>-I \[Omega] hBS[LI[C],LI[l],LI[m]],
+
+PD[{0,-Hyp}][hK[{A_,-NP},{B_,-NP},LI[C_],LI[l1],LI[m1]]]:>-I \[Omega]1 hK[{A,-NP},{B,-NP},LI[C],LI[l1],LI[m1]],
+PD[{0,-Hyp}][hK[{A_,-NP},{B_,-NP},LI[C_],LI[l2],LI[m2]]]:>-I \[Omega]2 hK[{A,-NP},{B,-NP},LI[C],LI[l2],LI[m2]],
+PD[{0,-Hyp}][hK[{A_,-NP},{B_,-NP},LI[C_],LI[l],LI[m]]]:>-I \[Omega] hK[{A,-NP},{B,-NP},LI[C],LI[l],LI[m]],
+
+PD[{0,-Hyp}][htt[LI[l1],LI[m1]]]:>-I \[Omega]1 htt[LI[l1],LI[m1]],
+PD[{0,-Hyp}][htt[LI[l2],LI[m2]]]:>-I \[Omega]2 htt[LI[l2],LI[m2]],
+PD[{0,-Hyp}][htt[LI[l],LI[m]]]:>-I \[Omega] htt[LI[l],LI[m]],
+
+PD[{0,-Hyp}][htr[LI[l1],LI[m1]]]:>-I \[Omega]1 htr[LI[l1],LI[m1]],
+PD[{0,-Hyp}][htr[LI[l2],LI[m2]]]:>-I \[Omega]2 htr[LI[l2],LI[m2]],
+PD[{0,-Hyp}][htr[LI[l],LI[m]]]:>-I \[Omega] htr[LI[l],LI[m]],
+
+PD[{0,-Hyp}][hrr[LI[l1],LI[m1]]]:>-I \[Omega]1 hrr[LI[l1],LI[m1]],
+PD[{0,-Hyp}][hrr[LI[l2],LI[m2]]]:>-I \[Omega]2 hrr[LI[l2],LI[m2]],
+PD[{0,-Hyp}][hrr[LI[l],LI[m]]]:>-I \[Omega] hrr[LI[l],LI[m]],
+
+PD[{0,-Hyp}][hrp[LI[l1],LI[m1]]]:>-I \[Omega]1 hrp[LI[l1],LI[m1]],
+PD[{0,-Hyp}][hrp[LI[l2],LI[m2]]]:>-I \[Omega]2 hrp[LI[l2],LI[m2]],
+PD[{0,-Hyp}][hrp[LI[l],LI[m]]]:>-I \[Omega] hrp[LI[l],LI[m]],
+
+PD[{0,-Hyp}][hrm[LI[l1],LI[m1]]]:>-I \[Omega]1 hrm[LI[l1],LI[m1]],
+PD[{0,-Hyp}][hrm[LI[l2],LI[m2]]]:>-I \[Omega]2 hrm[LI[l2],LI[m2]],
+PD[{0,-Hyp}][hrm[LI[l],LI[m]]]:>-I \[Omega] hrm[LI[l],LI[m]],
+
+PD[{0,-Hyp}][htp[LI[l1],LI[m1]]]:>-I \[Omega]1 htp[LI[l1],LI[m1]],
+PD[{0,-Hyp}][htp[LI[l2],LI[m2]]]:>-I \[Omega]2 htp[LI[l2],LI[m2]],
+PD[{0,-Hyp}][htp[LI[l],LI[m]]]:>-I \[Omega] htp[LI[l],LI[m]],
+
+PD[{0,-Hyp}][htm[LI[l1],LI[m1]]]:>-I \[Omega]1 htm[LI[l1],LI[m1]],
+PD[{0,-Hyp}][htm[LI[l2],LI[m2]]]:>-I \[Omega]2 htm[LI[l2],LI[m2]],
+PD[{0,-Hyp}][htm[LI[l],LI[m]]]:>-I \[Omega] htm[LI[l],LI[m]],
+
+PD[{0,-Hyp}][htrAB[LI[l1],LI[m1]]]:>-I \[Omega]1 htrAB[LI[l1],LI[m1]],
+PD[{0,-Hyp}][htrAB[LI[l2],LI[m2]]]:>-I \[Omega]2 htrAB[LI[l2],LI[m2]],
+PD[{0,-Hyp}][htrAB[LI[l],LI[m]]]:>-I \[Omega] htrAB[LI[l],LI[m]],
+
+
+PD[{0,-Hyp}][psiMasterminus2[LI[l1],LI[m1]]]:>-I \[Omega]1 psiMasterminus2[LI[l1],LI[m1]],
+PD[{0,-Hyp}][psiMasterminus2[LI[l2],LI[m2]]]:>-I \[Omega]2 psiMasterminus2[LI[l2],LI[m2]],
+PD[{0,-Hyp}][psiMasterminus2[LI[l],LI[m]]]:>-I \[Omega] psiMasterminus2[LI[l],LI[m]],
+
+PD[{0,-Hyp}][psiMasterplus2[LI[l1],LI[m1]]]:>-I \[Omega]1 psiMasterplus2[LI[l1],LI[m1]],
+PD[{0,-Hyp}][psiMasterplus2[LI[l2],LI[m2]]]:>-I \[Omega]2 psiMasterplus2[LI[l2],LI[m2]],
+PD[{0,-Hyp}][psiMasterplus2[LI[l],LI[m]]]:>-I \[Omega] psiMasterplus2[LI[l],LI[m]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterminus2[LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][psiMasterminus2[LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterminus2[LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][psiMasterminus2[LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterminus2[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][psiMasterminus2[LI[l],LI[m]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterplus2[LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][psiMasterplus2[LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterplus2[LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][psiMasterplus2[LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterplus2[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][psiMasterplus2[LI[l],LI[m]]]
 }
 
 
@@ -514,9 +598,9 @@ Get["xAct`PerturbationEquations`S4d2GLorenzCarter`"];
 (*Master Teukolsky*)
 
 
-MasterTeukolskyplus2=(psiMasterplus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]] (4 I xAct`PerturbationEquations`M xAct`PerturbationEquations`\[Omega]-xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] (-6+xAct`PerturbationEquations`l+xAct`PerturbationEquations`l^2-8 I xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[] (-4 I+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])))/xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]]+6 (xAct`PerturbationEquations`M+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]) xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterplus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]]]+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]^2 xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterplus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]]]];
+MasterTeukolskyplus2=(psiMasterplus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`m]] (4 I xAct`PerturbationEquations`M xAct`PerturbationEquations`\[Omega]-xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] (-6+xAct`PerturbationEquations`l+xAct`PerturbationEquations`l^2-8 I xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[] (-4 I+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])))/xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]]+6 (xAct`PerturbationEquations`M+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]) xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterplus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`m]]]+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]^2 xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterplus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`m]]]];
 
-MasterTeukolskyminus2=(psiMasterminus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]] (-4 I xAct`PerturbationEquations`M xAct`PerturbationEquations`\[Omega]-xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] (-2+xAct`PerturbationEquations`l+xAct`PerturbationEquations`l^2+8 I xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[] (4 I+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])))/xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]]-2 (xAct`PerturbationEquations`M+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]) xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterminus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]]]+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]^2 xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterminus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]]]];
+MasterTeukolskyminus2=(psiMasterminus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`m]] (-4 I xAct`PerturbationEquations`M xAct`PerturbationEquations`\[Omega]-xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] (-2+xAct`PerturbationEquations`l+xAct`PerturbationEquations`l^2+8 I xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[] (4 I+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])))/xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]]-2 (xAct`PerturbationEquations`M+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]) xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterminus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`m]]]+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]^2 xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterminus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`m]]]];
 
 
 (* ::Section::Closed:: *)
@@ -844,6 +928,13 @@ If[Source=="d2G"&&Gauge=="Generic",func=d2GVectorHarmonics];
 If[Source=="d2G"&&Gauge=="ReggeWheeler",func=d2GVectorHarmonics/.RWGaugeConditionVectorHarmonicdecompform];
 
 Return[func]];
+
+
+(* ::Section:: *)
+(*HyperboloidalCoordinates rule*)
+
+
+HyperboloidalCoordinates=
 
 
 (* ::Section::Closed:: *)
