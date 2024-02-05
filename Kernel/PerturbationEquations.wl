@@ -103,6 +103,7 @@ BLS::usage="The Barack--Lousto--Sago basis."
 trTensor::usage="The Boyer--Lindquist coordinate t r basis with the angular dependence expressed using scalar, vector and tenser spherical harmonics.  
 The ordering of the output terms is {\!\(\*SubscriptBox[\(h\), \(tt\)]\),\!\(\*SubscriptBox[\(h\), \(tr\)]\),\!\(\*SubscriptBox[\(h\), \(rr\)]\),\!\(\*SubscriptBox[\(h\), \(\(t\)\(+\)\)]\),\!\(\*SubscriptBox[\(h\), \(\(r\)\(+\)\)]\),\!\(\*SubscriptBox[\(h\), \(\[EmptyCircle]\)]\),\!\(\*SubscriptBox[\(h\), \(p\)]\),\!\(\*SubscriptBox[\(h\), \(\(t\)\(-\)\)]\),\!\(\*SubscriptBox[\(h\), \(rm\)]\),\!\(\*SubscriptBox[\(h\), \(-\)]\)}"
 
+ChristoffelPDBLPDHyp::usage="Christoffel symbols between Boyer--Lindquist and Hyperbolic coordinates.";
 
 
 (* ::Subsubsection:: *)
@@ -281,11 +282,10 @@ DefConstantSymbol[M];
 DefScalarFunction[f];
 (*DefTensor[r[],M4];*)
 
-DefChart[BL,R2,{0,1},{t[],r[]}];
-
 DefChart[Hyp,R2,{0,1},{\[Tau][],r[]},ChartColor->RGBColor[0,1,0]];
 
-MetricInBasis[q,-BL,{{-f[r[]],0},{0,1/f[r[]]}}];
+DefChart[BL,R2,{0,1},{t[],r[]}];
+
 
 $Assumptions=f[r[]]>0;
 
@@ -934,7 +934,48 @@ Return[func]];
 (*HyperboloidalCoordinates rule*)
 
 
-HyperboloidalCoordinates=
+HyperboloidalCoordinates={PD[{0,-BL}][A_]:>PD[{0,-Hyp}][A],PD[{1,-BL}][A_]:>H[r[]]/f[r[]]PD[{0,-Hyp}][A]+PD[{1,-Hyp}][A],
+
+
+Basis[{0, -Hyp}, {0, BL}] -> 1, Basis[{0, -Hyp}, {1, BL}] -> 0, Basis[{0, -Hyp}, {2, BL}] -> 0, Basis[{0, -Hyp}, {3, BL}] -> 0, 
+ Basis[{1, -Hyp}, {0, BL}] -> -((H[r[]]*r[])/(-2*M + r[])), Basis[{1, -Hyp}, {1, BL}] -> 1, Basis[{1, -Hyp}, {2, BL}] -> 0, Basis[{1, -Hyp}, {3, BL}] -> 0, 
+ Basis[{2, -Hyp}, {0, BL}] -> 0, Basis[{2, -Hyp}, {1, BL}] -> 0, Basis[{2, -Hyp}, {2, BL}] -> 1, Basis[{2, -Hyp}, {3, BL}] -> 0, 
+ Basis[{3, -Hyp}, {0, BL}] -> 0, Basis[{3, -Hyp}, {1, BL}] -> 0, Basis[{3, -Hyp}, {2, BL}] -> 0, Basis[{3, -Hyp}, {3, BL}] -> 1,
+ 
+ 
+ ChristoffelPDBLPDHyp[{0, BL}, {0, -Hyp}, {0, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{0, BL}, {1, -Hyp}, {0, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{0, BL}, {2, -Hyp}, {0, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{0, BL}, {3, -Hyp}, {0, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{1, BL}, {0, -Hyp}, {0, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{1, BL}, {1, -Hyp}, {0, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{1, BL}, {2, -Hyp}, {0, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{1, BL}, {3, -Hyp}, {0, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{2, BL}, {0, -Hyp}, {0, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{2, BL}, {1, -Hyp}, {0, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{2, BL}, {2, -Hyp}, {0, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{2, BL}, {3, -Hyp}, {0, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{3, BL}, {0, -Hyp}, {0, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{3, BL}, {1, -Hyp}, {0, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{3, BL}, {2, -Hyp}, {0, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{3, BL}, {3, -Hyp}, {0, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{0, BL}, {0, -Hyp}, {1, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{0, BL}, {1, -Hyp}, {1, -Hyp}] -> 
+  (H[r[]] - f[r[]]*H[r[]] - f[r[]]*r[]*Derivative[1][H][r[]])/(f[r[]]^2*r[]), ChristoffelPDBLPDHyp[{0, BL}, {2, -Hyp}, {1, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{0, BL}, {3, -Hyp}, {1, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{1, BL}, {0, -Hyp}, {1, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{1, BL}, {1, -Hyp}, {1, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{1, BL}, {2, -Hyp}, {1, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{1, BL}, {3, -Hyp}, {1, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{2, BL}, {0, -Hyp}, {1, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{2, BL}, {1, -Hyp}, {1, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{2, BL}, {2, -Hyp}, {1, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{2, BL}, {3, -Hyp}, {1, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{3, BL}, {0, -Hyp}, {1, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{3, BL}, {1, -Hyp}, {1, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{3, BL}, {2, -Hyp}, {1, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{3, BL}, {3, -Hyp}, {1, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{0, BL}, {0, -Hyp}, {2, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{0, BL}, {1, -Hyp}, {2, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{0, BL}, {2, -Hyp}, {2, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{0, BL}, {3, -Hyp}, {2, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{1, BL}, {0, -Hyp}, {2, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{1, BL}, {1, -Hyp}, {2, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{1, BL}, {2, -Hyp}, {2, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{1, BL}, {3, -Hyp}, {2, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{2, BL}, {0, -Hyp}, {2, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{2, BL}, {1, -Hyp}, {2, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{2, BL}, {2, -Hyp}, {2, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{2, BL}, {3, -Hyp}, {2, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{3, BL}, {0, -Hyp}, {2, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{3, BL}, {1, -Hyp}, {2, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{3, BL}, {2, -Hyp}, {2, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{3, BL}, {3, -Hyp}, {2, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{0, BL}, {0, -Hyp}, {3, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{0, BL}, {1, -Hyp}, {3, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{0, BL}, {2, -Hyp}, {3, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{0, BL}, {3, -Hyp}, {3, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{1, BL}, {0, -Hyp}, {3, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{1, BL}, {1, -Hyp}, {3, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{1, BL}, {2, -Hyp}, {3, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{1, BL}, {3, -Hyp}, {3, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{2, BL}, {0, -Hyp}, {3, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{2, BL}, {1, -Hyp}, {3, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{2, BL}, {2, -Hyp}, {3, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{2, BL}, {3, -Hyp}, {3, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{3, BL}, {0, -Hyp}, {3, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{3, BL}, {1, -Hyp}, {3, -Hyp}] -> 0, ChristoffelPDBLPDHyp[{3, BL}, {2, -Hyp}, {3, -Hyp}] -> 0, 
+ ChristoffelPDBLPDHyp[{3, BL}, {3, -Hyp}, {3, -Hyp}] -> 0};
 
 
 (* ::Section::Closed:: *)
