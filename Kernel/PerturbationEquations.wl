@@ -4,7 +4,7 @@
 (*Begin Package*)
 
 
-xAct`HelloWorldxTension`$xTensorVersionExpected={"1.2.0",{2021,10,17}};
+xAct`PerturbationEquations`$xTensorVersionExpected={"1.2.0",{2021,10,17}};
 xAct`PerturbationEquations`$Version={"0.2.0",{2023,10,11}}
 
 
