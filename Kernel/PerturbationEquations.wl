@@ -5,7 +5,7 @@
 
 
 xAct`PerturbationEquations`$xTensorVersionExpected={"1.2.0",{2021,10,17}};
-xAct`PerturbationEquations`$Version={"0.2.0",{2023,10,11}}
+xAct`PerturbationEquations`$Version={"0.3.0",{2024,2,8}};
 
 
 With[{xAct`PerturbationEquations`Private`PerturbationEquationsSymbols=DeleteCases[Join[Names["xAct`PerturbationEquations`*"],Names["xAct`PerturbationEquations`Private`*"]],"$Version"|"xAct`PerturbationEquations`$Version"|"$PerturbationEquationsVersionExpected"|"xAct`PerturbationEquations`$xTensorVersionExpected"]},
@@ -162,9 +162,6 @@ Replaces l, m, \!\(\*SubscriptBox[\(l\), \(1\)]\), \!\(\*SubscriptBox[\(m\), \(1
 
 (* ::Subsubsection:: *)
 (*Coordinates*)
-
-
-
 
 
 BL::usage ="Boyer-Lindquist coordinate basis, {0,1,2,3}:={t,r,\[Theta],\[Phi]}.";
