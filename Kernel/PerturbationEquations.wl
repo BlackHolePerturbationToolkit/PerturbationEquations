@@ -173,8 +173,7 @@ r::usage = "Boyer\[Dash]Lindquist radial coordinate.";
 t::usage = "Boyer\[Dash]Lindquist time coordinate.";
 f::usage = "Schwarzschild's function, f(r)=1-2M/r.";
 M::usage = "Mass.";
-h::usage = "Height function relating the hyperboloidal time to the Boyer--Lindquist time, t=\[Tau]-h[r] and H[r]=\!\(\*FractionBox[\(d\), SubscriptBox[\(dr\), \(*\)]]\)h[r]=\!\(\*FractionBox[\(1\), \(f\)]\)h'[r].";
-h::usage = "\!\(\*SubscriptBox[\(r\), \(*\)]\) derivative of the Height function which relating the hyperboloidal time to the Boyer--Lindquist time, t=\[Tau]-h[r] and H[r]=\!\(\*FractionBox[\(d\), SubscriptBox[\(dr\), \(*\)]]\)h[r]=\!\(\*FractionBox[\(1\), \(f\)]\)h'[r].";
+H::usage = "Height function relating the hyperboloidal time to the Boyer--Lindquist time, t=\[Tau]-h[r] and H[r]=\!\(\*FractionBox[\(d\), SubscriptBox[\(dr\), \(*\)]]\)h[r]=\!\(\*FractionBox[\(1\), \(f\)]\)h'[r].";
 
 
 (* ::Subsubsection:: *)
@@ -266,7 +265,7 @@ SchwarzschildCovariantSource::argserror = "Argument `1` is unknown";
 (*Definitions*)
 
 
-DefManifold[S2,2,{A,B,F,G,H,J,P,Q}];
+DefManifold[S2,2,{A,B,F,G,J,P,Q}];
 DefMetric[1,\[CapitalOmega][-A,-B],CDS2,SymbolOfCovD->{"|","D "}];
 
 DefManifold[R2,2,{a,b,c,d,i,j,k,p}];
@@ -277,6 +276,7 @@ DefProductMetric[g[-\[Alpha],-\[Beta]],{{TangentR2,1},{TangentS2,r[]}},CD,Symbol
 
 DefConstantSymbol[M];
 DefScalarFunction[f];
+DefScalarFunction[H];
 (*DefTensor[r[],M4];*)
 
 DefChart[Hyp,R2,{0,1},{\[Tau][],r[]},ChartColor->RGBColor[0,1,0]];
