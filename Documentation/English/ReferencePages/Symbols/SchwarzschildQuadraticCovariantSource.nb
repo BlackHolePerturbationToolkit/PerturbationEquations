@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20267,        559]
-NotebookOptionsPosition[     14153,        427]
-NotebookOutlinePosition[     14939,        453]
-CellTagsIndexPosition[     14860,        448]
+NotebookDataLength[     57149,       1291]
+NotebookOptionsPosition[     50855,       1155]
+NotebookOutlinePosition[     51639,       1181]
+CellTagsIndexPosition[     51559,       1176]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -152,10 +152,10 @@ Cell[TextData[{
     "3c86c01d-f23c-44bd-82ba-6adb8a3691d1"], 
    DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
     "9295dc44-32d1-46fb-9724-b117d8608b5c", 
-     "87f0c8f1-bdab-4e3d-a392-e3bf24fd2582"], $CellContext`cellobj$$ = 
+     "e2daa270-da12-41bb-9785-c2cfc71c67d9"], $CellContext`cellobj$$ = 
     CellObject[
     "038a0d28-ae24-4401-a929-cf3502223d79", 
-     "60b13b5e-eba3-485d-8cbe-8df48597f85d"]}, 
+     "2caf4166-351a-4fb1-aca3-006ee0ece768"]}, 
     TemplateBox[{
       GraphicsBox[{{
          Thickness[0.06], 
@@ -238,13 +238,741 @@ Cell[BoxData[
   $Line = 0; Null]], "PrimaryExamplesSection",
  CellID->1307144712,ExpressionUUID->"5646416f-3950-4759-a0e0-7d06982aa9c6"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{
   RowBox[{"SchwarzschildQuadraticCovariantSource", "[", 
    RowBox[{"\"\<d2G\>\"", ",", "\"\<Generic\>\""}], "]"}], "[", 
   RowBox[{"[", "1", "]"}], "]"}]], "Input",
- CellLabel->"In[29]:=",
- CellID->1578745179,ExpressionUUID->"637db36e-8910-438e-a2d2-7b8e74546f46"]
+ CellLabel->"In[4]:=",
+ CellID->1578745179,ExpressionUUID->"637db36e-8910-438e-a2d2-7b8e74546f46"],
+
+Cell[BoxData[
+ TemplateBox[<|"shortenedBoxes" -> TagBox[
+     RowBox[{
+       FractionBox[
+        RowBox[{
+          InterpretationBox[
+           StyleBox[
+            GridBox[{{"C", 
+               StyleBox[
+                
+                GridBox[{{
+                  "\!\(\*SuperscriptBox[\(\[ScriptL]\), \(\[Prime]\[Prime]\)]\
+\)", "\!\(\*SuperscriptBox[\(\[ScriptM]\), \(\[Prime]\[Prime]\)]\)", "0", " ",
+                    " ", " ", " ", " ", " "}, {
+                  " ", " ", " ", "\[ScriptL]", "\[ScriptM]", "3", 
+                   "\!\(\*SuperscriptBox[\(\[ScriptL]\), \(\[Prime]\)]\)", 
+                   "\!\(\*SuperscriptBox[\(\[ScriptM]\), \(\[Prime]\)]\)", 
+                   "-3"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                 GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+             ColumnSpacings -> 0.05, RowAlignments -> Center], AutoSpacing -> 
+            False, ShowAutoStyles -> False], 
+           xAct`PerturbationEquations`CInt[
+            xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptQ]], 
+            xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]pp], 
+            xAct`xTensor`LI[0], -
+            xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], -
+            xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]], -
+            xAct`xTensor`LI[3], -
+            xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], -
+            xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p], -
+            xAct`xTensor`LI[-3]], Editable -> False], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              InterpretationBox[
+               StyleBox[
+                GridBox[{{"\!\(\*SubscriptBox[\(h\), \(-\)]\)", 
+                   StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]"}, {" ", " "}}, 
+                    RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                 ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                AutoSpacing -> False, ShowAutoStyles -> False], 
+               xAct`PerturbationEquations`hm[
+                xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]], 
+               Editable -> False], "-", 
+              RowBox[{"\[ImaginaryI]", " ", 
+                InterpretationBox[
+                 StyleBox[
+                  GridBox[{{"\!\(\*SubscriptBox[\(h\), \(+\)]\)", 
+                    StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]"}, {" ", " "}}, 
+                    RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                   ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                  AutoSpacing -> False, ShowAutoStyles -> False], 
+                 xAct`PerturbationEquations`hp[
+                  xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                  xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]], 
+                 Editable -> False]}]}], ")"}], " ", 
+          RowBox[{"(", 
+            RowBox[{
+              InterpretationBox[
+               StyleBox[
+                GridBox[{{"\!\(\*SubscriptBox[\(h\), \(-\)]\)", 
+                   StyleBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], FontSize -> 
+                    9]}}, ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                AutoSpacing -> False, ShowAutoStyles -> False], 
+               xAct`PerturbationEquations`hm[
+                xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], 
+                xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p]], 
+               Editable -> False], "+", 
+              RowBox[{"\[ImaginaryI]", " ", 
+                InterpretationBox[
+                 StyleBox[
+                  GridBox[{{"\!\(\*SubscriptBox[\(h\), \(+\)]\)", 
+                    StyleBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], FontSize -> 
+                    9]}}, ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                  AutoSpacing -> False, ShowAutoStyles -> False], 
+                 xAct`PerturbationEquations`hp[
+                  xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], 
+                  xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p]], 
+                 Editable -> False]}]}], ")"}], " ", 
+          InterpretationBox[
+           StyleBox[
+            GridBox[{{"q", 
+               StyleBox[
+                
+                GridBox[{{" ", " "}, {"a", "b"}}, RowSpacings -> 0, 
+                 ColumnSpacings -> 0.05, 
+                 GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+             ColumnSpacings -> 0.05, RowAlignments -> Center], AutoSpacing -> 
+            False, ShowAutoStyles -> False], 
+           
+           xAct`PerturbationEquations`q[-xAct`PerturbationEquations`a, -
+            xAct`PerturbationEquations`b], Editable -> False], " ", 
+          RowBox[{
+            InterpretationBox[
+             StyleBox[
+              RowBox[{"\!\(\*SubscriptBox[\(\[Lambda]\), \(3\)]\)"}], 
+              AutoSpacing -> False, ShowAutoStyles -> False], 
+             xAct`PerturbationEquations`\[Lambda]3, Editable -> False], "[", 
+            InterpretationBox[
+             StyleBox[
+              RowBox[{"\[ScriptL]"}], AutoSpacing -> False, ShowAutoStyles -> 
+              False], xAct`PerturbationEquations`\[ScriptL], Editable -> 
+             False], "]"}], " ", 
+          RowBox[{
+            InterpretationBox[
+             StyleBox[
+              RowBox[{"\!\(\*SubscriptBox[\(\[Lambda]\), \(3\)]\)"}], 
+              AutoSpacing -> False, ShowAutoStyles -> False], 
+             xAct`PerturbationEquations`\[Lambda]3, Editable -> False], "[", 
+            InterpretationBox[
+             StyleBox[
+              
+              RowBox[{"\!\(\*SuperscriptBox[\(\[ScriptL]\), \
+\(\[Prime]\)]\)"}], AutoSpacing -> False, ShowAutoStyles -> False], 
+             xAct`PerturbationEquations`\[ScriptP], Editable -> False], 
+            "]"}]}], 
+        RowBox[{"16", " ", 
+          SuperscriptBox[
+           InterpretationBox[
+            StyleBox["r", AutoSpacing -> False, ShowAutoStyles -> False], 
+            xAct`PerturbationEquations`r[], Editable -> False], "6"]}]], "+", 
+       
+       TemplateBox[{"2"}, "OutputSizeLimit`Skeleton"], "+", 
+       RowBox[{
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"C", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*SuperscriptBox[\(\[ScriptL]\), \
+\(\[Prime]\[Prime]\)]\)", 
+                  "\!\(\*SuperscriptBox[\(\[ScriptM]\), \(\[Prime]\[Prime]\)]\
+\)", "0", " ", " ", " ", " ", " ", " "}, {
+                 " ", " ", " ", "\[ScriptL]", "\[ScriptM]", "0", 
+                  "\!\(\*SuperscriptBox[\(\[ScriptL]\), \(\[Prime]\)]\)", 
+                  "\!\(\*SuperscriptBox[\(\[ScriptM]\), \(\[Prime]\)]\)", 
+                  "0"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+            ColumnSpacings -> 0.05, RowAlignments -> Center], AutoSpacing -> 
+           False, ShowAutoStyles -> False], 
+          xAct`PerturbationEquations`CInt[
+           xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptQ]], 
+           xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]pp], 
+           xAct`xTensor`LI[0], -
+           xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], -
+           xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]], -
+           xAct`xTensor`LI[0], -
+           xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], -
+           xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p], -
+           xAct`xTensor`LI[0]], Editable -> False], " ", 
+         RowBox[{"(", 
+           RowBox[{
+             FractionBox[
+              RowBox[{
+                RowBox[{"8", " ", 
+                  InterpretationBox[
+                   StyleBox[
+                    
+                    GridBox[{{
+                    "\!\(\*SubscriptBox[\(h\), \(\[EmptyCircle]\)]\)", 
+                    StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]"}, {" ", " "}}, 
+                    RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                   xAct`PerturbationEquations`htrAB[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]], 
+                   Editable -> False], " ", 
+                  InterpretationBox[
+                   StyleBox[
+                    
+                    GridBox[{{
+                    "\!\(\*SubscriptBox[\(h\), \(\[EmptyCircle]\)]\)", 
+                    StyleBox[
+                    
+                    GridBox[{{
+                    "\!\(\*SuperscriptBox[\(\[ScriptL]\), \(\[Prime]\)]\)", 
+                    "\!\(\*SuperscriptBox[\(\[ScriptM]\), \(\[Prime]\)]\)"}, {
+                    " ", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                   xAct`PerturbationEquations`htrAB[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p]], 
+                   Editable -> False], " ", 
+                  InterpretationBox[
+                   StyleBox[
+                    GridBox[{{"n", 
+                    StyleBox[
+                    
+                    GridBox[{{" "}, {"a"}}, RowSpacings -> 0, ColumnSpacings -> 
+                    0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+                    9]}}, ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                   
+                   xAct`PerturbationEquations`n[-
+                    xAct`PerturbationEquations`a], Editable -> False], " ", 
+                  InterpretationBox[
+                   StyleBox[
+                    GridBox[{{"n", 
+                    StyleBox[
+                    
+                    GridBox[{{" "}, {"b"}}, RowSpacings -> 0, ColumnSpacings -> 
+                    0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+                    9]}}, ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                   
+                   xAct`PerturbationEquations`n[-
+                    xAct`PerturbationEquations`b], Editable -> False]}], "+", 
+                
+                RowBox[{
+                  FractionBox["1", "2"], " ", 
+                  InterpretationBox[
+                   StyleBox[
+                    
+                    GridBox[{{
+                    "\!\(\*SubscriptBox[\(h\), \(\[EmptyCircle]\)]\)", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                   xAct`PerturbationEquations`htrAB[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p]], 
+                   Editable -> False], " ", 
+                  InterpretationBox[
+                   StyleBox[
+                    GridBox[{{"q", 
+                    StyleBox[
+                    
+                    GridBox[{{" ", " "}, {"a", "b"}}, RowSpacings -> 0, 
+                    ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                   
+                   xAct`PerturbationEquations`q[-
+                    xAct`PerturbationEquations`a, -
+                    xAct`PerturbationEquations`b], Editable -> False], " ", 
+                  RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"4", " ", 
+                    InterpretationBox[
+                    StyleBox[
+                    
+                    GridBox[{{
+                    "\!\(\*SubscriptBox[\(h\), \(\[EmptyCircle]\)]\)", 
+                    StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]"}, {" ", " "}}, 
+                    RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    xAct`PerturbationEquations`htrAB[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]], 
+                    Editable -> False], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "2"}], " ", 
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{"f"}], AutoSpacing -> False, ShowAutoStyles -> 
+                    False], xAct`PerturbationEquations`f, Editable -> False], 
+                    "[", 
+                    InterpretationBox[
+                    StyleBox[
+                    "r", AutoSpacing -> False, ShowAutoStyles -> False], 
+                    xAct`PerturbationEquations`r[], Editable -> False], 
+                    "]"}]}], "+", 
+                    SuperscriptBox[
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    xAct`PerturbationEquations`\[Lambda]1, Editable -> False],
+                     "[", 
+                    InterpretationBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], 
+                    xAct`PerturbationEquations`\[ScriptL], Editable -> False],
+                     "]"}], "2"]}], ")"}]}], "+", 
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    GridBox[{{"\!\(\*SubscriptBox[\(h\), \(+\)]\)", 
+                    StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]"}, {" ", " "}}, 
+                    RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    xAct`PerturbationEquations`hp[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]], 
+                    Editable -> False], " ", 
+                    RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}]}]}],
+                     ")"}]}]}], 
+              SuperscriptBox[
+               InterpretationBox[
+                StyleBox["r", AutoSpacing -> False, ShowAutoStyles -> False], 
+                
+                xAct`PerturbationEquations`r[], Editable -> False], "6"]], 
+             "+", 
+             RowBox[{
+               FractionBox["1", "2"], " ", 
+               RowBox[{"(", 
+                 InterpretationBox[
+                  StyleBox[
+                   RowBox[{
+                    SubscriptBox["\[Delta] ", "a"], 
+                    GridBox[{{"h", 
+                    StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]", "c", "d"}, {
+                    " ", " ", " ", " "}}, RowSpacings -> 0, ColumnSpacings -> 
+                    0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+                    9]}}, ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                   AutoSpacing -> False, ShowAutoStyles -> False], 
+                  xAct`PerturbationEquations`cd[-xAct`PerturbationEquations`a][
+                   xAct`PerturbationEquations`hablm[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]], 
+                    xAct`PerturbationEquations`c, 
+                    xAct`PerturbationEquations`d]], Editable -> False], ")"}],
+                " ", 
+               RowBox[{"(", 
+                 InterpretationBox[
+                  StyleBox[
+                   RowBox[{
+                    SubscriptBox["\[Delta] ", "b"], 
+                    GridBox[{{"h", 
+                    StyleBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], FontSize -> 
+                    9]}}, ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                   AutoSpacing -> False, ShowAutoStyles -> False], 
+                  xAct`PerturbationEquations`cd[-xAct`PerturbationEquations`b][
+                   xAct`PerturbationEquations`hablm[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p], -
+                    xAct`PerturbationEquations`c, -
+                    xAct`PerturbationEquations`d]], Editable -> False], 
+                 ")"}]}], "+", 
+             TemplateBox[{"12"}, "OutputSizeLimit`Skeleton"], "+", 
+             FractionBox[
+              TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], 
+              InterpretationBox[
+               StyleBox["r", AutoSpacing -> False, ShowAutoStyles -> False], 
+               xAct`PerturbationEquations`r[], Editable -> False]], "+", 
+             RowBox[{
+               InterpretationBox[
+                StyleBox[
+                 GridBox[{{"q", 
+                    StyleBox[
+                    
+                    GridBox[{{" ", " "}, {"a", "b"}}, RowSpacings -> 0, 
+                    ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                  ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                 AutoSpacing -> False, ShowAutoStyles -> False], 
+                
+                xAct`PerturbationEquations`q[-xAct`PerturbationEquations`a, -
+                 xAct`PerturbationEquations`b], Editable -> False], " ", 
+               RowBox[{"(", 
+                 RowBox[{
+                   RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"(", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SuperscriptBox["\[Delta] ", "c"], 
+                    
+                    GridBox[{{
+                    "\!\(\*SubscriptBox[\(h\), \(\[FilledCircle]\)]\)", 
+                    StyleBox[
+                    
+                    GridBox[{{
+                    "\!\(\*SuperscriptBox[\(\[ScriptL]\), \(\[Prime]\)]\)", 
+                    "\!\(\*SuperscriptBox[\(\[ScriptM]\), \(\[Prime]\)]\)"}, {
+                    " ", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    xAct`PerturbationEquations`cd[
+                    xAct`PerturbationEquations`c][
+                    xAct`PerturbationEquations`htrab[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p]]],
+                     Editable -> False], ")"}]}], " ", 
+                    RowBox[{"(", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SubscriptBox["\[Delta] ", "d"], 
+                    GridBox[{{"h", 
+                    StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]", " ", "d"}, {
+                    " ", " ", "c", " "}}, RowSpacings -> 0, ColumnSpacings -> 
+                    0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+                    9]}}, ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    
+                    xAct`PerturbationEquations`cd[-
+                    xAct`PerturbationEquations`d][
+                    xAct`PerturbationEquations`hablm[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]], -
+                    xAct`PerturbationEquations`c, 
+                    xAct`PerturbationEquations`d]], Editable -> False], 
+                    ")"}]}], "+", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SuperscriptBox["\[Delta] ", "c"], 
+                    
+                    GridBox[{{
+                    "\!\(\*SubscriptBox[\(h\), \(\[FilledCircle]\)]\)", 
+                    StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]"}, {" ", " "}}, 
+                    RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    xAct`PerturbationEquations`cd[
+                    xAct`PerturbationEquations`c][
+                    xAct`PerturbationEquations`htrab[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]]], 
+                    Editable -> False], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SubscriptBox["\[Delta] ", "c"], 
+                    GridBox[{{
+                    "\!\(\*SubscriptBox[\(h\), \(\[FilledCircle]\)]\)", 
+                    StyleBox[
+                    
+                    GridBox[{{
+                    "\!\(\*SuperscriptBox[\(\[ScriptL]\), \(\[Prime]\)]\)", 
+                    TemplateBox[{"28"}, "OutputSizeLimit`Skeleton"]}, {
+                    " ", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    
+                    xAct`PerturbationEquations`cd[-
+                    xAct`PerturbationEquations`c][
+                    xAct`PerturbationEquations`htrab[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p]]],
+                     Editable -> False], "-", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SubscriptBox["\[Delta] ", "d"], 
+                    GridBox[{{"h", 
+                    StyleBox[
+                    
+                    GridBox[{{
+                    "\!\(\*SuperscriptBox[\(\[ScriptL]\), \(\[Prime]\)]\)", 
+                    "\!\(\*SuperscriptBox[\(\[ScriptM]\), \(\[Prime]\)]\)", 
+                    " ", "d"}, {" ", " ", "c", " "}}, RowSpacings -> 0, 
+                    ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    
+                    xAct`PerturbationEquations`cd[-
+                    xAct`PerturbationEquations`d][
+                    xAct`PerturbationEquations`hablm[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p], -
+                    xAct`PerturbationEquations`c, 
+                    xAct`PerturbationEquations`d]], Editable -> False]}], 
+                    ")"}]}], "+", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SubscriptBox["\[Delta] ", "c"], 
+                    GridBox[{{"h", 
+                    StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]", "c", "d"}, {
+                    " ", " ", " ", " "}}, RowSpacings -> 0, ColumnSpacings -> 
+                    0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+                    9]}}, ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    
+                    xAct`PerturbationEquations`cd[-
+                    xAct`PerturbationEquations`c][
+                    xAct`PerturbationEquations`hablm[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]], 
+                    xAct`PerturbationEquations`c, 
+                    xAct`PerturbationEquations`d]], Editable -> False], ")"}],
+                     " ", 
+                    RowBox[{"(", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SubscriptBox["\[Delta] ", "i"], 
+                    GridBox[{{"h", 
+                    StyleBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], FontSize -> 
+                    9]}}, ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    
+                    xAct`PerturbationEquations`cd[-
+                    xAct`PerturbationEquations`i][
+                    xAct`PerturbationEquations`hablm[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p], -
+                    xAct`PerturbationEquations`d, 
+                    xAct`PerturbationEquations`i]], Editable -> False], 
+                    ")"}]}], "-", 
+                   RowBox[{
+                    InterpretationBox[
+                    StyleBox[
+                    GridBox[{{"h", 
+                    StyleBox[
+                    
+                    GridBox[{{
+                    "\!\(\*SuperscriptBox[\(\[ScriptL]\), \(\[Prime]\)]\)", 
+                    "\!\(\*SuperscriptBox[\(\[ScriptM]\), \(\[Prime]\)]\)", 
+                    "c", "d"}, {" ", " ", " ", " "}}, RowSpacings -> 0, 
+                    ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    xAct`PerturbationEquations`hablm[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p], 
+                    xAct`PerturbationEquations`c, 
+                    xAct`PerturbationEquations`d], Editable -> False], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    RowBox[{"(", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SubscriptBox["\[Delta] ", "d"], 
+                    SubscriptBox["\[Delta] ", "c"], 
+                    
+                    GridBox[{{
+                    "\!\(\*SubscriptBox[\(h\), \(\[FilledCircle]\)]\)", 
+                    StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]"}, {" ", " "}}, 
+                    RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    
+                    xAct`PerturbationEquations`cd[-
+                    xAct`PerturbationEquations`d][
+                    
+                    xAct`PerturbationEquations`cd[-
+                    xAct`PerturbationEquations`c][
+                    xAct`PerturbationEquations`htrab[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]]]]],
+                     Editable -> False], ")"}]}], "-", 
+                    RowBox[{"2", " ", 
+                    RowBox[{"(", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SubscriptBox["\[Delta] ", "d"], 
+                    SubscriptBox["\[Delta] ", "i"], 
+                    GridBox[{{"h", 
+                    StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]", " ", "i"}, {
+                    " ", " ", "c", " "}}, RowSpacings -> 0, ColumnSpacings -> 
+                    0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+                    9]}}, ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    
+                    xAct`PerturbationEquations`cd[-
+                    xAct`PerturbationEquations`d][
+                    
+                    xAct`PerturbationEquations`cd[-
+                    xAct`PerturbationEquations`i][
+                    xAct`PerturbationEquations`hablm[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]], -
+                    xAct`PerturbationEquations`c, 
+                    xAct`PerturbationEquations`i]]], Editable -> False], 
+                    ")"}]}], "+", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SubscriptBox["\[Delta] ", "i"], 
+                    SuperscriptBox["\[Delta] ", "i"], 
+                    GridBox[{{"h", 
+                    StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]", " ", " "}, {
+                    " ", " ", "c", "d"}}, RowSpacings -> 0, ColumnSpacings -> 
+                    0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+                    9]}}, ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    
+                    xAct`PerturbationEquations`cd[-
+                    xAct`PerturbationEquations`i][
+                    xAct`PerturbationEquations`cd[
+                    xAct`PerturbationEquations`i][
+                    xAct`PerturbationEquations`hablm[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]], -
+                    xAct`PerturbationEquations`c, -
+                    xAct`PerturbationEquations`d]]], Editable -> False]}], 
+                    ")"}]}], "+", 
+                   RowBox[{
+                    FractionBox["1", "4"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"2", " ", 
+                    RowBox[{"(", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SubscriptBox["\[Delta] ", "d"], 
+                    GridBox[{{"h", 
+                    StyleBox[
+                    
+                    GridBox[{{
+                    "\!\(\*SuperscriptBox[\(\[ScriptL]\), \(\[Prime]\)]\)", 
+                    "\!\(\*SuperscriptBox[\(\[ScriptM]\), \(\[Prime]\)]\)", 
+                    " ", " "}, {" ", " ", "c", "i"}}, RowSpacings -> 0, 
+                    ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    
+                    xAct`PerturbationEquations`cd[-
+                    xAct`PerturbationEquations`d][
+                    xAct`PerturbationEquations`hablm[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p], -
+                    xAct`PerturbationEquations`c, -
+                    xAct`PerturbationEquations`i]], Editable -> False], 
+                    ")"}]}], "-", 
+                    RowBox[{"3", " ", 
+                    RowBox[{"(", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SubscriptBox["\[Delta] ", "i"], 
+                    GridBox[{{"h", 
+                    StyleBox[
+                    
+                    GridBox[{{
+                    "\!\(\*SuperscriptBox[\(\[ScriptL]\), \(\[Prime]\)]\)", 
+                    "\!\(\*SuperscriptBox[\(\[ScriptM]\), \(\[Prime]\)]\)", 
+                    " ", " "}, {" ", " ", "c", "d"}}, RowSpacings -> 0, 
+                    ColumnSpacings -> 0.05, 
+                    GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 9]}}, 
+                    ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    
+                    xAct`PerturbationEquations`cd[-
+                    xAct`PerturbationEquations`i][
+                    xAct`PerturbationEquations`hablm[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptP]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]p], -
+                    xAct`PerturbationEquations`c, -
+                    xAct`PerturbationEquations`d]], Editable -> False], 
+                    ")"}]}]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    InterpretationBox[
+                    StyleBox[
+                    RowBox[{
+                    SuperscriptBox["\[Delta] ", "i"], 
+                    GridBox[{{"h", 
+                    StyleBox[
+                    
+                    GridBox[{{"\[ScriptL]", "\[ScriptM]", "c", "d"}, {
+                    " ", " ", " ", " "}}, RowSpacings -> 0, ColumnSpacings -> 
+                    0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+                    9]}}, ColumnSpacings -> 0.05, RowAlignments -> Center]}], 
+                    AutoSpacing -> False, ShowAutoStyles -> False], 
+                    xAct`PerturbationEquations`cd[
+                    xAct`PerturbationEquations`i][
+                    xAct`PerturbationEquations`hablm[
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptL]], 
+                    xAct`xTensor`LI[xAct`PerturbationEquations`\[ScriptM]], 
+                    xAct`PerturbationEquations`c, 
+                    xAct`PerturbationEquations`d]], Editable -> False], 
+                    ")"}]}]}], ")"}]}]}], ")"}]}]}], Short[#, 8]& ], "line" -> 
+   4, "sessionID" -> 21141466003472560592, "byteCount" -> 280384, "size" -> 8,
+    "stored" -> False, "expr" -> Missing["NotStored"], "wrap" -> 
+   OutputSizeLimit`Defer, "version" -> 1|>,
+  "OutputSizeLimitTemplate"]], "Output",
+ CellChangeTimes->{3.916377680415847*^9, 3.916378456735977*^9},
+ CellLabel->"Out[4]=",
+ CellID->1696893292,ExpressionUUID->"e89cbc5e-e2eb-4e81-8afa-680d39e618e4"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -429,7 +1157,7 @@ WindowSize->{700, 770},
 WindowMargins->{{Automatic, 161}, {110, Automatic}},
 TaggingRules-><|"Paclet" -> "PerturbationEquations"|>,
 CellContext->"Global`",
-FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (January 30, 2023)",
+FrontEndVersion->"13.3 for Mac OS X x86 (64-bit) (June 3, 2023)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"9295dc44-32d1-46fb-9724-b117d8608b5c"
@@ -440,14 +1168,14 @@ ExpressionUUID->"9295dc44-32d1-46fb-9724-b117d8608b5c"
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[8317, 251, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"45ee0de3-4b01-48e7-9678-438bb18134d0",
+  Cell[45019, 979, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"45ee0de3-4b01-48e7-9678-438bb18134d0",
    CellTags->"ExtendedExamples",
    CellID->423465774]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 14667, 441}
+ {"ExtendedExamples", 51365, 1169}
  }
 *)
 (*NotebookFileOutline
@@ -495,69 +1223,73 @@ Cell[7322, 218, 186, 3, 47, "ExampleInitialization",ExpressionUUID->"565c2dc4-28
 Cell[CellGroupData[{
 Cell[7545, 226, 443, 12, 73, "PrimaryExamplesSection",ExpressionUUID->"5646416f-3950-4759-a0e0-7d06982aa9c6",
  CellID->1307144712],
-Cell[7991, 240, 289, 6, 27, "Input",ExpressionUUID->"637db36e-8910-438e-a2d2-7b8e74546f46",
- CellID->1578745179]
+Cell[CellGroupData[{
+Cell[8013, 242, 288, 6, 27, "Input",ExpressionUUID->"637db36e-8910-438e-a2d2-7b8e74546f46",
+ CellID->1578745179],
+Cell[8304, 250, 36666, 723, 296, "Output",ExpressionUUID->"e89cbc5e-e2eb-4e81-8afa-680d39e618e4",
+ CellID->1696893292]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8317, 251, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"45ee0de3-4b01-48e7-9678-438bb18134d0",
+Cell[45019, 979, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"45ee0de3-4b01-48e7-9678-438bb18134d0",
  CellTags->"ExtendedExamples",
  CellID->423465774],
-Cell[8807, 266, 241, 5, 35, "ExampleSection",ExpressionUUID->"a5660406-53d1-4b27-b7e2-8b767b027e86",
+Cell[45509, 994, 241, 5, 35, "ExampleSection",ExpressionUUID->"a5660406-53d1-4b27-b7e2-8b767b027e86",
  CellID->428457460],
-Cell[9051, 273, 264, 5, 23, "ExampleSection",ExpressionUUID->"079c50c5-b966-49de-927f-628a09a7eb06",
+Cell[45753, 1001, 264, 5, 23, "ExampleSection",ExpressionUUID->"079c50c5-b966-49de-927f-628a09a7eb06",
  CellID->571861829],
 Cell[CellGroupData[{
-Cell[9340, 282, 244, 5, 23, "ExampleSection",ExpressionUUID->"bc3fe705-8946-4e97-a98d-b0c922cfd346",
+Cell[46042, 1010, 244, 5, 23, "ExampleSection",ExpressionUUID->"bc3fe705-8946-4e97-a98d-b0c922cfd346",
  CellID->1292439678],
-Cell[9587, 289, 246, 5, 26, "ExampleSubsection",ExpressionUUID->"0985cd21-5b6b-4b8c-ac73-d5d0e075eb39",
+Cell[46289, 1017, 246, 5, 26, "ExampleSubsection",ExpressionUUID->"0985cd21-5b6b-4b8c-ac73-d5d0e075eb39",
  CellID->236578741],
-Cell[9836, 296, 247, 5, 22, "ExampleSubsection",ExpressionUUID->"d7db1fc9-87ef-4be2-be1b-49a6fa982cd2",
+Cell[46538, 1024, 247, 5, 22, "ExampleSubsection",ExpressionUUID->"d7db1fc9-87ef-4be2-be1b-49a6fa982cd2",
  CellID->1186669390]
 }, Open  ]],
-Cell[10098, 304, 248, 5, 35, "ExampleSection",ExpressionUUID->"7f3eb342-311a-4053-9ab2-7f0f58790ff4",
+Cell[46800, 1032, 248, 5, 35, "ExampleSection",ExpressionUUID->"7f3eb342-311a-4053-9ab2-7f0f58790ff4",
  CellID->671808041],
-Cell[10349, 311, 259, 5, 23, "ExampleSection",ExpressionUUID->"b102c275-19c7-437d-bc8d-56b96e68aadb",
+Cell[47051, 1039, 259, 5, 23, "ExampleSection",ExpressionUUID->"b102c275-19c7-437d-bc8d-56b96e68aadb",
  CellID->1756212808],
-Cell[10611, 318, 252, 5, 23, "ExampleSection",ExpressionUUID->"358bd544-5bcf-4a65-8fd4-4d4d18fdead7",
+Cell[47313, 1046, 252, 5, 23, "ExampleSection",ExpressionUUID->"358bd544-5bcf-4a65-8fd4-4d4d18fdead7",
  CellID->1653419688],
-Cell[10866, 325, 256, 5, 23, "ExampleSection",ExpressionUUID->"cf044b32-2268-467a-bf7b-1ef0ad052b49",
+Cell[47568, 1053, 256, 5, 23, "ExampleSection",ExpressionUUID->"cf044b32-2268-467a-bf7b-1ef0ad052b49",
  CellID->586304036],
-Cell[11125, 332, 250, 5, 23, "ExampleSection",ExpressionUUID->"e8aa059f-bb7f-48ab-8961-c5aaa78646b6",
+Cell[47827, 1060, 250, 5, 23, "ExampleSection",ExpressionUUID->"e8aa059f-bb7f-48ab-8961-c5aaa78646b6",
  CellID->1356960616]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11412, 342, 110, 1, 72, "MetadataSection",ExpressionUUID->"aa08a835-b0ff-4c31-8997-9a5ba231c5e4",
+Cell[48114, 1070, 110, 1, 72, "MetadataSection",ExpressionUUID->"aa08a835-b0ff-4c31-8997-9a5ba231c5e4",
  CellID->160741972],
-Cell[11525, 345, 475, 12, 26, "History",ExpressionUUID->"ec9790ff-a3b6-46a4-9e7b-5c34b2406270",
+Cell[48227, 1073, 475, 12, 26, "History",ExpressionUUID->"ec9790ff-a3b6-46a4-9e7b-5c34b2406270",
  CellID->55895478],
 Cell[CellGroupData[{
-Cell[12025, 361, 484, 13, 21, "CategorizationSection",ExpressionUUID->"fd2199a1-e0f0-48f3-ba94-3812953c72fe",
+Cell[48727, 1089, 484, 13, 21, "CategorizationSection",ExpressionUUID->"fd2199a1-e0f0-48f3-ba94-3812953c72fe",
  CellID->984945007],
-Cell[12512, 376, 135, 2, 35, "Categorization",ExpressionUUID->"2609a263-0211-4187-b4b9-ba2c44704122",
+Cell[49214, 1104, 135, 2, 35, "Categorization",ExpressionUUID->"2609a263-0211-4187-b4b9-ba2c44704122",
  CellID->1166781573],
-Cell[12650, 380, 149, 2, 35, "Categorization",ExpressionUUID->"4f5b43c6-b045-4fc4-80f2-87158de539d6",
+Cell[49352, 1108, 149, 2, 35, "Categorization",ExpressionUUID->"4f5b43c6-b045-4fc4-80f2-87158de539d6",
  CellID->477570541],
-Cell[12802, 384, 152, 2, 35, "Categorization",ExpressionUUID->"e0848d9e-0ccd-438e-aee0-5be2268e5af6",
+Cell[49504, 1112, 152, 2, 35, "Categorization",ExpressionUUID->"e0848d9e-0ccd-438e-aee0-5be2268e5af6",
  CellID->1381693748],
-Cell[12957, 388, 192, 4, 35, "Categorization",ExpressionUUID->"c0d955bf-d727-49ed-ab16-53102ed4ab04",
+Cell[49659, 1116, 192, 4, 35, "Categorization",ExpressionUUID->"c0d955bf-d727-49ed-ab16-53102ed4ab04",
  CellID->1386147625]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[13186, 397, 110, 1, 21, "KeywordsSection",ExpressionUUID->"7057bccd-7391-48c4-b27a-bb9e2119a97d",
+Cell[49888, 1125, 110, 1, 21, "KeywordsSection",ExpressionUUID->"7057bccd-7391-48c4-b27a-bb9e2119a97d",
  CellID->820982300],
-Cell[13299, 400, 99, 1, 70, "Keywords",ExpressionUUID->"f9ad3b93-fbdd-4f28-bcc6-18126ce02a26",
+Cell[50001, 1128, 99, 1, 70, "Keywords",ExpressionUUID->"f9ad3b93-fbdd-4f28-bcc6-18126ce02a26",
  CellID->667084125]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[13435, 406, 120, 1, 21, "TemplatesSection",ExpressionUUID->"229f87c1-39f5-4850-b6de-5a0d06d7485f",
+Cell[50137, 1134, 120, 1, 21, "TemplatesSection",ExpressionUUID->"229f87c1-39f5-4850-b6de-5a0d06d7485f",
  CellID->1818251535],
-Cell[13558, 409, 148, 2, 70, "Template",ExpressionUUID->"39b6ef1c-2ff0-4c3e-a0f1-001639740673",
+Cell[50260, 1137, 148, 2, 70, "Template",ExpressionUUID->"39b6ef1c-2ff0-4c3e-a0f1-001639740673",
  CellID->661251935],
-Cell[13709, 413, 137, 2, 70, "Template",ExpressionUUID->"9c4d8e30-77d0-45a6-a6ab-83220f66e8ba",
+Cell[50411, 1141, 137, 2, 70, "Template",ExpressionUUID->"9c4d8e30-77d0-45a6-a6ab-83220f66e8ba",
  CellID->433398320],
-Cell[13849, 417, 136, 2, 70, "Template",ExpressionUUID->"bd9301f3-d283-4163-844d-b8490feba9c3",
+Cell[50551, 1145, 136, 2, 70, "Template",ExpressionUUID->"bd9301f3-d283-4163-844d-b8490feba9c3",
  CellID->2008517263],
-Cell[13988, 421, 137, 2, 70, "Template",ExpressionUUID->"ac1cdb8f-6f2c-4fa5-b70e-48cf0fde0a98",
+Cell[50690, 1149, 137, 2, 70, "Template",ExpressionUUID->"ac1cdb8f-6f2c-4fa5-b70e-48cf0fde0a98",
  CellID->854192048]
 }, Closed]]
 }, Open  ]]

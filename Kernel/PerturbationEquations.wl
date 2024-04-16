@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Begin Package*)
 
 
@@ -44,11 +44,11 @@ ReportSet[$DefInfoQ,False];
 ReportSet[$CVVerbose,False];
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Usage messages*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Rules*)
 
 
@@ -89,11 +89,11 @@ sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 HyperboloidalCoordinates::usage = "Rule for transforming to a hyperboloidal time coordinate with t=\[Tau]-h[r].";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Symbols*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Basis*)
 
 
@@ -106,7 +106,7 @@ The ordering of the output terms is {\!\(\*SubscriptBox[\(h\), \(tt\)]\),\!\(\*S
 ChristoffelPDBLPDHyp::usage="Christoffel symbols between Boyer--Lindquist and Hyperbolic coordinates.";
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Gauges*)
 
 
@@ -118,7 +118,7 @@ OutgoingRadiationGauge::usage="The Outgoing Radiation Gauge, \!\(\*SubscriptBox[
 TraceFreeOutgoingRadiationGauge::usage="The Trace free Outgoing Radiation Gauge, \!\(\*SubscriptBox[\(h\), \(na\)]\)=0=\!\(\*SubscriptBox[\(h\), \(m \*OverscriptBox[\(m\), \(_\)]\)]\)."
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Coupling coefficients*)
 
 
@@ -160,7 +160,7 @@ Replaces l, m, \!\(\*SubscriptBox[\(l\), \(1\)]\), \!\(\*SubscriptBox[\(m\), \(1
 \[Sigma]p::usage = "\[Sigma]+1";
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Coordinates*)
 
 
@@ -176,7 +176,7 @@ M::usage = "Mass.";
 H::usage = "Height function relating the hyperboloidal time to the Boyer--Lindquist time, t=\[Tau]-h[r] and H[r]=\!\(\*FractionBox[\(d\), SubscriptBox[\(dr\), \(*\)]]\)h[r]=\!\(\*FractionBox[\(1\), \(f\)]\)h'[r].";
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Mode numbers*)
 
 
@@ -195,7 +195,7 @@ m2::usage ="Magnetic number m2.";
 \[Omega]2::usage ="Frequency \[Omega]2.";
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Metric perturbations*)
 
 
@@ -231,7 +231,7 @@ htm::usage ="t component of the minus angular part of the metric perturbation.";
 hrm::usage ="r component of the minus angular part of the metric perturbation.";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Master Teukolsky Variables*)
 
 
@@ -239,7 +239,7 @@ psiMasterplus2::usage ="spin +2 Master Teukolsky variable";
 psiMasterminus2::usage ="spin -2 Master Teukolsky variable";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Functions*)
 
 
@@ -252,7 +252,7 @@ SchwarzschildLinearOperator::usage = "SchwarzschildLinearOperator[source, gauge,
 SchwarzschildQuadraticCovariantSource::usage = "SchwarzschildQuadraticCovariantSource[source, gauge] generates d2G, a second-order source in Schwarzschild spacetime, in the t-r covariant manifold.";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Error Messages*)
 
 
@@ -261,7 +261,7 @@ SchwarzschildSource::argserror2 = "Cannot put `1` in output basis `2`";
 SchwarzschildCovariantSource::argserror = "Argument `1` is unknown";
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Definitions*)
 
 
@@ -394,14 +394,14 @@ DefTensor[psiMasterminus2[LI[l],LI[\[ScriptM]]],R2,PrintAs->"\!\(\*
 StyleBox[AdjustmentBox[\"-2\",\nBoxBaselineShift->0.6276432914790547,\nBoxMargins->{{0., 0.}, {-0.6276432914790547, 0.6276432914790547}}],\nFontSize->9]\)\[Psi]"];
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Begin Private part of package*)
 
 
 Begin["`Private`"]
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Frequency domain decomposition*)
 
 
@@ -524,7 +524,7 @@ PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterplus2[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}
 }
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Load expressions for dG, dR, d2G, d2R, S0d2G and S4d2G*)
 
 
@@ -591,13 +591,11 @@ Get["xAct`PerturbationEquations`S4d2GCarter`"];
 Get["xAct`PerturbationEquations`S4d2GLorenzCarter`"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Master Teukolsky*)
 
 
-MasterTeukolskyplus2=(psiMasterplus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`m]] (4 I xAct`PerturbationEquations`M xAct`PerturbationEquations`\[Omega]-xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] (-6+xAct`PerturbationEquations`l+xAct`PerturbationEquations`l^2-8 I xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[] (-4 I+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])))/xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]]+6 (xAct`PerturbationEquations`M+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]) xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterplus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`m]]]+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]^2 xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterplus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`m]]]];
-
-MasterTeukolskyminus2=(psiMasterminus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`m]] (-4 I xAct`PerturbationEquations`M xAct`PerturbationEquations`\[Omega]-xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] (-2+xAct`PerturbationEquations`l+xAct`PerturbationEquations`l^2+8 I xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[] (4 I+xAct`PerturbationEquations`\[Omega] xAct`PerturbationEquations`r[])))/xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]]-2 (xAct`PerturbationEquations`M+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]) xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterminus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`m]]]+xAct`PerturbationEquations`f[xAct`PerturbationEquations`r[]] xAct`PerturbationEquations`r[]^2 xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][xAct`xTensor`PD[{1, -xAct`PerturbationEquations`BL}][psiMasterminus2[xAct`xTensor`LI[xAct`PerturbationEquations`l], xAct`xTensor`LI[xAct`PerturbationEquations`m]]]];
+Get["xAct`PerturbationEquations`MasterTeukolsky`"];
 
 
 (* ::Section::Closed:: *)
@@ -720,7 +718,7 @@ x[[9]]*r[]^2,
 Input order: "ll","ln","lm","lmbar","nn","nm","nmbar","mm","mmbar","mbarmbar"*)
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*From Carter to Kinnersley tetrad rule and function*)
 
 
@@ -738,7 +736,7 @@ h[{4,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{4,-NP},{4,-NP},LI[s],LI[l],LI[m]]};
 CarterToKinnersley[x_]:={2/f[r[]]x[[1]],x[[2]],Sqrt[2/f[r[]]]x[[3]],Sqrt[2/f[r[]]]x[[4]],f[r[]]/2  x[[5]],Sqrt[f[r[]]/2]x[[6]],Sqrt[f[r[]]/2]x[[7]],x[[8]],x[[9]],x[[10]]}
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*From Carter to Hartle--Hawking tetrad rule and function*)
 
 
@@ -756,7 +754,7 @@ h[{4,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{4,-NP},{4,-NP},LI[s],LI[l],LI[m]]};
 CarterToHartleHawking[x_]:={(2/f[r[]])^(-1)x[[1]],x[[2]],(Sqrt[2/f[r[]]])^(-1)x[[3]],(Sqrt[2/f[r[]]])^(-1)x[[4]],(f[r[]]/2 )^(-1) x[[5]],(Sqrt[f[r[]]/2])^(-1)x[[6]],(Sqrt[f[r[]]/2])^(-1)x[[7]],x[[8]],x[[9]],x[[10]]}
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Rules for f[r], mu[l,s], etc.*)
 
 
@@ -786,7 +784,7 @@ CInt[LI[l_], LI[m_], LI[s_], -LI[l1_], -LI[m1_], -LI[s1_], -LI[l2_], -LI[m2_], -
 lmReplacerule[func_,ld_,md_,l1d_,m1d_,l2d_,m2d_]:=func/.l->ld/.m->md/.l1->l1d/.m1->m1d/.l2->l2d/.m2->m2d/.CIntrule/.mutolrule;
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*SchwarzschildSource Function*)
 
 
@@ -927,7 +925,7 @@ If[Source=="d2G"&&Gauge=="ReggeWheeler",func=d2GVectorHarmonics/.RWGaugeConditio
 Return[func]];
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*HyperboloidalCoordinates rule*)
 
 
