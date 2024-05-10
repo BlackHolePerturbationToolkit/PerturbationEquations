@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Begin Package*)
 
 
@@ -44,11 +44,11 @@ ReportSet[$DefInfoQ,False];
 ReportSet[$CVVerbose,False];
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Usage messages*)
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Rules*)
 
 
@@ -261,7 +261,7 @@ SchwarzschildSource::argserror2 = "Cannot put `1` in output basis `2`";
 SchwarzschildCovariantSource::argserror = "Argument `1` is unknown";
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Definitions*)
 
 
@@ -282,6 +282,7 @@ DefScalarFunction[H];
 DefChart[Hyp,R2,{0,1},{\[Tau][],r[]},ChartColor->RGBColor[0,1,0]];
 
 DefChart[BL,R2,{0,1},{t[],r[]}];
+MetricInBasis[q,-BL,{{-f[r[]],0},{0,1/f[r[]]}}];
 
 
 $Assumptions=f[r[]]>0;
