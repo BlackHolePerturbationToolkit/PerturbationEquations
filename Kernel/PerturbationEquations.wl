@@ -402,7 +402,7 @@ StyleBox[AdjustmentBox[\"-2\",\nBoxBaselineShift->0.6276432914790547,\nBoxMargin
 Begin["`Private`"]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Frequency domain decomposition*)
 
 
@@ -515,13 +515,151 @@ PD[{0,-Hyp}][psiMasterplus2[LI[l1],LI[m1]]]:>-I \[Omega]1 psiMasterplus2[LI[l1],
 PD[{0,-Hyp}][psiMasterplus2[LI[l2],LI[m2]]]:>-I \[Omega]2 psiMasterplus2[LI[l2],LI[m2]],
 PD[{0,-Hyp}][psiMasterplus2[LI[l],LI[m]]]:>-I \[Omega] psiMasterplus2[LI[l],LI[m]],
 
+
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][h[{A_,-NP},{B_,-NP},LI[C_],LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][h[{A,-NP},{B,-NP},LI[C],LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][h[{A_,-NP},{B_,-NP},LI[C_],LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][h[{A,-NP},{B,-NP},LI[C],LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][h[{A_,-NP},{B_,-NP},LI[C_],LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][h[{A,-NP},{B,-NP},LI[C],LI[l],LI[m]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][hBS[LI[C_],LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][hBS[LI[C],LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][hBS[LI[C_],LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][hBS[LI[C],LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][hBS[LI[C_],LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][hBS[LI[C],LI[l],LI[m]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][hK[{A_,-NP},{B_,-NP},LI[C_],LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][hK[{A,-NP},{B,-NP},LI[C],LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][hK[{A_,-NP},{B_,-NP},LI[C_],LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][hK[{A,-NP},{B,-NP},LI[C],LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][hK[{A_,-NP},{B_,-NP},LI[C_],LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][hK[{A,-NP},{B,-NP},LI[C],LI[l],LI[m]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][htt[LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][htt[LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][htt[LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][htt[LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][htt[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][htt[LI[l],LI[m]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][htr[LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][htr[LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][htr[LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][htr[LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][htr[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][htr[LI[l],LI[m]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][hrr[LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][hrr[LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][hrr[LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][hrr[LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][hrr[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][hrr[LI[l],LI[m]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][hrp[LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][hrp[LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][hrp[LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][hrp[LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][hrp[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][hrp[LI[l],LI[m]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][hrm[LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][hrm[LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][hrm[LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][hrm[LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][hrm[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][hrm[LI[l],LI[m]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][htp[LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][htp[LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][htp[LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][htp[LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][htp[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][htp[LI[l],LI[m]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][htm[LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][htm[LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][htm[LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][htm[LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][htm[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][htm[LI[l],LI[m]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][htrAB[LI[l1],LI[m1]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][htrAB[LI[l2],LI[m2]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][htrAB[LI[l],LI[m]]],
+
+
 PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterminus2[LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][psiMasterminus2[LI[l1],LI[m1]]],
 PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterminus2[LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][psiMasterminus2[LI[l2],LI[m2]]],
 PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterminus2[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][psiMasterminus2[LI[l],LI[m]]],
 
 PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterplus2[LI[l1],LI[m1]]]]:>-I \[Omega]1 PD[{1,-Hyp}][psiMasterplus2[LI[l1],LI[m1]]],
 PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterplus2[LI[l2],LI[m2]]]]:>-I \[Omega]2 PD[{1,-Hyp}][psiMasterplus2[LI[l2],LI[m2]]],
-PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterplus2[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][psiMasterplus2[LI[l],LI[m]]]
+PD[{0,-Hyp}][PD[{1,-Hyp}][psiMasterplus2[LI[l],LI[m]]]]:>-I \[Omega] PD[{1,-Hyp}][psiMasterplus2[LI[l],LI[m]]],
+
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][h[{A_,-NP},{B_,-NP},LI[C_],LI[l1],LI[m1]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][h[{A,-NP},{B,-NP},LI[C],LI[l1],LI[m1]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][h[{A_,-NP},{B_,-NP},LI[C_],LI[l2],LI[m2]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][h[{A,-NP},{B,-NP},LI[C],LI[l2],LI[m2]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][h[{A_,-NP},{B_,-NP},LI[C_],LI[l],LI[m]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][h[{A,-NP},{B,-NP},LI[C],LI[l],LI[m]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hBS[LI[C_],LI[l1],LI[m1]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][hBS[LI[C],LI[l1],LI[m1]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hBS[LI[C_],LI[l2],LI[m2]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][hBS[LI[C],LI[l2],LI[m2]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hBS[LI[C_],LI[l],LI[m]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][hBS[LI[C],LI[l],LI[m]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hK[{A_,-NP},{B_,-NP},LI[C_],LI[l1],LI[m1]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][hK[{A,-NP},{B,-NP},LI[C],LI[l1],LI[m1]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hK[{A_,-NP},{B_,-NP},LI[C_],LI[l2],LI[m2]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][hK[{A,-NP},{B,-NP},LI[C],LI[l2],LI[m2]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hK[{A_,-NP},{B_,-NP},LI[C_],LI[l],LI[m]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][hK[{A,-NP},{B,-NP},LI[C],LI[l],LI[m]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htt[LI[l1],LI[m1]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][htt[LI[l1],LI[m1]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htt[LI[l2],LI[m2]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][htt[LI[l2],LI[m2]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htt[LI[l],LI[m]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][htt[LI[l],LI[m]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htr[LI[l1],LI[m1]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][htr[LI[l1],LI[m1]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htr[LI[l2],LI[m2]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][htr[LI[l2],LI[m2]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htr[LI[l],LI[m]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][htr[LI[l],LI[m]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrr[LI[l1],LI[m1]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][hrr[LI[l1],LI[m1]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrr[LI[l2],LI[m2]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][hrr[LI[l2],LI[m2]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrr[LI[l],LI[m]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][hrr[LI[l],LI[m]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrp[LI[l1],LI[m1]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][hrp[LI[l1],LI[m1]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrp[LI[l2],LI[m2]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][hrp[LI[l2],LI[m2]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrp[LI[l],LI[m]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][hrp[LI[l],LI[m]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrm[LI[l1],LI[m1]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][hrm[LI[l1],LI[m1]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrm[LI[l2],LI[m2]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][hrm[LI[l2],LI[m2]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrm[LI[l],LI[m]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][hrm[LI[l],LI[m]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htp[LI[l1],LI[m1]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][htp[LI[l1],LI[m1]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htp[LI[l2],LI[m2]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][htp[LI[l2],LI[m2]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htp[LI[l],LI[m]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][htp[LI[l],LI[m]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htm[LI[l1],LI[m1]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][htm[LI[l1],LI[m1]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htm[LI[l2],LI[m2]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][htm[LI[l2],LI[m2]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htm[LI[l],LI[m]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][htm[LI[l],LI[m]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l1],LI[m1]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l1],LI[m1]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l2],LI[m2]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l2],LI[m2]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l],LI[m]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l],LI[m]]]],
+
+
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][h[{A_,-NP},{B_,-NP},LI[C_],LI[l1],LI[m1]]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][h[{A,-NP},{B,-NP},LI[C],LI[l1],LI[m1]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][h[{A_,-NP},{B_,-NP},LI[C_],LI[l2],LI[m2]]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][h[{A,-NP},{B,-NP},LI[C],LI[l2],LI[m2]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][h[{A_,-NP},{B_,-NP},LI[C_],LI[l],LI[m]]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][h[{A,-NP},{B,-NP},LI[C],LI[l],LI[m]]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hBS[LI[C_],LI[l1],LI[m1]]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hBS[LI[C],LI[l1],LI[m1]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hBS[LI[C_],LI[l2],LI[m2]]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hBS[LI[C],LI[l2],LI[m2]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hBS[LI[C_],LI[l],LI[m]]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hBS[LI[C],LI[l],LI[m]]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hK[{A_,-NP},{B_,-NP},LI[C_],LI[l1],LI[m1]]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hK[{A,-NP},{B,-NP},LI[C],LI[l1],LI[m1]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hK[{A_,-NP},{B_,-NP},LI[C_],LI[l2],LI[m2]]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hK[{A,-NP},{B,-NP},LI[C],LI[l2],LI[m2]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hK[{A_,-NP},{B_,-NP},LI[C_],LI[l],LI[m]]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hK[{A,-NP},{B,-NP},LI[C],LI[l],LI[m]]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htt[LI[l1],LI[m1]]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htt[LI[l1],LI[m1]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htt[LI[l2],LI[m2]]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htt[LI[l2],LI[m2]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htt[LI[l],LI[m]]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htt[LI[l],LI[m]]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htr[LI[l1],LI[m1]]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htr[LI[l1],LI[m1]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htr[LI[l2],LI[m2]]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htr[LI[l2],LI[m2]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htr[LI[l],LI[m]]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htr[LI[l],LI[m]]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrr[LI[l1],LI[m1]]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrr[LI[l1],LI[m1]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrr[LI[l2],LI[m2]]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrr[LI[l2],LI[m2]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrr[LI[l],LI[m]]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrr[LI[l],LI[m]]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrp[LI[l1],LI[m1]]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrp[LI[l1],LI[m1]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrp[LI[l2],LI[m2]]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrp[LI[l2],LI[m2]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrp[LI[l],LI[m]]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrp[LI[l],LI[m]]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrm[LI[l1],LI[m1]]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrm[LI[l1],LI[m1]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrm[LI[l2],LI[m2]]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrm[LI[l2],LI[m2]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrm[LI[l],LI[m]]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][hrm[LI[l],LI[m]]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htp[LI[l1],LI[m1]]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htp[LI[l1],LI[m1]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htp[LI[l2],LI[m2]]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htp[LI[l2],LI[m2]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htp[LI[l],LI[m]]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htp[LI[l],LI[m]]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htm[LI[l1],LI[m1]]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htm[LI[l1],LI[m1]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htm[LI[l2],LI[m2]]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htm[LI[l2],LI[m2]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htm[LI[l],LI[m]]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htm[LI[l],LI[m]]]]],
+
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l1],LI[m1]]]]]]:>-I \[Omega]1 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l1],LI[m1]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l2],LI[m2]]]]]]:>-I \[Omega]2 PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l2],LI[m2]]]]],
+PD[{0,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l],LI[m]]]]]]:>-I \[Omega] PD[{1,-Hyp}][PD[{1,-Hyp}][PD[{1,-Hyp}][htrAB[LI[l],LI[m]]]]]
 }
 
 
