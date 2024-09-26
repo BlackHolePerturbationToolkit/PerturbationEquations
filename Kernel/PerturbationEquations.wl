@@ -923,7 +923,7 @@ CInt[LI[l_], LI[m_], LI[s_], -LI[l1_], -LI[m1_], -LI[s1_], -LI[l2_], -LI[m2_], -
 lmReplacerule[func_,ld_,md_,l1d_,m1d_,l2d_,m2d_]:=func/.l->ld/.m->md/.l1->l1d/.m1->m1d/.l2->l2d/.m2->m2d/.CIntrule/.mutolrule;
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*SchwarzschildSource Function*)
 
 
@@ -983,8 +983,8 @@ If[OutputBasis=="HartleHawking"&&MemberQ[{"d2G","d2R"},Source],func=Association@
 If[OutputBasis=="HartleHawking"&&Source=="S0d2G",func=func*(2/f[r[]])^(-1)];
 If[OutputBasis=="HartleHawking"&&Source=="S4d2G",func=func*(f[r[]]/2)^(-1)];
 
-If[OutputBasis=="Master"&&Source=="S0d2G",func=func*-4*r^2/f[r[]]];
-If[OutputBasis=="Master"&&Source=="S4d2G",func=func*-r^6*f[r[]]];
+If[OutputBasis=="Master"&&Source=="S0d2G",func=func*4*r^2/f[r[]]];(*** might look a - factor is missing, but this is because S0d2G does not contain a minus factor from d2G ***)
+If[OutputBasis=="Master"&&Source=="S4d2G",func=func*r^6*f[r[]]];(*** might look a - factor is missing, but this is because S4d2G does not contain a minus factor from d2G ***)
 
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
 If[InputBasis=="trTensor",func=func/.CarterTotrhRule];
