@@ -122,7 +122,9 @@ TraceFreeOutgoingRadiationGauge::usage="The Trace free Outgoing Radiation Gauge,
 (*Coupling coefficients*)
 
 
-CInt::usage = "CInt[LI[l], LI[m], LI[s], -LI[l'], -LI[m'], -LI[s'], -LI[l''], -LI[m''], -LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]";
+CInt::usage = "CInt[LI[l], LI[m], LI[s], -LI[l'], -LI[m'], -LI[s'], -LI[l''], -LI[m''], -LI[s'']]=\!\(\*SubscriptBox[\(\[Integral]\), \(S\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s\)]\)\!\(\*SuperscriptBox[OverscriptBox[\(Y\), \(_\)], \(lm\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s'\)]\)\!\(\*SuperscriptBox[\(Y\), \(l' m'\)]\)\!\(\*SubscriptBox[\(\\\ \), \(s''\)]\)\!\(\*SuperscriptBox[\(Y\), \(l'' m''\)]\) \[DifferentialD]\[CapitalOmega]
+
+To evaluate CInt for integer values of l,m,s,l',m',s',l'',m'',s'', use CIntrule";
 
 
 CIntrule::usage = "Converts CInt to ThreeJSymbols: {SchwarzschildPerturbations`CInt[xAct`xTensor`LI[Pattern[SchwarzschildPerturbations`l, Blank[]]], xAct`xTensor`LI[Pattern[SchwarzschildPerturbations`m, Blank[]]], xAct`xTensor`LI[Pattern[s, Blank[]]], -xAct`xTensor`LI[Pattern[SchwarzschildPerturbations`l1, Blank[]]], -xAct`xTensor`LI[Pattern[SchwarzschildPerturbations`m1, Blank[]]], -xAct`xTensor`LI[Pattern[s1, Blank[]]], -xAct`xTensor`LI[Pattern[SchwarzschildPerturbations`l2, Blank[]]], -xAct`xTensor`LI[Pattern[SchwarzschildPerturbations`m2, Blank[]]], -xAct`xTensor`LI[Pattern[s2, Blank[]]]]\[RuleDelayed](-1\!\(\*SuperscriptBox[\()\), \(\*InterpretationBox[
