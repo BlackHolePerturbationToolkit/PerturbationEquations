@@ -810,13 +810,13 @@ ail[[10]]/r[](I (x[[8]] mu[LI[l], -LI[1]] mu[LI[l], -LI[2]] r[]-x[[10]] mu[LI[l]
 (*Input order for CarterToBLS: "ll","ln","lm","lmbar","nn","nm","nmbar","mm","mmbar","mbarmbar"*)
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*BLS to t-r basis rule and function*)
 
 
-BLStotrhRule={hBS[LI[1],LI[l_],LI[m_]]:>r[](f[r[]]^2 htt[LI[l],LI[m]]+hrr[LI[l],LI[m]]),
+BLStotrhRule={hBS[LI[1],LI[l_],LI[m_]]:>r[]( htt[LI[l],LI[m]]+f[r[]]^2 hrr[LI[l],LI[m]]),
 hBS[LI[2],LI[l_],LI[m_]]:>2r[]f[r[]] htr[LI[l],LI[m]],
-hBS[LI[3],LI[l_],LI[m_]]:>r[]/f[r[]](f[r[]]^2 htt[LI[l],LI[m]]-hrr[LI[l],LI[m]]),
+hBS[LI[3],LI[l_],LI[m_]]:>r[]/f[r[]]( htt[LI[l],LI[m]]-f[r[]]^2hrr[LI[l],LI[m]]),
 hBS[LI[4],LI[l_],LI[m_]]:>2 mu[LI[l],-LI[1]]^2 htp[LI[l],LI[m]],
 hBS[LI[5],LI[l_],LI[m_]]:>2 mu[LI[l],-LI[1]]^2 f[r[]] hrp[LI[l],LI[m]],
 hBS[LI[8],LI[l_],LI[m_]]:>-2 mu[LI[l],-LI[1]]^2 htm[LI[l],LI[m]],
