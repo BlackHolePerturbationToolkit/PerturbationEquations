@@ -89,7 +89,7 @@ sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 HyperboloidalCoordinates::usage = "Rule for transforming to a hyperboloidal time coordinate with t=\[Tau]-h[r].";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Symbols*)
 
 
@@ -118,7 +118,7 @@ OutgoingRadiationGauge::usage="The Outgoing Radiation Gauge, \!\(\*SubscriptBox[
 TraceFreeOutgoingRadiationGauge::usage="The Trace free Outgoing Radiation Gauge, \!\(\*SubscriptBox[\(h\), \(na\)]\)=0=\!\(\*SubscriptBox[\(h\), \(m \*OverscriptBox[\(m\), \(_\)]\)]\)."
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Coupling coefficients*)
 
 
