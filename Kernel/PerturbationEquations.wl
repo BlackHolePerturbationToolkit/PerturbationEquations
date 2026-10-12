@@ -68,7 +68,7 @@ CarterToKinnersley::usage = "Rule that takes a quantity expressed in terms of it
 
 
 CarterToHartleHawkinghRule::usage = "Rule that expresses Carter tetrad modes of the metric perturbation in terms of the Hartle--Hawking tetrad modes.";
-CarterToHartleHawkingKinnersley::usage = "Rule that takes a quantity expressed in terms of its Carter output modes, and reexpresses the quantity in terms of Hartle--Hawking tetrad output modes."
+CarterToHartleHawking::usage = "Rule that takes a quantity expressed in terms of its Carter output modes, and reexpresses the quantity in terms of Hartle--Hawking tetrad output modes."
 
 
 FrequencyDomainConversion::usage = "Rule for converting t derivatives to frequency domain. Assumes the time dependence is Exp[-i\[Omega]t].";
@@ -197,14 +197,14 @@ m2::usage ="Magnetic number m2.";
 \[Omega]2::usage ="Frequency \[Omega]2.";
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Metric perturbations*)
 
 
 h::usage ="Metric perturbation.";
 
 
-hBS::usage ="Metric perturbation in the Barack-Sago basis.";
+hBS::usage ="Metric perturbation in the Barack-Sago basis (non-trace-reversed).";
 
 
 hK::usage ="Metric perturbation in the Kinnersley basis.";
@@ -447,6 +447,14 @@ PD[{0,-BL}][htp[LI[l],LI[m]]]:>-I \[Omega] htp[LI[l],LI[m]],
 PD[{0,-BL}][htm[LI[l1],LI[m1]]]:>-I \[Omega]1 htm[LI[l1],LI[m1]],
 PD[{0,-BL}][htm[LI[l2],LI[m2]]]:>-I \[Omega]2 htm[LI[l2],LI[m2]],
 PD[{0,-BL}][htm[LI[l],LI[m]]]:>-I \[Omega] htm[LI[l],LI[m]],
+
+PD[{0,-BL}][hp[LI[l1],LI[m1]]]:>-I \[Omega]1 hp[LI[l1],LI[m1]],
+PD[{0,-BL}][hp[LI[l2],LI[m2]]]:>-I \[Omega]2 hp[LI[l2],LI[m2]],
+PD[{0,-BL}][hp[LI[l],LI[m]]]:>-I \[Omega] hp[LI[l],LI[m]],
+
+PD[{0,-BL}][hm[LI[l1],LI[m1]]]:>-I \[Omega]1 hm[LI[l1],LI[m1]],
+PD[{0,-BL}][hm[LI[l2],LI[m2]]]:>-I \[Omega]2 hm[LI[l2],LI[m2]],
+PD[{0,-BL}][hm[LI[l],LI[m]]]:>-I \[Omega] hm[LI[l],LI[m]],
 
 PD[{0,-BL}][htrAB[LI[l1],LI[m1]]]:>-I \[Omega]1 htrAB[LI[l1],LI[m1]],
 PD[{0,-BL}][htrAB[LI[l2],LI[m2]]]:>-I \[Omega]2 htrAB[LI[l2],LI[m2]],
@@ -826,7 +834,7 @@ hBS[LI[7],LI[l_],LI[m_]]:>mu[LI[l],-LI[1]]^2 mu[LI[l],-LI[2]]^2/r[] hp[LI[l],LI[
 hBS[LI[10],LI[l_],LI[m_]]:>-mu[LI[l],-LI[1]]^2 mu[LI[l],-LI[2]]^2/r[] hm[LI[l],LI[m]]};
 
 
-BLStotr[x_]:={1/Sqrt[2](f[r[]]x[[3]]+x[[1]]),1/(Sqrt[2]f[r[]])x[[2]],1/(Sqrt[2]f[r[]]^2)(-f[r[]]x[[3]]+x[[1]]),r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[4]],r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[5]],r[]^2/(Sqrt[2])x[[6]],Sqrt[2]r[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[7]],-r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[8]],-r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[9]],-Sqrt[2]r[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[10]]};
+BLStotr[x_]:={1/Sqrt[2](f[r[]]x[[3]]+x[[1]]),1/(Sqrt[2]f[r[]])x[[2]],1/(Sqrt[2]f[r[]]^2)(-f[r[]]x[[3]]+x[[1]]),r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[4]],r[]/(Sqrt[2]f[r[]]mu[LI[l],-LI[1]])x[[5]],r[]^2/(Sqrt[2])x[[6]],Sqrt[2]r[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[7]],-r[]/(Sqrt[2]mu[LI[l],-LI[1]])x[[8]],-r[]/(Sqrt[2]f[r[]]mu[LI[l],-LI[1]])x[[9]],-Sqrt[2]r[]^2/(mu[LI[l],-LI[1]]mu[LI[l],-LI[2]])x[[10]]};
 
 
 (* ::Section::Closed:: *)
@@ -877,7 +885,7 @@ h[{4,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{4,-NP},{4,-NP},LI[s],LI[l],LI[m]]};
 CarterToKinnersley[x_]:={2/f[r[]]x[[1]],x[[2]],Sqrt[2/f[r[]]]x[[3]],Sqrt[2/f[r[]]]x[[4]],f[r[]]/2  x[[5]],Sqrt[f[r[]]/2]x[[6]],Sqrt[f[r[]]/2]x[[7]],x[[8]],x[[9]],x[[10]]}
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*From Carter to Hartle--Hawking tetrad rule and function*)
 
 
@@ -895,7 +903,7 @@ h[{4,-NP},{4,-NP},LI[s_],LI[l_],LI[m_]]:>hK[{4,-NP},{4,-NP},LI[s],LI[l],LI[m]]};
 CarterToHartleHawking[x_]:={(2/f[r[]])^(-1)x[[1]],x[[2]],(Sqrt[2/f[r[]]])^(-1)x[[3]],(Sqrt[2/f[r[]]])^(-1)x[[4]],(f[r[]]/2 )^(-1) x[[5]],(Sqrt[f[r[]]/2])^(-1)x[[6]],(Sqrt[f[r[]]/2])^(-1)x[[7]],x[[8]],x[[9]],x[[10]]}
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Rules for f[r], mu[l,s], etc.*)
 
 
@@ -903,7 +911,7 @@ ftoMrule=f->Function[{r},1-2M/r];
 
 Derivative[n_][f] := Evaluate[Function[{r}, Evaluate[D[1-2M/r,{r,n}]]]];
 
-lambdatolrule={\[Lambda]1[l_]->Sqrt[(l)(l+1)],\[Lambda]2[l_]->Sqrt[(l-1)(l+2)]};
+lambdatolrule={\[Lambda]1[l_]->Sqrt[(l)(l+1)],\[Lambda]2[l_]->Sqrt[(l-1)(l)(l+1)(l+2)]};
 mutolrule=mu[LI[l_],-LI[s_]]:>Sqrt[(l+1-s)(l+s)];
 sigmarule={\[Sigma]->(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]),\[Sigma]p->\[Sigma]+1,\[Sigma]m->\[Sigma]-1};
 
@@ -985,8 +993,8 @@ If[OutputBasis=="HartleHawking"&&MemberQ[{"d2G","d2R"},Source],func=Association@
 If[OutputBasis=="HartleHawking"&&Source=="S0d2G",func=func*(2/f[r[]])^(-1)];
 If[OutputBasis=="HartleHawking"&&Source=="S4d2G",func=func*(f[r[]]/2)^(-1)];
 
-If[OutputBasis=="Master"&&Source=="S0d2G",func=func*4*r^2/f[r[]]];(*** might look a - factor is missing, but this is because S0d2G does not contain a minus factor from d2G ***)
-If[OutputBasis=="Master"&&Source=="S4d2G",func=func*r^6*f[r[]]];(*** might look a - factor is missing, but this is because S4d2G does not contain a minus factor from d2G ***)
+If[OutputBasis=="Master"&&Source=="S0d2G",func=func*4*r[]^2/f[r[]]];(*** might look a - factor is missing, but this is because S0d2G does not contain a minus factor from d2G ***)
+If[OutputBasis=="Master"&&Source=="S4d2G",func=func*r[]^6*f[r[]]];(*** might look a - factor is missing, but this is because S4d2G does not contain a minus factor from d2G ***)
 
 If[InputBasis=="BLS",func=func/.CarterToBLShRule];
 If[InputBasis=="trTensor",func=func/.CarterTotrhRule];
