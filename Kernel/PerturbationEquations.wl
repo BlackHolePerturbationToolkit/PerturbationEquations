@@ -80,7 +80,7 @@ RWGaugeConditionVectorHarmonicdecompform::usage = "Rule that imposes the Regge-W
 
 ftoMrule::usage = "Rule for f(r)=1-2M/r.";
 mutolrule::usage = "Rule for \[Mu]=\!\(\*SqrtBox[\(\((l + 1 - s)\) \((l + s)\)\)]\).";
-lambdatolrule::usage = "Rule for \[Lambda]1=\!\(\*SqrtBox[\(l \((l + 1)\)\)]\) and \[Lambda]2=\!\(\*SqrtBox[\(\((l - 1)\) \((l + 2)\)\)]\).";
+lambdatolrule::usage = "Rule for \[Lambda]1=\!\(\*SqrtBox[\(l \((l + 1)\)\)]\) and \[Lambda]2=\!\(\*SqrtBox[\(\((l - 1)\) (l) \((l + 1)\) \((l + 2)\)\)]\).";
 sigmarule::usage = "Rule for \[Sigma]=(-1)^(\[ScriptQ]+\[ScriptL]+\[ScriptP]).";
 
 
@@ -1074,7 +1074,7 @@ If[Source=="d2G"&&Gauge=="ReggeWheeler",func=d2GVectorHarmonics/.RWGaugeConditio
 Return[func]];
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*HyperboloidalCoordinates rule*)
 
 
